@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19C57" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="SavedStock" representedClassName="SavedStock" syncable="YES">
+        <attribute name="companyCEO" optional="YES" attributeType="String"/>
+        <attribute name="companyDescription" optional="YES" attributeType="String"/>
+        <attribute name="companyLogoURL" optional="YES" attributeType="String"/>
+        <attribute name="companyName" optional="YES" attributeType="String"/>
+        <attribute name="symbol" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Stock" representedClassName=".Stock" syncable="YES">
+        <attribute name="companyCEO" optional="YES" attributeType="String"/>
+        <attribute name="companyDescription" optional="YES" attributeType="String"/>
+        <attribute name="companyIndustry" optional="YES" attributeType="String"/>
+        <attribute name="companyLogoURL" optional="YES" attributeType="String"/>
+        <attribute name="companyName" optional="YES" attributeType="String"/>
+        <attribute name="companyWebsite" optional="YES" attributeType="String"/>
+        <attribute name="order" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="symbol" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Transaction" representedClassName="Transaction" syncable="YES" codeGenerationType="class">
+        <attribute name="balanceRemaining" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="dateAcquired" optional="YES" attributeType="String"/>
+        <attribute name="shareAmount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="sharePrice" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="ticker" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="SavedStock" positionX="-54" positionY="54" width="128" height="118"/>
+        <element name="Stock" positionX="-63" positionY="-18" width="128" height="163"/>
+        <element name="Transaction" positionX="-54" positionY="54" width="128" height="118"/>
+    </elements>
+</model>

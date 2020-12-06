@@ -1,0 +1,1162 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		082BB27625708E9E001927A0 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082BB27525708E9E001927A0 /* Stock.swift */; };
+		082BB27725708E9E001927A0 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082BB27525708E9E001927A0 /* Stock.swift */; };
+		082BB27825708E9E001927A0 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082BB27525708E9E001927A0 /* Stock.swift */; };
+		082BB27925720B0A001927A0 /* Equiteez.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 08EF72C223C497EB003A8A13 /* Equiteez.xcdatamodeld */; };
+		082BB27A25720B0B001927A0 /* Equiteez.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 08EF72C223C497EB003A8A13 /* Equiteez.xcdatamodeld */; };
+		0858115024A1D58200C1CA2E /* DetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0858114C24A1D58100C1CA2E /* DetailsCell.xib */; };
+		0858115124A1D58200C1CA2E /* DetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0858114C24A1D58100C1CA2E /* DetailsCell.xib */; };
+		0858115224A1D58200C1CA2E /* DetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0858114C24A1D58100C1CA2E /* DetailsCell.xib */; };
+		0858115324A1D58200C1CA2E /* StatsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0858114D24A1D58200C1CA2E /* StatsCell.xib */; };
+		0858115424A1D58200C1CA2E /* StatsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0858114D24A1D58200C1CA2E /* StatsCell.xib */; };
+		0858115524A1D58200C1CA2E /* StatsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0858114D24A1D58200C1CA2E /* StatsCell.xib */; };
+		0858115624A1D58200C1CA2E /* InformationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0858114E24A1D58200C1CA2E /* InformationCell.xib */; };
+		0858115724A1D58200C1CA2E /* InformationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0858114E24A1D58200C1CA2E /* InformationCell.xib */; };
+		0858115824A1D58200C1CA2E /* InformationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0858114E24A1D58200C1CA2E /* InformationCell.xib */; };
+		0858115924A1D58200C1CA2E /* GraphCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0858114F24A1D58200C1CA2E /* GraphCell.xib */; };
+		0858115A24A1D58200C1CA2E /* GraphCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0858114F24A1D58200C1CA2E /* GraphCell.xib */; };
+		0858115B24A1D58200C1CA2E /* GraphCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0858114F24A1D58200C1CA2E /* GraphCell.xib */; };
+		0858116024A1D66100C1CA2E /* DetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0858115C24A1D66100C1CA2E /* DetailsCell.swift */; };
+		0858116124A1D66100C1CA2E /* DetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0858115C24A1D66100C1CA2E /* DetailsCell.swift */; };
+		0858116224A1D66100C1CA2E /* DetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0858115C24A1D66100C1CA2E /* DetailsCell.swift */; };
+		0858116324A1D66100C1CA2E /* InformationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0858115D24A1D66100C1CA2E /* InformationCell.swift */; };
+		0858116424A1D66100C1CA2E /* InformationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0858115D24A1D66100C1CA2E /* InformationCell.swift */; };
+		0858116524A1D66100C1CA2E /* InformationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0858115D24A1D66100C1CA2E /* InformationCell.swift */; };
+		0858116624A1D66100C1CA2E /* GraphCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0858115E24A1D66100C1CA2E /* GraphCell.swift */; };
+		0858116724A1D66100C1CA2E /* GraphCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0858115E24A1D66100C1CA2E /* GraphCell.swift */; };
+		0858116824A1D66100C1CA2E /* GraphCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0858115E24A1D66100C1CA2E /* GraphCell.swift */; };
+		0858116924A1D66100C1CA2E /* StatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0858115F24A1D66100C1CA2E /* StatsCell.swift */; };
+		0858116A24A1D66100C1CA2E /* StatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0858115F24A1D66100C1CA2E /* StatsCell.swift */; };
+		0858116B24A1D66100C1CA2E /* StatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0858115F24A1D66100C1CA2E /* StatsCell.swift */; };
+		08685BA3257A03350028EE6C /* FinancialStatements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08685BA2257A03350028EE6C /* FinancialStatements.swift */; };
+		08685BA4257A03350028EE6C /* FinancialStatements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08685BA2257A03350028EE6C /* FinancialStatements.swift */; };
+		08685BA5257A03350028EE6C /* FinancialStatements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08685BA2257A03350028EE6C /* FinancialStatements.swift */; };
+		08685BA8257C6DDD0028EE6C /* PortfolioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08685BA7257C6DDD0028EE6C /* PortfolioVC.swift */; };
+		08685BA9257C6DDD0028EE6C /* PortfolioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08685BA7257C6DDD0028EE6C /* PortfolioVC.swift */; };
+		08685BAA257C6DDD0028EE6C /* PortfolioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08685BA7257C6DDD0028EE6C /* PortfolioVC.swift */; };
+		086B610C23C55C850012765B /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B610B23C55C850012765B /* SettingsVC.swift */; };
+		086B610D23C55C850012765B /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B610B23C55C850012765B /* SettingsVC.swift */; };
+		086B610E23C55C850012765B /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B610B23C55C850012765B /* SettingsVC.swift */; };
+		086B611023C55FA10012765B /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 086B610F23C55FA10012765B /* Settings.storyboard */; };
+		086B611123C55FA10012765B /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 086B610F23C55FA10012765B /* Settings.storyboard */; };
+		086B611223C55FA10012765B /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 086B610F23C55FA10012765B /* Settings.storyboard */; };
+		086B611423C5FD5E0012765B /* StockCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 086B611323C5FD5E0012765B /* StockCell.xib */; };
+		086B611523C5FD5E0012765B /* StockCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 086B611323C5FD5E0012765B /* StockCell.xib */; };
+		086B611623C5FD5E0012765B /* StockCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 086B611323C5FD5E0012765B /* StockCell.xib */; };
+		086B611823C674DD0012765B /* PersistentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B611723C674DD0012765B /* PersistentService.swift */; };
+		086B611923C674DD0012765B /* PersistentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B611723C674DD0012765B /* PersistentService.swift */; };
+		086B611A23C674DD0012765B /* PersistentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B611723C674DD0012765B /* PersistentService.swift */; };
+		086B613D23C69AAE0012765B /* Equiteez.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 08EF72C223C497EB003A8A13 /* Equiteez.xcdatamodeld */; };
+		086B614723C6A4180012765B /* StockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B614623C6A4180012765B /* StockCell.swift */; };
+		086B614823C6A4180012765B /* StockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B614623C6A4180012765B /* StockCell.swift */; };
+		086B614923C6A4180012765B /* StockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B614623C6A4180012765B /* StockCell.swift */; };
+		086B614B23C73AE10012765B /* SearchStock2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 086B614A23C73AE10012765B /* SearchStock2.xib */; };
+		086B614C23C73AE10012765B /* SearchStock2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 086B614A23C73AE10012765B /* SearchStock2.xib */; };
+		086B614D23C73AE10012765B /* SearchStock2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 086B614A23C73AE10012765B /* SearchStock2.xib */; };
+		086B614F23C91DE50012765B /* ViewAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B614E23C91DE50012765B /* ViewAppearance.swift */; };
+		086B615023C91DE50012765B /* ViewAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B614E23C91DE50012765B /* ViewAppearance.swift */; };
+		086B615123C91DE50012765B /* ViewAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B614E23C91DE50012765B /* ViewAppearance.swift */; };
+		086B615323C9B7270012765B /* ToastSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B615223C9B7270012765B /* ToastSwift.swift */; };
+		086B615423C9B7270012765B /* ToastSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B615223C9B7270012765B /* ToastSwift.swift */; };
+		086B615523C9B7270012765B /* ToastSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B615223C9B7270012765B /* ToastSwift.swift */; };
+		086B615723C9C1FA0012765B /* AlphaVantageQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B615623C9C1FA0012765B /* AlphaVantageQuery.swift */; };
+		086B615823C9C1FA0012765B /* AlphaVantageQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B615623C9C1FA0012765B /* AlphaVantageQuery.swift */; };
+		086B615923C9C1FA0012765B /* AlphaVantageQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B615623C9C1FA0012765B /* AlphaVantageQuery.swift */; };
+		086B615B23CABC5C0012765B /* NumDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B615A23CABC5C0012765B /* NumDateFormatter.swift */; };
+		086B615C23CABC5C0012765B /* NumDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B615A23CABC5C0012765B /* NumDateFormatter.swift */; };
+		086B615D23CABC5C0012765B /* NumDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B615A23CABC5C0012765B /* NumDateFormatter.swift */; };
+		08B2022423DA8C59001AB937 /* ToolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2022323DA8C59001AB937 /* ToolCell.swift */; };
+		08B2022523DA8C59001AB937 /* ToolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2022323DA8C59001AB937 /* ToolCell.swift */; };
+		08B2022623DA8C59001AB937 /* ToolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2022323DA8C59001AB937 /* ToolCell.swift */; };
+		08B2022823E7E5CC001AB937 /* StockFinancialsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2022723E7E5CC001AB937 /* StockFinancialsVC.swift */; };
+		08B2022923E7E5CC001AB937 /* StockFinancialsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2022723E7E5CC001AB937 /* StockFinancialsVC.swift */; };
+		08B2022A23E7E5CC001AB937 /* StockFinancialsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2022723E7E5CC001AB937 /* StockFinancialsVC.swift */; };
+		08E3788E23C4A0A000246F66 /* StocksMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E3788D23C4A0A000246F66 /* StocksMainVC.swift */; };
+		08E3788F23C4A0A000246F66 /* StocksMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E3788D23C4A0A000246F66 /* StocksMainVC.swift */; };
+		08E3789023C4A0A000246F66 /* StocksMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E3788D23C4A0A000246F66 /* StocksMainVC.swift */; };
+		08E3789223C4A10700246F66 /* StocksMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08E3789123C4A10700246F66 /* StocksMain.storyboard */; };
+		08E3789323C4A10700246F66 /* StocksMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08E3789123C4A10700246F66 /* StocksMain.storyboard */; };
+		08E3789423C4A10700246F66 /* StocksMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08E3789123C4A10700246F66 /* StocksMain.storyboard */; };
+		08E3789623C4A14400246F66 /* SearchStockVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E3789523C4A14400246F66 /* SearchStockVC.swift */; };
+		08E3789723C4A14400246F66 /* SearchStockVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E3789523C4A14400246F66 /* SearchStockVC.swift */; };
+		08E3789823C4A14400246F66 /* SearchStockVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E3789523C4A14400246F66 /* SearchStockVC.swift */; };
+		08E3789A23C4A16200246F66 /* SearchStock.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08E3789923C4A16200246F66 /* SearchStock.storyboard */; };
+		08E3789B23C4A16200246F66 /* SearchStock.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08E3789923C4A16200246F66 /* SearchStock.storyboard */; };
+		08E3789C23C4A16200246F66 /* SearchStock.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08E3789923C4A16200246F66 /* SearchStock.storyboard */; };
+		08E3789E23C4A17B00246F66 /* StockDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E3789D23C4A17B00246F66 /* StockDetailsVC.swift */; };
+		08E3789F23C4A17B00246F66 /* StockDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E3789D23C4A17B00246F66 /* StockDetailsVC.swift */; };
+		08E378A023C4A17B00246F66 /* StockDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E3789D23C4A17B00246F66 /* StockDetailsVC.swift */; };
+		08E378A223C4A19100246F66 /* StockDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08E378A123C4A19100246F66 /* StockDetails.storyboard */; };
+		08E378A323C4A19100246F66 /* StockDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08E378A123C4A19100246F66 /* StockDetails.storyboard */; };
+		08E378A423C4A19100246F66 /* StockDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08E378A123C4A19100246F66 /* StockDetails.storyboard */; };
+		08E378A623C4A1BC00246F66 /* CandleStickVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E378A523C4A1BC00246F66 /* CandleStickVC.swift */; };
+		08E378A723C4A1BC00246F66 /* CandleStickVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E378A523C4A1BC00246F66 /* CandleStickVC.swift */; };
+		08E378A823C4A1BC00246F66 /* CandleStickVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E378A523C4A1BC00246F66 /* CandleStickVC.swift */; };
+		08E378AA23C4A1DF00246F66 /* CandleStickChart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08E378A923C4A1DF00246F66 /* CandleStickChart.storyboard */; };
+		08E378AB23C4A1DF00246F66 /* CandleStickChart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08E378A923C4A1DF00246F66 /* CandleStickChart.storyboard */; };
+		08E378AC23C4A1DF00246F66 /* CandleStickChart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08E378A923C4A1DF00246F66 /* CandleStickChart.storyboard */; };
+		08E378AE23C4A20E00246F66 /* ToolsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E378AD23C4A20E00246F66 /* ToolsVC.swift */; };
+		08E378AF23C4A20E00246F66 /* ToolsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E378AD23C4A20E00246F66 /* ToolsVC.swift */; };
+		08E378B023C4A20E00246F66 /* ToolsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E378AD23C4A20E00246F66 /* ToolsVC.swift */; };
+		08E378B223C4A21C00246F66 /* Portfolio.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08E378B123C4A21C00246F66 /* Portfolio.storyboard */; };
+		08E378B323C4A21C00246F66 /* Portfolio.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08E378B123C4A21C00246F66 /* Portfolio.storyboard */; };
+		08E378B423C4A21C00246F66 /* Portfolio.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08E378B123C4A21C00246F66 /* Portfolio.storyboard */; };
+		08E378B623C4A24100246F66 /* FMPquery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E378B523C4A24100246F66 /* FMPquery.swift */; };
+		08E378B723C4A24100246F66 /* FMPquery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E378B523C4A24100246F66 /* FMPquery.swift */; };
+		08E378B823C4A24100246F66 /* FMPquery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E378B523C4A24100246F66 /* FMPquery.swift */; };
+		08E378BA23C4A34000246F66 /* CurrencyExchangeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E378B923C4A34000246F66 /* CurrencyExchangeVC.swift */; };
+		08E378BB23C4A34000246F66 /* CurrencyExchangeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E378B923C4A34000246F66 /* CurrencyExchangeVC.swift */; };
+		08E378BC23C4A34000246F66 /* CurrencyExchangeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E378B923C4A34000246F66 /* CurrencyExchangeVC.swift */; };
+		08E378BE23C4A35800246F66 /* CurrencyExchange.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08E378BD23C4A35800246F66 /* CurrencyExchange.storyboard */; };
+		08E378BF23C4A35800246F66 /* CurrencyExchange.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08E378BD23C4A35800246F66 /* CurrencyExchange.storyboard */; };
+		08E378C023C4A35800246F66 /* CurrencyExchange.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08E378BD23C4A35800246F66 /* CurrencyExchange.storyboard */; };
+		08EF72BA23C497EB003A8A13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EF72B923C497EB003A8A13 /* AppDelegate.swift */; };
+		08EF72BC23C497EB003A8A13 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EF72BB23C497EB003A8A13 /* SceneDelegate.swift */; };
+		08EF72BE23C497EB003A8A13 /* HomeScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EF72BD23C497EB003A8A13 /* HomeScreenVC.swift */; };
+		08EF72C123C497EB003A8A13 /* HomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08EF72BF23C497EB003A8A13 /* HomeScreen.storyboard */; };
+		08EF72C623C497EE003A8A13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08EF72C523C497EE003A8A13 /* Assets.xcassets */; };
+		08EF72C923C497EE003A8A13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08EF72C723C497EE003A8A13 /* LaunchScreen.storyboard */; };
+		08EF72D423C497EE003A8A13 /* EquiteezTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EF72D323C497EE003A8A13 /* EquiteezTests.swift */; };
+		08EF72DF23C497EE003A8A13 /* EquiteezUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EF72DE23C497EE003A8A13 /* EquiteezUITests.swift */; };
+		3720197E5F4ED1EA2D3C50C9 /* Pods_Equiteez.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29C5864CB6D10924258EC947 /* Pods_Equiteez.framework */; };
+		583C6057E60E2BCDE3799F35 /* Pods_EquiteezTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 948E595744CB93DFF510E26D /* Pods_EquiteezTests.framework */; };
+		D794616E548664A7F26D5202 /* Pods_Equiteez_EquiteezUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 962E97BD19006515B85A4C03 /* Pods_Equiteez_EquiteezUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		08EF72D023C497EE003A8A13 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08EF72AE23C497EB003A8A13 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 08EF72B523C497EB003A8A13;
+			remoteInfo = Equiteez;
+		};
+		08EF72DB23C497EE003A8A13 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08EF72AE23C497EB003A8A13 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 08EF72B523C497EB003A8A13;
+			remoteInfo = Equiteez;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		082BB27525708E9E001927A0 /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
+		0858114C24A1D58100C1CA2E /* DetailsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailsCell.xib; sourceTree = "<group>"; };
+		0858114D24A1D58200C1CA2E /* StatsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatsCell.xib; sourceTree = "<group>"; };
+		0858114E24A1D58200C1CA2E /* InformationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InformationCell.xib; sourceTree = "<group>"; };
+		0858114F24A1D58200C1CA2E /* GraphCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GraphCell.xib; sourceTree = "<group>"; };
+		0858115C24A1D66100C1CA2E /* DetailsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsCell.swift; sourceTree = "<group>"; };
+		0858115D24A1D66100C1CA2E /* InformationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationCell.swift; sourceTree = "<group>"; };
+		0858115E24A1D66100C1CA2E /* GraphCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphCell.swift; sourceTree = "<group>"; };
+		0858115F24A1D66100C1CA2E /* StatsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsCell.swift; sourceTree = "<group>"; };
+		08685BA2257A03350028EE6C /* FinancialStatements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialStatements.swift; sourceTree = "<group>"; };
+		08685BA7257C6DDD0028EE6C /* PortfolioVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioVC.swift; sourceTree = "<group>"; };
+		086B610B23C55C850012765B /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		086B610F23C55FA10012765B /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		086B611323C5FD5E0012765B /* StockCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StockCell.xib; sourceTree = "<group>"; };
+		086B611723C674DD0012765B /* PersistentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentService.swift; sourceTree = "<group>"; };
+		086B614623C6A4180012765B /* StockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCell.swift; sourceTree = "<group>"; };
+		086B614A23C73AE10012765B /* SearchStock2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchStock2.xib; sourceTree = "<group>"; };
+		086B614E23C91DE50012765B /* ViewAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAppearance.swift; sourceTree = "<group>"; };
+		086B615223C9B7270012765B /* ToastSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastSwift.swift; sourceTree = "<group>"; };
+		086B615623C9C1FA0012765B /* AlphaVantageQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaVantageQuery.swift; sourceTree = "<group>"; };
+		086B615A23CABC5C0012765B /* NumDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumDateFormatter.swift; sourceTree = "<group>"; };
+		08B2022323DA8C59001AB937 /* ToolCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolCell.swift; sourceTree = "<group>"; };
+		08B2022723E7E5CC001AB937 /* StockFinancialsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockFinancialsVC.swift; sourceTree = "<group>"; };
+		08E3788D23C4A0A000246F66 /* StocksMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksMainVC.swift; sourceTree = "<group>"; };
+		08E3789123C4A10700246F66 /* StocksMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StocksMain.storyboard; sourceTree = "<group>"; };
+		08E3789523C4A14400246F66 /* SearchStockVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStockVC.swift; sourceTree = "<group>"; };
+		08E3789923C4A16200246F66 /* SearchStock.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchStock.storyboard; sourceTree = "<group>"; };
+		08E3789D23C4A17B00246F66 /* StockDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailsVC.swift; sourceTree = "<group>"; };
+		08E378A123C4A19100246F66 /* StockDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StockDetails.storyboard; sourceTree = "<group>"; };
+		08E378A523C4A1BC00246F66 /* CandleStickVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandleStickVC.swift; sourceTree = "<group>"; };
+		08E378A923C4A1DF00246F66 /* CandleStickChart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CandleStickChart.storyboard; sourceTree = "<group>"; };
+		08E378AD23C4A20E00246F66 /* ToolsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsVC.swift; sourceTree = "<group>"; };
+		08E378B123C4A21C00246F66 /* Portfolio.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Portfolio.storyboard; sourceTree = "<group>"; };
+		08E378B523C4A24100246F66 /* FMPquery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMPquery.swift; sourceTree = "<group>"; };
+		08E378B923C4A34000246F66 /* CurrencyExchangeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeVC.swift; sourceTree = "<group>"; };
+		08E378BD23C4A35800246F66 /* CurrencyExchange.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CurrencyExchange.storyboard; sourceTree = "<group>"; };
+		08EF72B623C497EB003A8A13 /* Equiteez.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Equiteez.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		08EF72B923C497EB003A8A13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		08EF72BB23C497EB003A8A13 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		08EF72BD23C497EB003A8A13 /* HomeScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenVC.swift; sourceTree = "<group>"; };
+		08EF72C023C497EB003A8A13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/HomeScreen.storyboard; sourceTree = "<group>"; };
+		08EF72C323C497EB003A8A13 /* Equiteez.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Equiteez.xcdatamodel; sourceTree = "<group>"; };
+		08EF72C523C497EE003A8A13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		08EF72C823C497EE003A8A13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		08EF72CA23C497EE003A8A13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		08EF72CF23C497EE003A8A13 /* EquiteezTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EquiteezTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		08EF72D323C497EE003A8A13 /* EquiteezTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquiteezTests.swift; sourceTree = "<group>"; };
+		08EF72D523C497EE003A8A13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		08EF72DA23C497EE003A8A13 /* EquiteezUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EquiteezUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		08EF72DE23C497EE003A8A13 /* EquiteezUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquiteezUITests.swift; sourceTree = "<group>"; };
+		08EF72E023C497EE003A8A13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29C5864CB6D10924258EC947 /* Pods_Equiteez.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Equiteez.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5183C527B49CAEDA0B0185F6 /* Pods-Equiteez.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Equiteez.debug.xcconfig"; path = "Target Support Files/Pods-Equiteez/Pods-Equiteez.debug.xcconfig"; sourceTree = "<group>"; };
+		7DCA73E1E5DF0517AA76CEC5 /* Pods-Equiteez-EquiteezUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Equiteez-EquiteezUITests.debug.xcconfig"; path = "Target Support Files/Pods-Equiteez-EquiteezUITests/Pods-Equiteez-EquiteezUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		85258D4A40172383F0C91C35 /* Pods-EquiteezTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EquiteezTests.debug.xcconfig"; path = "Target Support Files/Pods-EquiteezTests/Pods-EquiteezTests.debug.xcconfig"; sourceTree = "<group>"; };
+		948E595744CB93DFF510E26D /* Pods_EquiteezTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EquiteezTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		962E97BD19006515B85A4C03 /* Pods_Equiteez_EquiteezUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Equiteez_EquiteezUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4BCD5480CE57B055468376D /* Pods-EquiteezTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EquiteezTests.release.xcconfig"; path = "Target Support Files/Pods-EquiteezTests/Pods-EquiteezTests.release.xcconfig"; sourceTree = "<group>"; };
+		CB4B4B560BC877FBC8A18DE3 /* Pods-Equiteez.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Equiteez.release.xcconfig"; path = "Target Support Files/Pods-Equiteez/Pods-Equiteez.release.xcconfig"; sourceTree = "<group>"; };
+		CDB770648F30A7E39C8760BB /* Pods-Equiteez-EquiteezUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Equiteez-EquiteezUITests.release.xcconfig"; path = "Target Support Files/Pods-Equiteez-EquiteezUITests/Pods-Equiteez-EquiteezUITests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		08EF72B323C497EB003A8A13 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3720197E5F4ED1EA2D3C50C9 /* Pods_Equiteez.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08EF72CC23C497EE003A8A13 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				583C6057E60E2BCDE3799F35 /* Pods_EquiteezTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08EF72D723C497EE003A8A13 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D794616E548664A7F26D5202 /* Pods_Equiteez_EquiteezUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08685BA6257C6DAA0028EE6C /* Portfolio */ = {
+			isa = PBXGroup;
+			children = (
+				08E378B123C4A21C00246F66 /* Portfolio.storyboard */,
+				08685BA7257C6DDD0028EE6C /* PortfolioVC.swift */,
+			);
+			path = Portfolio;
+			sourceTree = "<group>";
+		};
+		086B611B23C676790012765B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				08EF72C223C497EB003A8A13 /* Equiteez.xcdatamodeld */,
+				086B611723C674DD0012765B /* PersistentService.swift */,
+				082BB27525708E9E001927A0 /* Stock.swift */,
+				08685BA2257A03350028EE6C /* FinancialStatements.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		08E3788223C49CCB00246F66 /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				08EF72BF23C497EB003A8A13 /* HomeScreen.storyboard */,
+				08EF72BD23C497EB003A8A13 /* HomeScreenVC.swift */,
+			);
+			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		08E3788323C49CE800246F66 /* CandleStick */ = {
+			isa = PBXGroup;
+			children = (
+				08E378A923C4A1DF00246F66 /* CandleStickChart.storyboard */,
+				08E378A523C4A1BC00246F66 /* CandleStickVC.swift */,
+			);
+			path = CandleStick;
+			sourceTree = "<group>";
+		};
+		08E3788423C49CEB00246F66 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				086B610B23C55C850012765B /* SettingsVC.swift */,
+				086B610F23C55FA10012765B /* Settings.storyboard */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		08E3788523C49CF100246F66 /* SearchStock */ = {
+			isa = PBXGroup;
+			children = (
+				08E3789923C4A16200246F66 /* SearchStock.storyboard */,
+				08E3789523C4A14400246F66 /* SearchStockVC.swift */,
+				086B614A23C73AE10012765B /* SearchStock2.xib */,
+			);
+			path = SearchStock;
+			sourceTree = "<group>";
+		};
+		08E3788623C49CF300246F66 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				08E378AD23C4A20E00246F66 /* ToolsVC.swift */,
+				08B2022323DA8C59001AB937 /* ToolCell.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		08E3788723C49CF600246F66 /* StocksMain */ = {
+			isa = PBXGroup;
+			children = (
+				08E3789123C4A10700246F66 /* StocksMain.storyboard */,
+				086B611323C5FD5E0012765B /* StockCell.xib */,
+				08E3788D23C4A0A000246F66 /* StocksMainVC.swift */,
+				086B614623C6A4180012765B /* StockCell.swift */,
+			);
+			path = StocksMain;
+			sourceTree = "<group>";
+		};
+		08E3788823C49CF900246F66 /* StockDetails */ = {
+			isa = PBXGroup;
+			children = (
+				0858115C24A1D66100C1CA2E /* DetailsCell.swift */,
+				0858115E24A1D66100C1CA2E /* GraphCell.swift */,
+				0858115D24A1D66100C1CA2E /* InformationCell.swift */,
+				0858115F24A1D66100C1CA2E /* StatsCell.swift */,
+				0858114C24A1D58100C1CA2E /* DetailsCell.xib */,
+				0858114F24A1D58200C1CA2E /* GraphCell.xib */,
+				0858114E24A1D58200C1CA2E /* InformationCell.xib */,
+				0858114D24A1D58200C1CA2E /* StatsCell.xib */,
+				08E378A123C4A19100246F66 /* StockDetails.storyboard */,
+				08E3789D23C4A17B00246F66 /* StockDetailsVC.swift */,
+				08B2022723E7E5CC001AB937 /* StockFinancialsVC.swift */,
+			);
+			path = StockDetails;
+			sourceTree = "<group>";
+		};
+		08E3788923C49DA100246F66 /* CurrencyExchange */ = {
+			isa = PBXGroup;
+			children = (
+				08E378BD23C4A35800246F66 /* CurrencyExchange.storyboard */,
+				08E378B923C4A34000246F66 /* CurrencyExchangeVC.swift */,
+			);
+			path = CurrencyExchange;
+			sourceTree = "<group>";
+		};
+		08E3788A23C49E1800246F66 /* Crypto */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Crypto;
+			sourceTree = "<group>";
+		};
+		08E3788B23C49E2700246F66 /* LoanCalculator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LoanCalculator;
+			sourceTree = "<group>";
+		};
+		08E3788C23C49E8B00246F66 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				08E378B523C4A24100246F66 /* FMPquery.swift */,
+				086B615623C9C1FA0012765B /* AlphaVantageQuery.swift */,
+				086B615A23CABC5C0012765B /* NumDateFormatter.swift */,
+				086B614E23C91DE50012765B /* ViewAppearance.swift */,
+				086B615223C9B7270012765B /* ToastSwift.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		08EF72AD23C497EB003A8A13 = {
+			isa = PBXGroup;
+			children = (
+				08EF72B823C497EB003A8A13 /* Equiteez */,
+				08EF72D223C497EE003A8A13 /* EquiteezTests */,
+				08EF72DD23C497EE003A8A13 /* EquiteezUITests */,
+				08EF72B723C497EB003A8A13 /* Products */,
+				86958C2FE3F3BA17C814DEBA /* Pods */,
+				E2BB729851221270780544B0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		08EF72B723C497EB003A8A13 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				08EF72B623C497EB003A8A13 /* Equiteez.app */,
+				08EF72CF23C497EE003A8A13 /* EquiteezTests.xctest */,
+				08EF72DA23C497EE003A8A13 /* EquiteezUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		08EF72B823C497EB003A8A13 /* Equiteez */ = {
+			isa = PBXGroup;
+			children = (
+				086B611B23C676790012765B /* Models */,
+				08E3788C23C49E8B00246F66 /* Helpers */,
+				08E3788223C49CCB00246F66 /* HomeScreen */,
+				08E3788723C49CF600246F66 /* StocksMain */,
+				08E3788523C49CF100246F66 /* SearchStock */,
+				08E3788823C49CF900246F66 /* StockDetails */,
+				08685BA6257C6DAA0028EE6C /* Portfolio */,
+				08E3788323C49CE800246F66 /* CandleStick */,
+				08E3788623C49CF300246F66 /* Tools */,
+				08E3788923C49DA100246F66 /* CurrencyExchange */,
+				08E3788A23C49E1800246F66 /* Crypto */,
+				08E3788B23C49E2700246F66 /* LoanCalculator */,
+				08E3788423C49CEB00246F66 /* Settings */,
+				08EF72CA23C497EE003A8A13 /* Info.plist */,
+				08EF72B923C497EB003A8A13 /* AppDelegate.swift */,
+				08EF72BB23C497EB003A8A13 /* SceneDelegate.swift */,
+				08EF72C523C497EE003A8A13 /* Assets.xcassets */,
+				08EF72C723C497EE003A8A13 /* LaunchScreen.storyboard */,
+			);
+			path = Equiteez;
+			sourceTree = "<group>";
+		};
+		08EF72D223C497EE003A8A13 /* EquiteezTests */ = {
+			isa = PBXGroup;
+			children = (
+				08EF72D323C497EE003A8A13 /* EquiteezTests.swift */,
+				08EF72D523C497EE003A8A13 /* Info.plist */,
+			);
+			path = EquiteezTests;
+			sourceTree = "<group>";
+		};
+		08EF72DD23C497EE003A8A13 /* EquiteezUITests */ = {
+			isa = PBXGroup;
+			children = (
+				08EF72DE23C497EE003A8A13 /* EquiteezUITests.swift */,
+				08EF72E023C497EE003A8A13 /* Info.plist */,
+			);
+			path = EquiteezUITests;
+			sourceTree = "<group>";
+		};
+		86958C2FE3F3BA17C814DEBA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5183C527B49CAEDA0B0185F6 /* Pods-Equiteez.debug.xcconfig */,
+				CB4B4B560BC877FBC8A18DE3 /* Pods-Equiteez.release.xcconfig */,
+				7DCA73E1E5DF0517AA76CEC5 /* Pods-Equiteez-EquiteezUITests.debug.xcconfig */,
+				CDB770648F30A7E39C8760BB /* Pods-Equiteez-EquiteezUITests.release.xcconfig */,
+				85258D4A40172383F0C91C35 /* Pods-EquiteezTests.debug.xcconfig */,
+				A4BCD5480CE57B055468376D /* Pods-EquiteezTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E2BB729851221270780544B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29C5864CB6D10924258EC947 /* Pods_Equiteez.framework */,
+				962E97BD19006515B85A4C03 /* Pods_Equiteez_EquiteezUITests.framework */,
+				948E595744CB93DFF510E26D /* Pods_EquiteezTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		08EF72B523C497EB003A8A13 /* Equiteez */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 08EF72E323C497EE003A8A13 /* Build configuration list for PBXNativeTarget "Equiteez" */;
+			buildPhases = (
+				92151DD0B889E61B25E526E0 /* [CP] Check Pods Manifest.lock */,
+				08EF72B223C497EB003A8A13 /* Sources */,
+				08EF72B323C497EB003A8A13 /* Frameworks */,
+				08EF72B423C497EB003A8A13 /* Resources */,
+				457F90096346CF254420E9B8 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Equiteez;
+			productName = Equiteez;
+			productReference = 08EF72B623C497EB003A8A13 /* Equiteez.app */;
+			productType = "com.apple.product-type.application";
+		};
+		08EF72CE23C497EE003A8A13 /* EquiteezTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 08EF72E623C497EE003A8A13 /* Build configuration list for PBXNativeTarget "EquiteezTests" */;
+			buildPhases = (
+				E932C5AF35C97447ED0BDE95 /* [CP] Check Pods Manifest.lock */,
+				08EF72CB23C497EE003A8A13 /* Sources */,
+				08EF72CC23C497EE003A8A13 /* Frameworks */,
+				08EF72CD23C497EE003A8A13 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				08EF72D123C497EE003A8A13 /* PBXTargetDependency */,
+			);
+			name = EquiteezTests;
+			productName = EquiteezTests;
+			productReference = 08EF72CF23C497EE003A8A13 /* EquiteezTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		08EF72D923C497EE003A8A13 /* EquiteezUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 08EF72E923C497EE003A8A13 /* Build configuration list for PBXNativeTarget "EquiteezUITests" */;
+			buildPhases = (
+				8AB8CDDBE84558C826F56820 /* [CP] Check Pods Manifest.lock */,
+				08EF72D623C497EE003A8A13 /* Sources */,
+				08EF72D723C497EE003A8A13 /* Frameworks */,
+				08EF72D823C497EE003A8A13 /* Resources */,
+				00019E01B364DDA9FE6FD589 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				08EF72DC23C497EE003A8A13 /* PBXTargetDependency */,
+			);
+			name = EquiteezUITests;
+			productName = EquiteezUITests;
+			productReference = 08EF72DA23C497EE003A8A13 /* EquiteezUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08EF72AE23C497EB003A8A13 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Aniruddha Prabhu";
+				TargetAttributes = {
+					08EF72B523C497EB003A8A13 = {
+						CreatedOnToolsVersion = 11.3;
+					};
+					08EF72CE23C497EE003A8A13 = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = 08EF72B523C497EB003A8A13;
+					};
+					08EF72D923C497EE003A8A13 = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = 08EF72B523C497EB003A8A13;
+					};
+				};
+			};
+			buildConfigurationList = 08EF72B123C497EB003A8A13 /* Build configuration list for PBXProject "Equiteez" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 08EF72AD23C497EB003A8A13;
+			productRefGroup = 08EF72B723C497EB003A8A13 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				08EF72B523C497EB003A8A13 /* Equiteez */,
+				08EF72CE23C497EE003A8A13 /* EquiteezTests */,
+				08EF72D923C497EE003A8A13 /* EquiteezUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		08EF72B423C497EB003A8A13 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0858115924A1D58200C1CA2E /* GraphCell.xib in Resources */,
+				08E378B223C4A21C00246F66 /* Portfolio.storyboard in Resources */,
+				08E378AA23C4A1DF00246F66 /* CandleStickChart.storyboard in Resources */,
+				08E3789223C4A10700246F66 /* StocksMain.storyboard in Resources */,
+				0858115324A1D58200C1CA2E /* StatsCell.xib in Resources */,
+				08EF72C923C497EE003A8A13 /* LaunchScreen.storyboard in Resources */,
+				086B611423C5FD5E0012765B /* StockCell.xib in Resources */,
+				08E378BE23C4A35800246F66 /* CurrencyExchange.storyboard in Resources */,
+				086B614B23C73AE10012765B /* SearchStock2.xib in Resources */,
+				08EF72C623C497EE003A8A13 /* Assets.xcassets in Resources */,
+				0858115624A1D58200C1CA2E /* InformationCell.xib in Resources */,
+				08E3789A23C4A16200246F66 /* SearchStock.storyboard in Resources */,
+				08E378A223C4A19100246F66 /* StockDetails.storyboard in Resources */,
+				0858115024A1D58200C1CA2E /* DetailsCell.xib in Resources */,
+				08EF72C123C497EB003A8A13 /* HomeScreen.storyboard in Resources */,
+				086B611023C55FA10012765B /* Settings.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08EF72CD23C497EE003A8A13 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				086B614C23C73AE10012765B /* SearchStock2.xib in Resources */,
+				08E3789323C4A10700246F66 /* StocksMain.storyboard in Resources */,
+				08E378BF23C4A35800246F66 /* CurrencyExchange.storyboard in Resources */,
+				0858115424A1D58200C1CA2E /* StatsCell.xib in Resources */,
+				086B611523C5FD5E0012765B /* StockCell.xib in Resources */,
+				08E378AB23C4A1DF00246F66 /* CandleStickChart.storyboard in Resources */,
+				0858115724A1D58200C1CA2E /* InformationCell.xib in Resources */,
+				08E378A323C4A19100246F66 /* StockDetails.storyboard in Resources */,
+				08E378B323C4A21C00246F66 /* Portfolio.storyboard in Resources */,
+				08E3789B23C4A16200246F66 /* SearchStock.storyboard in Resources */,
+				0858115124A1D58200C1CA2E /* DetailsCell.xib in Resources */,
+				086B611123C55FA10012765B /* Settings.storyboard in Resources */,
+				0858115A24A1D58200C1CA2E /* GraphCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08EF72D823C497EE003A8A13 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				086B614D23C73AE10012765B /* SearchStock2.xib in Resources */,
+				08E3789423C4A10700246F66 /* StocksMain.storyboard in Resources */,
+				08E378C023C4A35800246F66 /* CurrencyExchange.storyboard in Resources */,
+				0858115524A1D58200C1CA2E /* StatsCell.xib in Resources */,
+				086B611623C5FD5E0012765B /* StockCell.xib in Resources */,
+				08E378AC23C4A1DF00246F66 /* CandleStickChart.storyboard in Resources */,
+				0858115824A1D58200C1CA2E /* InformationCell.xib in Resources */,
+				08E378A423C4A19100246F66 /* StockDetails.storyboard in Resources */,
+				08E378B423C4A21C00246F66 /* Portfolio.storyboard in Resources */,
+				08E3789C23C4A16200246F66 /* SearchStock.storyboard in Resources */,
+				0858115224A1D58200C1CA2E /* DetailsCell.xib in Resources */,
+				086B611223C55FA10012765B /* Settings.storyboard in Resources */,
+				0858115B24A1D58200C1CA2E /* GraphCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00019E01B364DDA9FE6FD589 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Equiteez-EquiteezUITests/Pods-Equiteez-EquiteezUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Equiteez-EquiteezUITests/Pods-Equiteez-EquiteezUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Equiteez-EquiteezUITests/Pods-Equiteez-EquiteezUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		457F90096346CF254420E9B8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Equiteez/Pods-Equiteez-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Equiteez/Pods-Equiteez-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Equiteez/Pods-Equiteez-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8AB8CDDBE84558C826F56820 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Equiteez-EquiteezUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		92151DD0B889E61B25E526E0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Equiteez-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E932C5AF35C97447ED0BDE95 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EquiteezTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		08EF72B223C497EB003A8A13 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0858116024A1D66100C1CA2E /* DetailsCell.swift in Sources */,
+				08685BA8257C6DDD0028EE6C /* PortfolioVC.swift in Sources */,
+				086B613D23C69AAE0012765B /* Equiteez.xcdatamodeld in Sources */,
+				08EF72BE23C497EB003A8A13 /* HomeScreenVC.swift in Sources */,
+				086B614723C6A4180012765B /* StockCell.swift in Sources */,
+				086B615323C9B7270012765B /* ToastSwift.swift in Sources */,
+				08685BA3257A03350028EE6C /* FinancialStatements.swift in Sources */,
+				08E3789623C4A14400246F66 /* SearchStockVC.swift in Sources */,
+				086B615B23CABC5C0012765B /* NumDateFormatter.swift in Sources */,
+				08E3788E23C4A0A000246F66 /* StocksMainVC.swift in Sources */,
+				0858116324A1D66100C1CA2E /* InformationCell.swift in Sources */,
+				0858116924A1D66100C1CA2E /* StatsCell.swift in Sources */,
+				08E378BA23C4A34000246F66 /* CurrencyExchangeVC.swift in Sources */,
+				086B610C23C55C850012765B /* SettingsVC.swift in Sources */,
+				086B614F23C91DE50012765B /* ViewAppearance.swift in Sources */,
+				08E378A623C4A1BC00246F66 /* CandleStickVC.swift in Sources */,
+				08B2022823E7E5CC001AB937 /* StockFinancialsVC.swift in Sources */,
+				08EF72BA23C497EB003A8A13 /* AppDelegate.swift in Sources */,
+				086B615723C9C1FA0012765B /* AlphaVantageQuery.swift in Sources */,
+				08EF72BC23C497EB003A8A13 /* SceneDelegate.swift in Sources */,
+				082BB27625708E9E001927A0 /* Stock.swift in Sources */,
+				08E3789E23C4A17B00246F66 /* StockDetailsVC.swift in Sources */,
+				0858116624A1D66100C1CA2E /* GraphCell.swift in Sources */,
+				08E378B623C4A24100246F66 /* FMPquery.swift in Sources */,
+				08E378AE23C4A20E00246F66 /* ToolsVC.swift in Sources */,
+				08B2022423DA8C59001AB937 /* ToolCell.swift in Sources */,
+				086B611823C674DD0012765B /* PersistentService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08EF72CB23C497EE003A8A13 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0858116124A1D66100C1CA2E /* DetailsCell.swift in Sources */,
+				08E3788F23C4A0A000246F66 /* StocksMainVC.swift in Sources */,
+				08E378A723C4A1BC00246F66 /* CandleStickVC.swift in Sources */,
+				0858116A24A1D66100C1CA2E /* StatsCell.swift in Sources */,
+				086B615823C9C1FA0012765B /* AlphaVantageQuery.swift in Sources */,
+				086B611923C674DD0012765B /* PersistentService.swift in Sources */,
+				08E378AF23C4A20E00246F66 /* ToolsVC.swift in Sources */,
+				082BB27925720B0A001927A0 /* Equiteez.xcdatamodeld in Sources */,
+				08B2022523DA8C59001AB937 /* ToolCell.swift in Sources */,
+				08685BA4257A03350028EE6C /* FinancialStatements.swift in Sources */,
+				086B614823C6A4180012765B /* StockCell.swift in Sources */,
+				0858116724A1D66100C1CA2E /* GraphCell.swift in Sources */,
+				08E3789723C4A14400246F66 /* SearchStockVC.swift in Sources */,
+				086B615423C9B7270012765B /* ToastSwift.swift in Sources */,
+				08E3789F23C4A17B00246F66 /* StockDetailsVC.swift in Sources */,
+				08E378B723C4A24100246F66 /* FMPquery.swift in Sources */,
+				08EF72D423C497EE003A8A13 /* EquiteezTests.swift in Sources */,
+				08E378BB23C4A34000246F66 /* CurrencyExchangeVC.swift in Sources */,
+				086B615023C91DE50012765B /* ViewAppearance.swift in Sources */,
+				0858116424A1D66100C1CA2E /* InformationCell.swift in Sources */,
+				08685BA9257C6DDD0028EE6C /* PortfolioVC.swift in Sources */,
+				08B2022923E7E5CC001AB937 /* StockFinancialsVC.swift in Sources */,
+				086B610D23C55C850012765B /* SettingsVC.swift in Sources */,
+				082BB27725708E9E001927A0 /* Stock.swift in Sources */,
+				086B615C23CABC5C0012765B /* NumDateFormatter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08EF72D623C497EE003A8A13 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0858116224A1D66100C1CA2E /* DetailsCell.swift in Sources */,
+				08E3789023C4A0A000246F66 /* StocksMainVC.swift in Sources */,
+				08E378A823C4A1BC00246F66 /* CandleStickVC.swift in Sources */,
+				0858116B24A1D66100C1CA2E /* StatsCell.swift in Sources */,
+				086B615923C9C1FA0012765B /* AlphaVantageQuery.swift in Sources */,
+				086B611A23C674DD0012765B /* PersistentService.swift in Sources */,
+				08E378B023C4A20E00246F66 /* ToolsVC.swift in Sources */,
+				082BB27A25720B0B001927A0 /* Equiteez.xcdatamodeld in Sources */,
+				08B2022623DA8C59001AB937 /* ToolCell.swift in Sources */,
+				08685BA5257A03350028EE6C /* FinancialStatements.swift in Sources */,
+				086B614923C6A4180012765B /* StockCell.swift in Sources */,
+				0858116824A1D66100C1CA2E /* GraphCell.swift in Sources */,
+				08E3789823C4A14400246F66 /* SearchStockVC.swift in Sources */,
+				086B615523C9B7270012765B /* ToastSwift.swift in Sources */,
+				08E378A023C4A17B00246F66 /* StockDetailsVC.swift in Sources */,
+				08E378B823C4A24100246F66 /* FMPquery.swift in Sources */,
+				08EF72DF23C497EE003A8A13 /* EquiteezUITests.swift in Sources */,
+				08E378BC23C4A34000246F66 /* CurrencyExchangeVC.swift in Sources */,
+				086B615123C91DE50012765B /* ViewAppearance.swift in Sources */,
+				0858116524A1D66100C1CA2E /* InformationCell.swift in Sources */,
+				08685BAA257C6DDD0028EE6C /* PortfolioVC.swift in Sources */,
+				08B2022A23E7E5CC001AB937 /* StockFinancialsVC.swift in Sources */,
+				086B610E23C55C850012765B /* SettingsVC.swift in Sources */,
+				082BB27825708E9E001927A0 /* Stock.swift in Sources */,
+				086B615D23CABC5C0012765B /* NumDateFormatter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		08EF72D123C497EE003A8A13 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 08EF72B523C497EB003A8A13 /* Equiteez */;
+			targetProxy = 08EF72D023C497EE003A8A13 /* PBXContainerItemProxy */;
+		};
+		08EF72DC23C497EE003A8A13 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 08EF72B523C497EB003A8A13 /* Equiteez */;
+			targetProxy = 08EF72DB23C497EE003A8A13 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		08EF72BF23C497EB003A8A13 /* HomeScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				08EF72C023C497EB003A8A13 /* Base */,
+			);
+			name = HomeScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		08EF72C723C497EE003A8A13 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				08EF72C823C497EE003A8A13 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		08EF72E123C497EE003A8A13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		08EF72E223C497EE003A8A13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		08EF72E423C497EE003A8A13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5183C527B49CAEDA0B0185F6 /* Pods-Equiteez.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y6HHFA67T5;
+				INFOPLIST_FILE = Equiteez/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = aprabh823.Equiteez;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		08EF72E523C497EE003A8A13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB4B4B560BC877FBC8A18DE3 /* Pods-Equiteez.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y6HHFA67T5;
+				INFOPLIST_FILE = Equiteez/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = aprabh823.Equiteez;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		08EF72E723C497EE003A8A13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85258D4A40172383F0C91C35 /* Pods-EquiteezTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y6HHFA67T5;
+				INFOPLIST_FILE = EquiteezTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = aprabh823.EquiteezTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Equiteez.app/Equiteez";
+			};
+			name = Debug;
+		};
+		08EF72E823C497EE003A8A13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4BCD5480CE57B055468376D /* Pods-EquiteezTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y6HHFA67T5;
+				INFOPLIST_FILE = EquiteezTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = aprabh823.EquiteezTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Equiteez.app/Equiteez";
+			};
+			name = Release;
+		};
+		08EF72EA23C497EE003A8A13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DCA73E1E5DF0517AA76CEC5 /* Pods-Equiteez-EquiteezUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y6HHFA67T5;
+				INFOPLIST_FILE = EquiteezUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = aprabh823.EquiteezUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Equiteez;
+			};
+			name = Debug;
+		};
+		08EF72EB23C497EE003A8A13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDB770648F30A7E39C8760BB /* Pods-Equiteez-EquiteezUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y6HHFA67T5;
+				INFOPLIST_FILE = EquiteezUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = aprabh823.EquiteezUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Equiteez;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		08EF72B123C497EB003A8A13 /* Build configuration list for PBXProject "Equiteez" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08EF72E123C497EE003A8A13 /* Debug */,
+				08EF72E223C497EE003A8A13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		08EF72E323C497EE003A8A13 /* Build configuration list for PBXNativeTarget "Equiteez" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08EF72E423C497EE003A8A13 /* Debug */,
+				08EF72E523C497EE003A8A13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		08EF72E623C497EE003A8A13 /* Build configuration list for PBXNativeTarget "EquiteezTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08EF72E723C497EE003A8A13 /* Debug */,
+				08EF72E823C497EE003A8A13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		08EF72E923C497EE003A8A13 /* Build configuration list for PBXNativeTarget "EquiteezUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08EF72EA23C497EE003A8A13 /* Debug */,
+				08EF72EB23C497EE003A8A13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		08EF72C223C497EB003A8A13 /* Equiteez.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				08EF72C323C497EB003A8A13 /* Equiteez.xcdatamodel */,
+			);
+			currentVersion = 08EF72C323C497EB003A8A13 /* Equiteez.xcdatamodel */;
+			path = Equiteez.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 08EF72AE23C497EB003A8A13 /* Project object */;
+}

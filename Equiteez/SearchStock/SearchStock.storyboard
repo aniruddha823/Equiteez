@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UFp-Jv-q5l">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search StockVC-->
+        <scene sceneID="uT1-xE-LWh">
+            <objects>
+                <viewController storyboardIdentifier="searchStock" id="UFp-Jv-q5l" customClass="SearchStockVC" customModule="Equiteez" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="noi-fL-Qbf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Company Symbol or Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="14Q-Ul-1jk" customClass="SearchTextField" customModule="SearchTextField">
+                                <rect key="frame" x="20" y="94" width="374" height="36"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nr3-st-ywk">
+                                <rect key="frame" x="145.5" y="248" width="123" height="48"/>
+                                <color key="backgroundColor" red="0.0" green="0.78438035100000003" blue="0.3926851455" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" title="Test Button">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="testFetch:" destination="UFp-Jv-q5l" eventType="touchUpInside" id="lta-wT-Pmq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="14Q-Ul-1jk" firstAttribute="centerX" secondItem="gWt-Zg-0hl" secondAttribute="centerX" id="DYS-ng-4St"/>
+                            <constraint firstItem="nr3-st-ywk" firstAttribute="centerX" secondItem="gWt-Zg-0hl" secondAttribute="centerX" id="FPK-Cb-Xfy"/>
+                            <constraint firstItem="nr3-st-ywk" firstAttribute="centerY" secondItem="gWt-Zg-0hl" secondAttribute="centerY" id="TBE-Vj-KOO"/>
+                            <constraint firstItem="gWt-Zg-0hl" firstAttribute="trailing" secondItem="14Q-Ul-1jk" secondAttribute="trailing" constant="20" id="g3q-7V-qMU"/>
+                            <constraint firstItem="14Q-Ul-1jk" firstAttribute="leading" secondItem="gWt-Zg-0hl" secondAttribute="leading" constant="20" id="tY2-H1-L2f"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gWt-Zg-0hl"/>
+                    </view>
+                    <size key="freeformSize" width="414" height="500"/>
+                    <connections>
+                        <outlet property="searchStockField" destination="14Q-Ul-1jk" id="2Go-pd-q1G"/>
+                        <segue destination="48k-Qy-EMS" kind="unwind" identifier="gotoMain" unwindAction="unwindToMainWithSegue:" id="OcK-Go-3tH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jXE-WS-E8J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="48k-Qy-EMS" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="60.869565217391312" y="89.732142857142847"/>
+        </scene>
+    </scenes>
+</document>

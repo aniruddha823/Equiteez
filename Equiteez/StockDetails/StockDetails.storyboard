@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rZb-un-m6V">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Stock SegmentedVC-->
+        <scene sceneID="2Pf-1T-oDz">
+            <objects>
+                <viewController storyboardIdentifier="segmented" id="rZb-un-m6V" customClass="StockSegmentedVC" customModule="Equiteez" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hsp-aE-E7h">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="grE-l8-m2l">
+                                <rect key="frame" x="107" y="54" width="161" height="32"/>
+                                <segments>
+                                    <segment title="Details"/>
+                                    <segment title="Financials"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="switchStockViews:" destination="rZb-un-m6V" eventType="valueChanged" id="373-8z-q5z"/>
+                                </connections>
+                            </segmentedControl>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I8l-qp-TXq">
+                                <rect key="frame" x="0.0" y="95" width="375" height="683"/>
+                                <connections>
+                                    <segue destination="Zp4-sC-Q0J" kind="embed" identifier="gotoFinancials" id="NyL-rX-Ulu"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O0G-6s-FSz">
+                                <rect key="frame" x="0.0" y="95" width="375" height="683"/>
+                                <connections>
+                                    <segue destination="LXe-eD-bTJ" kind="embed" identifier="gotoDetails" id="Cnk-In-zHi"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="GzQ-T2-xAO" firstAttribute="bottom" secondItem="O0G-6s-FSz" secondAttribute="bottom" id="3br-UQ-gn0"/>
+                            <constraint firstItem="grE-l8-m2l" firstAttribute="centerX" secondItem="GzQ-T2-xAO" secondAttribute="centerX" id="B9w-oo-xP5"/>
+                            <constraint firstItem="GzQ-T2-xAO" firstAttribute="trailing" secondItem="I8l-qp-TXq" secondAttribute="trailing" id="CJX-r9-baw"/>
+                            <constraint firstItem="O0G-6s-FSz" firstAttribute="top" secondItem="grE-l8-m2l" secondAttribute="bottom" constant="10" id="G8M-mG-B6q"/>
+                            <constraint firstItem="I8l-qp-TXq" firstAttribute="top" secondItem="grE-l8-m2l" secondAttribute="bottom" constant="10" id="JqA-K9-Hc9"/>
+                            <constraint firstItem="grE-l8-m2l" firstAttribute="top" secondItem="GzQ-T2-xAO" secondAttribute="top" constant="10" id="NXg-wm-BF4"/>
+                            <constraint firstItem="O0G-6s-FSz" firstAttribute="leading" secondItem="GzQ-T2-xAO" secondAttribute="leading" id="OXH-Wf-tgD"/>
+                            <constraint firstItem="GzQ-T2-xAO" firstAttribute="bottom" secondItem="I8l-qp-TXq" secondAttribute="bottom" id="cZN-5w-YBX"/>
+                            <constraint firstItem="I8l-qp-TXq" firstAttribute="leading" secondItem="GzQ-T2-xAO" secondAttribute="leading" id="g5g-XR-Xts"/>
+                            <constraint firstItem="GzQ-T2-xAO" firstAttribute="trailing" secondItem="O0G-6s-FSz" secondAttribute="trailing" id="lIx-ll-0Mq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GzQ-T2-xAO"/>
+                    </view>
+                    <connections>
+                        <outlet property="stockDetailView" destination="O0G-6s-FSz" id="ca8-AQ-yPF"/>
+                        <outlet property="stockFinancialsView" destination="I8l-qp-TXq" id="Pe8-aq-xFN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bcr-Ky-CYF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-282.39999999999998" y="150"/>
+        </scene>
+        <!--Stock FinancialsVC-->
+        <scene sceneID="Air-Vm-4M4">
+            <objects>
+                <viewController id="Zp4-sC-Q0J" customClass="StockFinancialsVC" customModule="Equiteez" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="83e-CI-vo1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="683"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ab-tX-4hL">
+                                <rect key="frame" x="5" y="88.333333333333314" width="365" height="589.66666666666674"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance Sheet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J98-Fa-CZg">
+                                <rect key="frame" x="5" y="49" width="365" height="34.333333333333343"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="J98-Fa-CZg" firstAttribute="leading" secondItem="mNp-1s-ER3" secondAttribute="leading" constant="5" id="3LP-41-bKM"/>
+                            <constraint firstItem="4Ab-tX-4hL" firstAttribute="leading" secondItem="mNp-1s-ER3" secondAttribute="leading" constant="5" id="5qb-XX-MVh"/>
+                            <constraint firstItem="4Ab-tX-4hL" firstAttribute="top" secondItem="J98-Fa-CZg" secondAttribute="bottom" constant="5" id="HXT-cv-dzi"/>
+                            <constraint firstItem="mNp-1s-ER3" firstAttribute="trailing" secondItem="J98-Fa-CZg" secondAttribute="trailing" constant="5" id="XLa-2v-Ea7"/>
+                            <constraint firstItem="mNp-1s-ER3" firstAttribute="trailing" secondItem="4Ab-tX-4hL" secondAttribute="trailing" constant="5" id="jOl-DS-jaY"/>
+                            <constraint firstItem="mNp-1s-ER3" firstAttribute="bottom" secondItem="4Ab-tX-4hL" secondAttribute="bottom" constant="5" id="qiS-6g-E7t"/>
+                            <constraint firstItem="J98-Fa-CZg" firstAttribute="top" secondItem="mNp-1s-ER3" secondAttribute="top" constant="5" id="sCA-gb-0C8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mNp-1s-ER3"/>
+                    </view>
+                    <connections>
+                        <outlet property="financialStatementView" destination="4Ab-tX-4hL" id="9ZK-Fe-DAG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7IH-Ag-ePx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="120.8" y="836.82266009852219"/>
+        </scene>
+        <!--Stock DetailsVC-->
+        <scene sceneID="fiI-9m-4i2">
+            <objects>
+                <viewController id="LXe-eD-bTJ" customClass="StockDetailsVC" customModule="Equiteez" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xGd-J5-CbW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="683"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BBq-wT-i4F">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="683"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="kVH-gO-D1y">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="10"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="LxF-ce-c5P">
+                                        <rect key="frame" x="0.0" y="10" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="tNZ-BI-pif">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="50" height="50"/>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="pP7-d7-kaM">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="10"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionReusableView>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="BBq-wT-i4F" firstAttribute="leading" secondItem="5SO-WA-GdR" secondAttribute="leading" id="bBP-2e-5gW"/>
+                            <constraint firstItem="BBq-wT-i4F" firstAttribute="top" secondItem="xGd-J5-CbW" secondAttribute="top" id="kKN-H6-Lqy"/>
+                            <constraint firstItem="BBq-wT-i4F" firstAttribute="bottom" secondItem="5SO-WA-GdR" secondAttribute="bottom" id="paQ-kg-vd3"/>
+                            <constraint firstItem="BBq-wT-i4F" firstAttribute="trailing" secondItem="5SO-WA-GdR" secondAttribute="trailing" id="yIm-yq-U1f"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5SO-WA-GdR"/>
+                    </view>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="collectionView" destination="BBq-wT-i4F" id="zxs-DW-BFv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eLY-Ab-XTe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-668" y="837"/>
+        </scene>
+    </scenes>
+</document>
