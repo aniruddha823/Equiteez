@@ -58,13 +58,10 @@ class StocksMainVC: UIViewController {
         }
         
         self.setNeedsStatusBarAppearanceUpdate()
-//        let fontDictionary = [NSAttributedString.Key.font: "Avenir Next"]
-//        editButton.setTitleTextAttributes(fontDictionary, for: UIControl.State.normal)
         
         if let index = stocksTableView.indexPathForSelectedRow{
             self.stocksTableView.deselectRow(at: index, animated: false)
         }
-        
         
         refreshSavedStocks()
     }
@@ -82,6 +79,7 @@ class StocksMainVC: UIViewController {
     func refreshSavedStocks() {
         do {
             savedStocks = try PersistentService.context.fetch(Stock.getSortedFetchRequest())
+            savedStocks = savedStocks.filter({$0.onWatchlist})
             stocksTableView.reloadData()
         } catch { print(error); print("lol") }
     }
@@ -167,7 +165,7 @@ extension StocksMainVC: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-class SPStorkSegue: UIStoryboardSegue {
+class SearchStockSegue: UIStoryboardSegue {
     
     public var transitioningDelegate = SPStorkTransitioningDelegate()
     
@@ -200,11 +198,3 @@ class SPStorkSegue: UIStoryboardSegue {
 //
 //    stocksTableView.reloadData()
 //}
-
-// Code to create SPStorkController programmatically. - for future use
-//        let sstk = SearchStockVC()
-//        let transition = SPStorkTransitioningDelegate()
-//        transition.customHeight = 600
-//        sstk.transitioningDelegate = transition
-//        sstk.modalPresentationStyle = .custom
-//        self.present(sstk, animated: true, completion: nil)

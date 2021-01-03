@@ -29,7 +29,7 @@ class FMPquery {
         }
     }
     
-    class func getProfile(symbol: String, completionHandler: @escaping (String, Double, Double, String, String, String, String, String, String, String) -> ()) {
+    class func getProfile(symbol: String, completionHandler: @escaping (String, Double, Double, String, String, String, String, String, String, String, Int) -> ()) {
         guard let url = URL(string: baseURL + "profile/\(symbol)?apikey=\(apikey)") else { return }
         
         Alamofire.request(url, method: .get).validate().responseJSON { (response) in
@@ -47,30 +47,32 @@ class FMPquery {
             let cmpd = json[0]["description"].stringValue
             let cmpc = json[0]["ceo"].stringValue
             let cmpl = json[0]["image"].stringValue
+            let cmpe = json[0]["fullTimeEmployees"].intValue
             
-            completionHandler(ticker, mkcp, avgv, pchg, cmpn, cmpi, cmpw, cmpd, cmpc, cmpl)
+            completionHandler(ticker, mkcp, avgv, pchg, cmpn, cmpi, cmpw, cmpd, cmpc, cmpl, cmpe)
         }
     }
     
-//    class func getQuote2(symbol: String, completionHandler: @escaping (String, String, String, String, String) -> ()) {
-//        guard let url = URL(string: baseURL + "quote/\(symbol)?apikey=\(apikey)") else { return }
-//
-//        Alamofire.request(url, method: .get).validate().responseJSON { (response) in
-//            guard response.result.isSuccess else { return }
-//
-//            let json = JSON(response.result.value)
-//
-//            var open = json[0]["open"].stringValue
-//            var close = json[0]["close"].stringValue
-//            var high = json[0]["high"].stringValue
-//            var low = json[0]["low"].stringValue
-//            var pchg = json[0]["changesPercentage"].stringValue
-//
-//            completionHandler(open, close, high, low, pchg)
-//        }
-//    }
+    class func getQuote(symbol: String, completionHandler: @escaping (Double, Double, Double, Double, Double, Double) -> ()) {
+        guard let url = URL(string: baseURL + "quote/\(symbol)?apikey=\(apikey)") else { return }
+
+        Alamofire.request(url, method: .get).validate().responseJSON { (response) in
+            guard response.result.isSuccess else { return }
+
+            let json = JSON(response.result.value)
+
+            let open = json[0]["open"].doubleValue
+            let high = json[0]["dayHigh"].doubleValue
+            let low = json[0]["dayLow"].doubleValue
+            let volume = json[0]["volume"].doubleValue
+            let per = json[0]["pe"].doubleValue
+            let mcap = json[0]["marketCap"].doubleValue
+
+            completionHandler(open, high, low, volume, per, mcap)
+        }
+    }
     
-    class func getQuote(symbol: String, completionHandler: @escaping (String, String, String, String, String, String) -> ()) {
+    class func getAlternateQuote(symbol: String, completionHandler: @escaping (Double, String, Double, Double, String, String) -> ()) {
         guard let url = URL(string: baseURL + "historical-price-full/\(symbol)?timeseries=1&apikey=\(apikey)") else { return }
         
         Alamofire.request(url, method: .get).validate().responseJSON { (response) in
@@ -79,10 +81,10 @@ class FMPquery {
             let json = JSON(response.result.value)
             
             let date = json["historical"][0]["date"].stringValue
-            let open = json["historical"][0]["open"].stringValue
+            let open = json["historical"][0]["open"].doubleValue
             let close = json["historical"][0]["close"].stringValue
-            let high = json["historical"][0]["high"].stringValue
-            let low = json["historical"][0]["low"].stringValue
+            let high = json["historical"][0]["high"].doubleValue
+            let low = json["historical"][0]["low"].doubleValue
             let pchg = json["historical"][0]["changePercent"].stringValue
             
             completionHandler(open, close, high, low, pchg, date)
@@ -155,10 +157,6 @@ class FMPquery {
                 monthPrices.insert(day["vwap"].doubleValue, at: 0)
                 monthPercentages.insert(day["changePercent"].doubleValue, at: 0)
                 monthDates.insert(day["date"].stringValue, at: 0)
-                
-//                monthPrices.append(day["vwap"].doubleValue)
-//                monthPercentages.append(day["changePercent"].doubleValue)
-//                monthDates.append(day["date"].stringValue)
             }
             
             completionHandler(monthPrices, monthPercentages, monthDates)

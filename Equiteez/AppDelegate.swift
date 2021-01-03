@@ -17,6 +17,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        do {
+            let count = try PersistentService.context.fetch(Transfer.getSortedFetchRequest()).count
+            if count == 0 {
+                let initialBalance = Transfer(context: PersistentService.context)
+                initialBalance.walletBalance = 10000
+                initialBalance.dateUpdated = Double(Date().timeIntervalSince1970)
+                
+                PersistentService.saveContext()
+            }
+            
+//            // Temporary code for adding missing CoreData values on bootup
+//            let stocks = try PersistentService.context.fetch(Stock.getSortedFetchRequest())
+//            print("stocks count: \(stocks.count)")
+//            for stk in stocks {
+//
+//                FMPquery.getProfile(symbol: stk.symbol!) { (tick, mkcp, avgv, pchg, cmpn, cmpi, cmpw, cmpd, cmpc, cmpl, cmpe) in
+//
+//                    stk.onWatchlist = true
+//                    stk.companyEmployees = cmpe
+//                    PersistentService.saveContext()
+//
+//                }
+//            }
+        } catch { print(error) }
+        
         return true
     }
 

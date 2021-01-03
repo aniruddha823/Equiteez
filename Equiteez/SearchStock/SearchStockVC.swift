@@ -31,7 +31,6 @@ class SearchStockVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         AppDelegate.AppUtility.lockOrientation(.portrait)
         
-        print("vdl count: \(savedStocks.count)")
         super.viewDidAppear(animated)
     }
     
@@ -74,7 +73,6 @@ class SearchStockVC: UIViewController {
        
         do {
             let count = try PersistentService.context.fetch(Stock.fetchRequest()).count
-            print("saved count fetchsl: \(count)")
         }
         catch { print("fail") }
         
@@ -85,7 +83,6 @@ class SearchStockVC: UIViewController {
             }
         
             self.searchStockField.filterItems(self.searchTextFieldItems)
-            print("success!")
         }
     }
     
@@ -99,11 +96,6 @@ class SearchStockVC: UIViewController {
 }
 
 extension NSManagedObjectContext {
-    
-    /// Executes the given `NSBatchDeleteRequest` and directly merges the changes to bring the given managed object context up to date.
-    ///
-    /// - Parameter batchDeleteRequest: The `NSBatchDeleteRequest` to execute.
-    /// - Throws: An error if anything went wrong executing the batch deletion.
     public func executeAndMergeChanges(using batchDeleteRequest: NSBatchDeleteRequest) throws {
         batchDeleteRequest.resultType = .resultTypeObjectIDs
         let result = try execute(batchDeleteRequest) as? NSBatchDeleteResult
@@ -111,7 +103,3 @@ extension NSManagedObjectContext {
         NSManagedObjectContext.mergeChanges(fromRemoteContextSave: changes, into: [self])
     }
 }
-
-//class SearchStockView: UIView {
-//
-//}

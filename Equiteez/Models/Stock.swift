@@ -18,6 +18,10 @@ class Stock: NSManagedObject {
     @NSManaged public var companyIndustry: String?
     @NSManaged public var companyWebsite: String?
     @NSManaged public var order: Int
+    @NSManaged public var sharesOwned: Int
+    @NSManaged public var onWatchlist: Bool
+    @NSManaged public var companyEmployees: Int
+    
 }
 
 extension Stock {

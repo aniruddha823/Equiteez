@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="3YU-rZ-z8c" customClass="GraphView" customModule="Equiteez" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rQ4-NA-bUx">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sle-CA-NFX" customClass="LineChartView" customModule="Charts">
+                            <rect key="frame" x="10" y="10" width="355" height="236"/>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="K8q-Ui-FhB">
+                            <rect key="frame" x="10" y="256" width="355" height="34"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VqA-pF-lPj">
+                                    <rect key="frame" x="0.0" y="0.0" width="30" height="34"/>
+                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                    <state key="normal" title="1D">
+                                        <color key="titleColor" red="0.0" green="0.78438035100000003" blue="0.3926851455" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="getDayChart:" destination="3YU-rZ-z8c" eventType="touchUpInside" id="IDh-kg-j60"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k3K-9e-5N7">
+                                    <rect key="frame" x="81.5" y="0.0" width="30" height="34"/>
+                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                    <state key="normal" title="1W">
+                                        <color key="titleColor" red="0.0" green="0.78438035100000003" blue="0.3926851455" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="getWeekChart:" destination="3YU-rZ-z8c" eventType="touchUpInside" id="HY3-Da-hKT"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2m2-Nm-w1G">
+                                    <rect key="frame" x="162.5" y="0.0" width="30" height="34"/>
+                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                    <state key="normal" title="1M">
+                                        <color key="titleColor" red="0.0" green="0.78438035100000003" blue="0.3926851455" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="getMonthChart:" destination="3YU-rZ-z8c" eventType="touchUpInside" id="svJ-19-6cH"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4B-ys-iGv">
+                                    <rect key="frame" x="244" y="0.0" width="30" height="34"/>
+                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                    <state key="normal" title="1Y">
+                                        <color key="titleColor" red="0.0" green="0.78438035100000003" blue="0.3926851455" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="getYearChart:" destination="3YU-rZ-z8c" eventType="touchUpInside" id="Mum-eS-ykk"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="otY-gH-tBw">
+                                    <rect key="frame" x="325" y="0.0" width="30" height="34"/>
+                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                    <state key="normal" title="2Y">
+                                        <color key="titleColor" red="0.0" green="0.78438035100000003" blue="0.3926851455" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="get2YearChart:" destination="3YU-rZ-z8c" eventType="touchUpInside" id="BOJ-ZG-G42"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="K8q-Ui-FhB" secondAttribute="trailing" constant="10" id="0E5-P4-aRw"/>
+                        <constraint firstAttribute="trailing" secondItem="Sle-CA-NFX" secondAttribute="trailing" constant="10" id="5tZ-yM-s66"/>
+                        <constraint firstItem="K8q-Ui-FhB" firstAttribute="leading" secondItem="rQ4-NA-bUx" secondAttribute="leading" constant="10" id="Rop-9c-X4u"/>
+                        <constraint firstAttribute="bottom" secondItem="K8q-Ui-FhB" secondAttribute="bottom" constant="10" id="Ze2-mf-0l5"/>
+                        <constraint firstAttribute="height" constant="300" id="a00-g1-d4f"/>
+                        <constraint firstItem="Sle-CA-NFX" firstAttribute="top" secondItem="rQ4-NA-bUx" secondAttribute="top" constant="10" id="eDr-lg-AYa"/>
+                        <constraint firstItem="K8q-Ui-FhB" firstAttribute="top" secondItem="Sle-CA-NFX" secondAttribute="bottom" constant="10" id="swp-uT-T5x"/>
+                        <constraint firstItem="Sle-CA-NFX" firstAttribute="leading" secondItem="rQ4-NA-bUx" secondAttribute="leading" constant="10" id="x23-40-PQn"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="rQ4-NA-bUx" firstAttribute="leading" secondItem="3YU-rZ-z8c" secondAttribute="leading" id="IBA-9g-OVg"/>
+                <constraint firstAttribute="trailing" secondItem="rQ4-NA-bUx" secondAttribute="trailing" id="Lie-ky-EMz"/>
+                <constraint firstAttribute="bottom" secondItem="rQ4-NA-bUx" secondAttribute="bottom" id="Px8-Pf-M2P"/>
+                <constraint firstItem="rQ4-NA-bUx" firstAttribute="top" secondItem="3YU-rZ-z8c" secondAttribute="top" id="vyl-PP-V2A"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="6Ch-i6-yiz"/>
+            <connections>
+                <outlet property="priceGraph" destination="Sle-CA-NFX" id="3zD-IX-GtZ"/>
+            </connections>
+            <point key="canvasLocation" x="-28.260869565217394" y="-72.321428571428569"/>
+        </view>
+    </objects>
+</document>

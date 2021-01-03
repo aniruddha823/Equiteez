@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q7R-c5-nU1">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--SettingsVC-->
+        <!--Settings-->
         <scene sceneID="LMk-3P-5Gl">
             <objects>
                 <viewController storyboardIdentifier="settings" id="dzo-DZ-F9I" customClass="SettingsVC" customModule="Equiteez" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,12 +17,34 @@
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="2dh-bg-9ZX"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="settings" id="1e0-QS-mDI"/>
+                    <navigationItem key="navigationItem" title="Settings" id="CoM-qu-Riq"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fxb-wb-NuH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="276" y="-38"/>
+            <point key="canvasLocation" x="1185.5072463768117" y="-38.169642857142854"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3Cy-0G-bGl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Q7R-c5-nU1" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="settings" id="1e0-QS-mDI"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XK1-Jj-gOD">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="25"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dzo-DZ-F9I" kind="relationship" relationship="rootViewController" id="ofh-rf-4eB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B2V-44-paZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="275.36231884057975" y="-38.169642857142854"/>
         </scene>
     </scenes>
     <resources>

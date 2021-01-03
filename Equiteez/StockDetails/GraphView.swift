@@ -11,7 +11,7 @@ import UIKit
 import Charts
 import CoreData
 
-class GraphCell: UICollectionViewCell, ChartViewDelegate {
+class GraphView: UIView, ChartViewDelegate {
     
     var symbol = ""
     var dates = [String]()
@@ -26,82 +26,82 @@ class GraphCell: UICollectionViewCell, ChartViewDelegate {
     
     @IBAction func getDayChart(_ sender: Any) {
         UserDefaults.standard.set("daily", forKey: "pricingType")
-        FMPquery.getDayChart(symbol: symbol) { (dsp, dpc, dsd) in
+        FMPquery.getDayChart(symbol: symbol) { [weak self] (dsp, dpc, dsd) in
             var lineChartEntries = [ChartDataEntry]()
-            self.prices = dsp
-            self.percentages = dpc
-            self.dates = dsd
+            self?.prices = dsp
+            self?.percentages = dpc
+            self?.dates = dsd
         
             for i in stride(from: 0, to: dsp.count, by: 1) {
                 let day = ChartDataEntry(x: Double(i), y: dsp[i])
                 lineChartEntries.append(day)
             }
         
-            ViewAppearance.setupLineGraphView(lineChartView: self.priceGraph, lce: lineChartEntries)
+            ViewAppearance.setupLineGraphView(lineChartView: self!.priceGraph, lce: lineChartEntries)
         }
     }
     @IBAction func getWeekChart(_ sender: Any) {
         UserDefaults.standard.set("weekly", forKey: "pricingType")
-        FMPquery.getWeekChart(symbol: symbol) { (wsp, wpc, wsd) in
+        FMPquery.getWeekChart(symbol: symbol) { [weak self] (wsp, wpc, wsd) in
             var lineChartEntries = [ChartDataEntry]()
-            self.prices = wsp
-            self.percentages = wpc
-            self.dates = wsd
+            self?.prices = wsp
+            self?.percentages = wpc
+            self?.dates = wsd
         
             for i in stride(from: 0, to: wsp.count, by: 1) {
                 let day = ChartDataEntry(x: Double(i), y: wsp[i])
                 lineChartEntries.append(day)
             }
         
-            ViewAppearance.setupLineGraphView(lineChartView: self.priceGraph, lce: lineChartEntries)
+            ViewAppearance.setupLineGraphView(lineChartView: self!.priceGraph, lce: lineChartEntries)
         }
     }
     @IBAction func getMonthChart(_ sender: Any) {
         UserDefaults.standard.set("monthly", forKey: "pricingType")
-        FMPquery.getMonthChart(symbol: symbol) { (msp, mpc, msd) in
+        FMPquery.getMonthChart(symbol: symbol) { [weak self] (msp, mpc, msd) in
             var lineChartEntries = [ChartDataEntry]()
-            self.prices = msp
-            self.percentages = mpc
-            self.dates = msd
+            self?.prices = msp
+            self?.percentages = mpc
+            self?.dates = msd
         
             for i in stride(from: 0, to: msp.count, by: 1) {
                 let day = ChartDataEntry(x: Double(i), y: msp[i])
                 lineChartEntries.append(day)
             }
         
-            ViewAppearance.setupLineGraphView(lineChartView: self.priceGraph, lce: lineChartEntries)
+            ViewAppearance.setupLineGraphView(lineChartView: self!.priceGraph, lce: lineChartEntries)
         }
     }
     @IBAction func getYearChart(_ sender: Any) {
         UserDefaults.standard.set("yearly", forKey: "pricingType")
-        FMPquery.getYearChart(symbol: symbol) { (ysp, ypc, ysd) in
+        FMPquery.getYearChart(symbol: symbol) { [weak self] (ysp, ypc, ysd) in
             var lineChartEntries = [ChartDataEntry]()
-            self.prices = ysp
-            self.percentages = ypc
-            self.dates = ysd
+            self?.prices = ysp
+            self?.percentages = ypc
+            self?.dates = ysd
         
             for i in stride(from: 0, to: ysp.count, by: 1) {
                 let day = ChartDataEntry(x: Double(i), y: ysp[i])
                 lineChartEntries.append(day)
             }
         
-            ViewAppearance.setupLineGraphView(lineChartView: self.priceGraph, lce: lineChartEntries)
+            ViewAppearance.setupLineGraphView(lineChartView: self!.priceGraph, lce: lineChartEntries)
         }
     }
     @IBAction func get2YearChart(_ sender: Any) {
         UserDefaults.standard.set("twoyear", forKey: "pricingType")
-        FMPquery.getTwoYearChart(symbol: symbol) { (tysp, typc, tysd) in
+        FMPquery.getTwoYearChart(symbol: symbol) { [weak self] (tysp, typc, tysd) in
             var lineChartEntries = [ChartDataEntry]()
-            self.prices = tysp
-            self.percentages = typc
-            self.dates = tysd
+            self?.prices = tysp
+            self?.percentages = typc
+            self?.dates = tysd
         
             for i in stride(from: 0, to: tysp.count, by: 1) {
                 let day = ChartDataEntry(x: Double(i), y: tysp[i])
                 lineChartEntries.append(day)
             }
         
-            ViewAppearance.setupLineGraphView(lineChartView: self.priceGraph, lce: lineChartEntries)
+            ViewAppearance.setupLineGraphView(lineChartView: self!.priceGraph, lce: lineChartEntries)
         }
     }
     
@@ -112,18 +112,18 @@ class GraphCell: UICollectionViewCell, ChartViewDelegate {
         priceGraph.pinchZoomEnabled = false
         
         UserDefaults.standard.set("monthly", forKey: "pricingType")
-        FMPquery.getMonthChart(symbol: ticker) { (msp, mpc, msd) in
+        FMPquery.getMonthChart(symbol: ticker) { [weak self] (msp, mpc, msd) in
             var lineChartEntries = [ChartDataEntry]()
-            self.prices = msp
-            self.percentages = mpc
-            self.dates = msd
+            self?.prices = msp
+            self?.percentages = mpc
+            self?.dates = msd
         
             for i in stride(from: 0, to: msp.count, by: 1) {
                 let day = ChartDataEntry(x: Double(i), y: msp[i])
                 lineChartEntries.append(day)
             }
         
-            ViewAppearance.setupLineGraphView(lineChartView: self.priceGraph, lce: lineChartEntries)
+            ViewAppearance.setupLineGraphView(lineChartView: self!.priceGraph, lce: lineChartEntries)
         }
     }
     

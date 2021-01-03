@@ -31,16 +31,16 @@ class StockFinancialsVC: UIViewController {
 //        dataTable.delegate = self
 //        dataTable.dataSource = self
         
-        FMPquery.getBalanceSheet(symbol: ticker) { (bs) in
+        FMPquery.getBalanceSheet(symbol: ticker) { [weak self] (bs) in
             let bsar = try! JSONDecoder().decode(BalanceSheets.self, from: bs)
-            self.bs3 = bsar
+            self?.bs3 = bsar
             
-            self.financialStatementView.addSubview(self.dataTable)
+            self?.financialStatementView.addSubview(self!.dataTable)
             NSLayoutConstraint.activate([
-                self.dataTable.topAnchor.constraint(equalTo: self.financialStatementView.topAnchor),
-                self.dataTable.leadingAnchor.constraint(equalTo: self.financialStatementView.leadingAnchor),
-                self.dataTable.bottomAnchor.constraint(equalTo: self.financialStatementView.bottomAnchor),
-                self.dataTable.trailingAnchor.constraint(equalTo: self.financialStatementView.trailingAnchor),
+                self!.dataTable.topAnchor.constraint(equalTo: self!.financialStatementView.topAnchor),
+                self!.dataTable.leadingAnchor.constraint(equalTo: self!.financialStatementView.leadingAnchor),
+                self!.dataTable.bottomAnchor.constraint(equalTo: self!.financialStatementView.bottomAnchor),
+                self!.dataTable.trailingAnchor.constraint(equalTo: self!.financialStatementView.trailingAnchor),
             ])
         }
     }
@@ -99,34 +99,3 @@ extension StockFinancialsVC {
         return result
     }
 }
-
-//extension StockFinancialsVC: SwiftDataTableDelegate, SwiftDataTableDataSource {
-//    func dataTable(_ dataTable: SwiftDataTable, dataForRowAt index: NSInteger) -> [DataTableValueType] {
-//
-//    }
-//
-//    func dataTable(_ dataTable: SwiftDataTable, headerTitleForColumnAt columnIndex: NSInteger) -> String {
-//
-//    }
-//
-//
-//    func numberOfRows(in: SwiftDataTable) -> Int {
-//        return 21
-//    }
-//
-//    func numberOfColumns(in: SwiftDataTable) -> Int {
-//        return 13
-//    }
-//
-//    func shouldContentWidthScaleToFillFrame(in dataTable: SwiftDataTable) -> Bool {
-//        return true
-//    }
-//
-//    func fixedColumns(for dataTable: SwiftDataTable) -> DataTableFixedColumnType {
-//        return .init(leftColumns: 1, rightColumns: 1)
-//    }
-//
-//    func dataTable(_ dataTable: SwiftDataTable, widthForColumnAt index: Int) -> CGFloat {
-//        return 100
-//    }
-//}

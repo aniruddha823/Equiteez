@@ -10,14 +10,19 @@ import UIKit
 import Charts
 import FaveButton
 import CoreData
+import SPStorkController
+import SPFakeBar
 
 class StockSegmentedVC: UIViewController {
     
     @IBOutlet weak var stockDetailView: UIView!
     @IBOutlet weak var stockFinancialsView: UIView!
+    @IBOutlet weak var shareAmountLabel: UILabel!
+    @IBOutlet weak var tradeButton: UIButton!
     
     var detailContainer: StockDetailsVC?
     var financialsContainer: StockFinancialsVC?
+    var tradeScreen: TradeScreenVC?
     var ticker = ""
     
     @IBAction func switchStockViews(_ sender: UISegmentedControl) {
@@ -25,11 +30,17 @@ class StockSegmentedVC: UIViewController {
             stockDetailView.alpha = 1
             stockFinancialsView.alpha = 0
             print("in details")
-        } else {
+        } else if sender.selectedSegmentIndex == 1 {
             stockDetailView.alpha = 0
             stockFinancialsView.alpha = 1
             print("in fins")
+        } else {
+            print("In the News!!!")
         }
+    }
+    
+    @IBAction func tradeStock(_ sender: Any) {
+        performSegue(withIdentifier: "gotoTradeScreen", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -39,11 +50,25 @@ class StockSegmentedVC: UIViewController {
         } else if segue.identifier == "gotoFinancials" {
             financialsContainer = segue.destination as? StockFinancialsVC
             financialsContainer?.ticker = ticker
+        } else if segue.identifier == "gotoTradeScreen" {
+            tradeScreen = segue.destination as? TradeScreenVC
+            tradeScreen?.ticker = ticker
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        let fetchRequest: NSFetchRequest<Stock> = Stock.getSortedFetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "symbol == %@", ticker)
+        do {
+            let result = try PersistentService.context.fetch(fetchRequest)
+            if let savedStock = result.first {
+                shareAmountLabel.text = "\(savedStock.sharesOwned)"
+            } else { shareAmountLabel.text = "0" }
+        } catch { print(error) }
+        
+        tradeButton.layer.cornerRadius = tradeButton.frame.height / 2
 
         UIView.animate(withDuration: 0.25, animations: {
                 self.stockDetailView.alpha = 1
@@ -52,9 +77,21 @@ class StockSegmentedVC: UIViewController {
     }
     
     override func viewDidLoad() {
-        print(ticker)
+        
     }
     
+}
+
+class TradeScreenSegue: UIStoryboardSegue {
+    public var transitioningDelegate = SPStorkTransitioningDelegate()
+    
+    override func perform() {
+        transitioningDelegate.customHeight = 700
+        
+        destination.transitioningDelegate = transitioningDelegate
+        destination.modalPresentationStyle = .custom
+        super.perform()
+    }
 }
 
 class StockDetailsVC: UIViewController {
@@ -64,82 +101,57 @@ class StockDetailsVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         AppDelegate.AppUtility.lockOrientation(.portrait)
         ticker = ticker.uppercased()
+        self.title = ticker
+        print("nav title: \(navigationItem.title)")
+        
+        let nv = Bundle.main.loadNibNamed("NameView", owner: nil, options: nil)?.first as! NameView
+        nv.setupCell(ticker: ticker)
+        
+        if detailsStackView.arrangedSubviews.count == 5, let view = detailsStackView.arrangedSubviews.first {
+            
+            detailsStackView.removeArrangedSubview(view)
+            view.removeFromSuperview()
+        }
+        detailsStackView.insertArrangedSubview(setupShadow(view: nv), at: 0)
     }
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var detailsStackView: UIStackView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        collectionView.register(UINib(nibName: "DetailsCell", bundle: nil), forCellWithReuseIdentifier: "DetailsCell")
-        collectionView.register(UINib(nibName: "GraphCell", bundle: nil), forCellWithReuseIdentifier: "GraphCell")
-        collectionView.register(UINib(nibName: "StatsCell", bundle: nil), forCellWithReuseIdentifier: "StatsCell")
-        collectionView.register(UINib(nibName: "InformationCell", bundle: nil), forCellWithReuseIdentifier: "InformationCell")
-
-        collectionView.delegate = self
-        collectionView.dataSource = self
         
-        self.navigationItem.title = ticker
+        let dv = Bundle.main.loadNibNamed("DetailsView", owner: nil, options: nil)?.first as! DetailsView
+        dv.setupCell(ticker: ticker)
+        
+        let gv = Bundle.main.loadNibNamed("GraphView", owner: nil, options: nil)?.first as! GraphView
+        gv.setupCell(ticker: ticker)
+        
+        let sv = Bundle.main.loadNibNamed("StatsView", owner: nil, options: nil)?.first as! StatsView
+        sv.setupCell(ticker: ticker)
+        
+        let iv = Bundle.main.loadNibNamed("InformationView", owner: nil, options: nil)?.first as! InformationView
+        iv.setupCell(ticker: ticker)
+        
+        detailsStackView.addArrangedSubview(setupShadow(view: dv))
+        detailsStackView.addArrangedSubview(setupShadow(view: gv))
+        detailsStackView.addArrangedSubview(setupShadow(view: sv))
+        detailsStackView.addArrangedSubview(setupShadow(view: iv))
     }
     
-    func setupShadow(cell: UICollectionViewCell) -> UICollectionViewCell {
-        cell.contentView.layer.cornerRadius = 10
-        cell.contentView.layer.masksToBounds = true
+    func setupShadow(view: UIView) -> UIView {
+        view.layer.cornerRadius = 10
+        view.layer.masksToBounds = true
         
-        cell.layer.shadowColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        cell.layer.shadowOffset = CGSize(width: 5.0, height: 5.0)
-        cell.layer.shadowRadius = 10
-        cell.layer.shadowOpacity = 1
-        cell.layer.masksToBounds = false
+        view.layer.shadowColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        view.layer.shadowOffset = CGSize(width: 5.0, height: 5.0)
+        view.layer.shadowRadius = 10
+        view.layer.shadowOpacity = 1
+        view.layer.masksToBounds = false
         
-        return cell
+        return view
     }
     
     override var shouldAutorotate: Bool {
         return false
-    }
-}
-
-extension StockDetailsVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        if indexPath.row == 0 {
-            let cell1 = collectionView.dequeueReusableCell(withReuseIdentifier: "DetailsCell", for: indexPath) as! DetailsCell
-            cell1.setupCell(ticker: ticker)
-            
-            return setupShadow(cell: cell1)
-        } else if indexPath.row == 1 {
-            let cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: "GraphCell", for: indexPath) as! GraphCell
-            cell2.setupCell(ticker: ticker)
-            
-            return setupShadow(cell: cell2)
-        } else if indexPath.row == 2 {
-            let cell3 = collectionView.dequeueReusableCell(withReuseIdentifier: "StatsCell", for: indexPath) as! StatsCell
-            cell3.setupCell(ticker: ticker)
-            
-            return setupShadow(cell: cell3)
-        } else {
-            let cell4 = collectionView.dequeueReusableCell(withReuseIdentifier: "InformationCell", for: indexPath) as! InformationCell
-            cell4.setupCell(ticker: ticker)
-            
-            return setupShadow(cell: cell4)
-        }
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        if indexPath.row == 0 {
-            return CGSize(width: collectionView.frame.width - 20, height: 120)
-        } else if indexPath.row == 1 {
-            return CGSize(width: collectionView.frame.width - 20, height: 300)
-        } else if indexPath.row == 2 {
-            return CGSize(width: collectionView.frame.width - 20, height: 150)
-        } else {
-            return CGSize(width: collectionView.frame.width - 20, height: 200)
-        }
     }
 }

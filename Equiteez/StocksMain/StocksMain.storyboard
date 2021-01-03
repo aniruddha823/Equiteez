@@ -67,7 +67,7 @@
                     <connections>
                         <outlet property="editButton" destination="u5h-Ho-mh7" id="e6y-hS-yig"/>
                         <outlet property="stocksTableView" destination="VTa-Ez-Rx2" id="U5o-8I-Oy1"/>
-                        <segue destination="ugD-o4-zkx" kind="presentation" identifier="gotoSearch" customClass="SPStorkSegue" customModule="Equiteez" customModuleProvider="target" id="PXa-8g-XPl"/>
+                        <segue destination="ugD-o4-zkx" kind="presentation" identifier="gotoSearch" customClass="SearchStockSegue" customModule="Equiteez" customModuleProvider="target" id="PXa-8g-XPl"/>
                         <segue destination="tC1-g9-JcG" kind="show" identifier="gotoSegmented" id="DiD-ys-w2h"/>
                     </connections>
                 </viewController>
@@ -93,10 +93,10 @@
             </objects>
             <point key="canvasLocation" x="2616" y="-216"/>
         </scene>
-        <!--settings-->
+        <!--Settings-->
         <scene sceneID="3F5-xV-c8F">
             <objects>
-                <viewControllerPlaceholder storyboardName="Settings" referencedIdentifier="settings" id="WLu-xE-pRR" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Settings" id="WLu-xE-pRR" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="aMM-qi-cUu"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Kf-V6-F1F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

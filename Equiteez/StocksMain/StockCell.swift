@@ -42,11 +42,11 @@ class StockCell: UITableViewCell {
             self.currentPrice.text = "$" + String(format: "%.2f", price)
         }
         
-        FMPquery.getProfile(symbol: ticker) { (ticker, mkcp, avgv, pchg, cmpn, cmpi, cmpw, cmpd, cmpc, cmpl) in
+        FMPquery.getProfile(symbol: ticker) { [weak self] (ticker, mkcp, avgv, pchg, cmpn, cmpi, cmpw, cmpd, cmpc, cmpl, cmpe) in
             
-            NumDateFormatter.formatPercent(percentage: Double(pchg) ?? 0, label: self.currentPercentChange)
+            NumDateFormatter.formatPercent(percentage: Double(pchg) ?? 0, label: self!.currentPercentChange)
             
-            self.currentVolume.text = "Vol: \(NumDateFormatter.getFormattedNumberString(num: avgv))"
+            self?.currentVolume.text = "Vol: \(NumDateFormatter.getFormattedNumberString(num: avgv))"
         }
     }
     
