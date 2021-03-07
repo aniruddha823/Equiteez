@@ -57,7 +57,7 @@ class StocksMainVC: UIViewController {
             AppDelegate.AppUtility.lockOrientation(.portrait)
         }
         
-        self.setNeedsStatusBarAppearanceUpdate()
+//        self.setNeedsStatusBarAppearanceUpdate()
         
         if let index = stocksTableView.indexPathForSelectedRow{
             self.stocksTableView.deselectRow(at: index, animated: false)

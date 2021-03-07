@@ -139,12 +139,13 @@ class StockDetailsVC: UIViewController {
     }
     
     func setupShadow(view: UIView) -> UIView {
+        
         view.layer.cornerRadius = 10
         view.layer.masksToBounds = true
         
-        view.layer.shadowColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        view.layer.shadowOffset = CGSize(width: 5.0, height: 5.0)
-        view.layer.shadowRadius = 10
+        view.layer.shadowColor = UIColor(named: "shadcol")?.resolvedColor(with: self.traitCollection).cgColor
+        view.layer.shadowOffset = CGSize(width: 1, height: 0)
+        view.layer.shadowRadius = 3
         view.layer.shadowOpacity = 1
         view.layer.masksToBounds = false
         

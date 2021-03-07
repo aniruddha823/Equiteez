@@ -3,6 +3,7 @@
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,7 +23,7 @@
                                     <segment title="Financials"/>
                                     <segment title="News"/>
                                 </segments>
-                                <color key="selectedSegmentTintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="selectedSegmentTintColor" name="background-primary"/>
                                 <connections>
                                     <action selector="switchStockViews:" destination="rZb-un-m6V" eventType="valueChanged" id="373-8z-q5z"/>
                                 </connections>
@@ -62,19 +63,19 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shares Owned:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gh2-bS-6Xc">
                                                 <rect key="frame" x="0.0" y="0.0" width="84" height="20"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" name="text-primary"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="277 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9x-qi-SdG">
                                                 <rect key="frame" x="0.0" y="20" width="84" height="20"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" name="text-primary"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="background-primary"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="5tp-j9-Br9"/>
                                     <constraint firstAttribute="bottom" secondItem="aIE-zD-zq5" secondAttribute="bottom" constant="15" id="SgL-KV-pii"/>
@@ -86,7 +87,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="background-primary"/>
                         <constraints>
                             <constraint firstItem="grE-l8-m2l" firstAttribute="centerX" secondItem="GzQ-T2-xAO" secondAttribute="centerX" id="B9w-oo-xP5"/>
                             <constraint firstItem="GzQ-T2-xAO" firstAttribute="trailing" secondItem="I8l-qp-TXq" secondAttribute="trailing" id="CJX-r9-baw"/>
@@ -181,7 +182,7 @@
                                                 <rect key="frame" x="10" y="10" width="355" height="850"/>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" name="background-primary"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="870" id="5zm-qd-MyG"/>
                                             <constraint firstAttribute="trailing" secondItem="Fxm-dH-lXE" secondAttribute="trailing" constant="10" id="J9r-kU-pvf"/>
@@ -199,7 +200,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="background-primary"/>
                         <constraints>
                             <constraint firstItem="3dB-TE-EJo" firstAttribute="width" secondItem="xGd-J5-CbW" secondAttribute="width" id="6Nl-zu-NKf"/>
                             <constraint firstItem="Ggt-7R-J36" firstAttribute="top" secondItem="xGd-J5-CbW" secondAttribute="top" id="MIW-YN-6Ai"/>
@@ -221,4 +222,12 @@
             <point key="canvasLocation" x="-668" y="840.88669950738915"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="background-primary">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="text-primary">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

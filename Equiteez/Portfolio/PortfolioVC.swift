@@ -32,6 +32,15 @@ class PortfolioVC: UIViewController {
                 fundsLabel.text = " $\(String(format: "%.2f", walletBalance))"
             }
             
+//            let today = Date()
+//            let wtd = Calendar.current.date(byAdding: .day, value: -7, to: today)
+//            
+//            print("today: \(today), weekago: \(wtd)")
+            
+            for b in balances {
+                print("blength: \(Date(timeIntervalSince1970: TimeInterval(exactly: b.dateUpdated)!))")
+            }
+            
             ownedStocks = try PersistentService.context.fetch(Stock.getSortedFetchRequest())
             ownedStocks = ownedStocks.filter({$0.sharesOwned != 0})
             
@@ -63,6 +72,10 @@ class PortfolioVC: UIViewController {
         portfolioTableView.delegate = self
         portfolioTableView.dataSource = self
         portfolioTableView.register(UINib(nibName: "PortfolioStockCell", bundle: nil), forCellReuseIdentifier: "ptfc")
+    }
+    
+    func getDayValue() {
+        
     }
 }
 
