@@ -1,10 +1,10 @@
 # Equiteez
-A simple iOS application to buy & sell stocks and view the financial statements of publicly traded companies.
+A simple iOS application to buy/sell stocks using virtual $$$ and view the financial statements of publicly traded companies. This app stores transactions made & other information 100% on-device using CoreData.
 
 ## Screenshots
-<img src="Screenshots/watchlist.png" height="400" > <img src="Screenshots/portfolio.png" height="400" > <img src="Screenshots/tradehistory.png" height="400" >
+<img src="Screenshots/watchlist.png" height="400" hspace="20"/> <img src="Screenshots/portfolio.png" height="400" hspace="20"/> <img src="Screenshots/tradehistory.png" height="400" hspace="20"/>
 
-&nbsp;&nbsp;&nbsp;Watchlist&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Portfolio View&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Trade History
+&emsp;&emsp;&emsp;&emsp;&emsp;Watchlist&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Portfolio View&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Trade History
 
 ## Dependencies
 - Charts: https://github.com/danielgindi/Charts
@@ -16,4 +16,4 @@ A simple iOS application to buy & sell stocks and view the financial statements 
 - Alamofire: https://github.com/Alamofire/Alamofire
 - SwiftyJSON: https://github.com/SwiftyJSON/SwiftyJSON
 
-BIG thanks to FinancialModelingPrep! Their API supplied the data feverything in this project. Check it out at https://financialmodelingprep.com/developer/docs
+BIG thanks to FinancialModelingPrep! Their API supplied the data for this project. Check them out at https://financialmodelingprep.com/developer/docs.
