@@ -14,6 +14,7 @@ class Trade: NSManagedObject {
     @NSManaged public var ticker: String
     @NSManaged public var sharePrice: Double
     @NSManaged public var shareAmount: Int64
+    @NSManaged public var netShares: Int64
     @NSManaged public var dateAcquired: Double
 }
 

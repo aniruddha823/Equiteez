@@ -15,6 +15,7 @@
     </entity>
     <entity name="Trade" representedClassName=".Trade" syncable="YES">
         <attribute name="dateAcquired" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="netShares" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="shareAmount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="sharePrice" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="ticker" optional="YES" attributeType="String"/>
@@ -26,7 +27,7 @@
     </entity>
     <elements>
         <element name="Stock" positionX="38.85546875" positionY="-194.171875" width="128" height="208"/>
-        <element name="Trade" positionX="-176.046875" positionY="-196.02734375" width="128" height="118"/>
+        <element name="Trade" positionX="-176.046875" positionY="-196.02734375" width="128" height="133"/>
         <element name="Transfer" positionX="-45" positionY="63" width="128" height="73"/>
     </elements>
 </model>

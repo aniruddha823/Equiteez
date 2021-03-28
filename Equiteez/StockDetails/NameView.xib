@@ -23,9 +23,9 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="htD-AD-mzJ">
                                     <rect key="frame" x="0.0" y="0.0" width="355" height="50"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tesla Inc." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QI4-oB-JZ2">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tesla Inc." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="QI4-oB-JZ2">
                                             <rect key="frame" x="0.0" y="0.0" width="305" height="50"/>
-                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="22"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
                                             <color key="textColor" name="text-primary"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -34,7 +34,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="aTN-8I-VTl" secondAttribute="height" multiplier="1:1" id="Ady-QP-cia"/>
                                             </constraints>
-                                            <state key="normal" image="heart32"/>
+                                            <state key="normal" image="heart-medium-32"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="selectedColor">
                                                     <color key="value" red="0.0" green="0.78438035100000003" blue="0.3926851455" alpha="1" colorSpace="calibratedRGB"/>
@@ -76,7 +76,7 @@
         </view>
     </objects>
     <resources>
-        <image name="heart32" width="32" height="32"/>
+        <image name="heart-medium-32" width="32" height="32"/>
         <namedColor name="background-primary">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

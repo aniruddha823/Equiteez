@@ -54,7 +54,8 @@ extension StockFinancialsVC {
             options: setupTableConfig()        )
 
         dataTable.translatesAutoresizingMaskIntoConstraints = false
-        dataTable.backgroundColor = UIColor.init(red: 235/255, green: 235/255, blue: 235/255, alpha: 1)
+        dataTable.backgroundColor = UIColor(named: "background-primary")
+//        dataTable.backgroundColor = UIColor.init(red: 235/255, green: 235/255, blue: 235/255, alpha: 1)
         
         return dataTable
     }

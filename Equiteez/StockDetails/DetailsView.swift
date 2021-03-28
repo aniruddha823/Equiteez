@@ -21,7 +21,8 @@ class DetailsView: UIView {
     
     func setupCell(ticker: String) {
         symbol = ticker
-        percentChange.layer.cornerRadius = 10
+        percentChange.layer.masksToBounds = true
+        percentChange.layer.cornerRadius = percentChange.frame.height / 2
         
         FMPquery.getCurrentPrice(symbol: ticker) { [weak self] (price) in
             self?.currentPrice.text = "$" + String(format: "%.2f", price)

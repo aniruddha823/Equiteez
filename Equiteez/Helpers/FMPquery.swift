@@ -207,6 +207,28 @@ class FMPquery {
         }
     }
     
+    class func getMChart(symbol: String, datefrom: String, dateto: String, completionHandler: @escaping ([Double], [Double], [String]) -> ()) {
+        guard let url = URL(string: baseURL + "historical-price-full/\(symbol)?from=\(datefrom)&to=\(dateto)&apikey=\(apikey)") else { return }
+    
+        Alamofire.request(url, method: .get).validate().responseJSON { (response) in
+            guard response.result.isSuccess else { return }
+    
+            let json = JSON(response.result.value)
+            var weekPrices = [Double]()
+            var weekPercentages = [Double]()
+            var weekDates = [String]()
+    
+            // Should only loop once
+            for (_, day) in json["historical"] {
+                weekPrices.insert(day["vwap"].doubleValue, at: 0)
+                weekPercentages.insert(day["changePercent"].doubleValue, at: 0)
+                weekDates.insert(day["date"].stringValue, at: 0)
+            }
+    
+            completionHandler(weekPrices, weekPercentages, weekDates)
+        }
+    }
+    
     class func getStockList(completionHandler: @escaping ([String:String]) -> ()) {
         guard let url = URL(string: "https://financialmodelingprep.com/api/v3/company/stock/list?apikey=\(apikey)") else { return }
         

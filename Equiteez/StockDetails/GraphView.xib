@@ -17,7 +17,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sle-CA-NFX" customClass="LineChartView" customModule="Charts">
-                            <rect key="frame" x="10" y="10" width="355" height="236"/>
+                            <rect key="frame" x="5" y="10" width="365" height="246"/>
                         </view>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="K8q-Ui-FhB">
                             <rect key="frame" x="10" y="256" width="355" height="34"/>
@@ -78,13 +78,13 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="K8q-Ui-FhB" secondAttribute="trailing" constant="10" id="0E5-P4-aRw"/>
-                        <constraint firstAttribute="trailing" secondItem="Sle-CA-NFX" secondAttribute="trailing" constant="10" id="5tZ-yM-s66"/>
+                        <constraint firstAttribute="trailing" secondItem="Sle-CA-NFX" secondAttribute="trailing" constant="5" id="5tZ-yM-s66"/>
                         <constraint firstItem="K8q-Ui-FhB" firstAttribute="leading" secondItem="rQ4-NA-bUx" secondAttribute="leading" constant="10" id="Rop-9c-X4u"/>
                         <constraint firstAttribute="bottom" secondItem="K8q-Ui-FhB" secondAttribute="bottom" constant="10" id="Ze2-mf-0l5"/>
                         <constraint firstAttribute="height" constant="300" id="a00-g1-d4f"/>
                         <constraint firstItem="Sle-CA-NFX" firstAttribute="top" secondItem="rQ4-NA-bUx" secondAttribute="top" constant="10" id="eDr-lg-AYa"/>
-                        <constraint firstItem="K8q-Ui-FhB" firstAttribute="top" secondItem="Sle-CA-NFX" secondAttribute="bottom" constant="10" id="swp-uT-T5x"/>
-                        <constraint firstItem="Sle-CA-NFX" firstAttribute="leading" secondItem="rQ4-NA-bUx" secondAttribute="leading" constant="10" id="x23-40-PQn"/>
+                        <constraint firstItem="K8q-Ui-FhB" firstAttribute="top" secondItem="Sle-CA-NFX" secondAttribute="bottom" id="swp-uT-T5x"/>
+                        <constraint firstItem="Sle-CA-NFX" firstAttribute="leading" secondItem="rQ4-NA-bUx" secondAttribute="leading" constant="5" id="x23-40-PQn"/>
                     </constraints>
                 </view>
             </subviews>

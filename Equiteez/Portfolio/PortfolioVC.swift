@@ -17,9 +17,14 @@ class PortfolioVC: UIViewController {
     var balances = [Transfer]()
     var ownedStocks = [Stock]()
     var crp = [Double]()
+    var dates = [String]()
+    var currentValue: Double = -1
     
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var portfolioValueLabel: UILabel!
     @IBOutlet weak var fundsLabel: UILabel!
+    @IBOutlet weak var portfolioGraph: LineChartView!
+    @IBOutlet weak var portfolioPercentChange: UILabel!
     @IBOutlet weak var portfolioTableView: UITableView!
     @IBAction func viewTradeHistory(_ sender: Any) {
         performSegue(withIdentifier: "gotoTradeHistory", sender: self)
@@ -27,18 +32,14 @@ class PortfolioVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         do {
+            let format = DateFormatter()
+            format.dateStyle = .long
+            format.timeStyle = .none
+            dateLabel.text = "\(format.string(from: Date()))"
+            
             balances = try PersistentService.context.fetch(Transfer.getSortedFetchRequest())
             if let walletBalance = balances.first?.walletBalance {
                 fundsLabel.text = " $\(String(format: "%.2f", walletBalance))"
-            }
-            
-//            let today = Date()
-//            let wtd = Calendar.current.date(byAdding: .day, value: -7, to: today)
-//            
-//            print("today: \(today), weekago: \(wtd)")
-            
-            for b in balances {
-                print("blength: \(Date(timeIntervalSince1970: TimeInterval(exactly: b.dateUpdated)!))")
             }
             
             ownedStocks = try PersistentService.context.fetch(Stock.getSortedFetchRequest())
@@ -55,10 +56,12 @@ class PortfolioVC: UIViewController {
             }
             
             dg.notify(queue: DispatchQueue.global()) {
-                print(self.crp.reduce(0, +))
+//                print(self.crp.reduce(0, +))
                 
                 DispatchQueue.main.async {
-                    self.portfolioValueLabel.text = "$\(String(format: "%.2f", self.crp.reduce(0, +)))"
+                    let total = self.crp.reduce(0, +)
+                    self.portfolioValueLabel.text = "$\(String(format: "%.2f", total))"
+                    self.currentValue = total
                 }
             }
             
@@ -72,14 +75,90 @@ class PortfolioVC: UIViewController {
         portfolioTableView.delegate = self
         portfolioTableView.dataSource = self
         portfolioTableView.register(UINib(nibName: "PortfolioStockCell", bundle: nil), forCellReuseIdentifier: "ptfc")
+        portfolioGraph.delegate = self
+        
+        portfolioPercentChange.layer.masksToBounds = true
+        portfolioPercentChange.layer.cornerRadius = portfolioPercentChange.frame.height / 2
+        
+        do {
+            let trades = try PersistentService.context.fetch(Trade.getSortedFetchRequest())
+            let grouping = DateGrouping()
+            grouping.getDateRange(daysBack: 30)
+
+            let timeline = grouping.getTradeTimeline(tradelist: trades.reversed() as Array)
+
+            let fmt = DateFormatter()
+            fmt.dateFormat = "yyyy-MM-dd"
+            fmt.timeZone = TimeZone(abbreviation: "PST")
+                            
+//            for day in timeline {
+//                for ticker in day.shareList.keys {
+//                    print("date: \(fmt.string(from: day.date)), ticker: \(ticker), netSharesEOD: \(day.shareList[ticker]!)")
+//                }
+//
+//                print("date: \(fmt.string(from: day.date))")
+//            }
+
+            var values = [Double]()
+
+            let dg2 = DispatchGroup()
+            for ticker in grouping.tickerSet {
+                let x = timeline.map { $0.shareList[ticker]! }
+
+                dg2.enter()
+                FMPquery.getMChart(symbol: ticker, datefrom: fmt.string(from: grouping.dateStart), dateto: fmt.string(from: Calendar.current.date(byAdding: .day, value: -1, to: Date())!
+                        )) { mp, mpct, mpd in
+                            
+                            self.dates = mpd
+
+                    for i in stride(from: 0, to: mp.count, by: 1) {
+                        let transactionPrice = mp[i] * Double(x[i])
+
+                        if i < values.count {
+                            values[i] += transactionPrice
+                        } else {
+                            values.append(transactionPrice)
+                        }
+                    }
+
+                    dg2.leave()
+                }
+
+//                print("ticker: \(ticker), \(x)")
+            }
+
+            dg2.notify(queue: DispatchQueue.global()) {
+//                print(values)
+
+                DispatchQueue.main.async {
+                    var lineChartEntries = [ChartDataEntry]()
+
+                    for i in stride(from: 0, to: values.count, by: 1) {
+                        let day = ChartDataEntry(x: Double(i), y: values[i])
+                        lineChartEntries.append(day)
+                    }
+
+                    ViewAppearance.setupLineGraphView(lineChartView: self.portfolioGraph, lce: lineChartEntries)
+
+                    NumDateFormatter.formatPercent(percentage: ((values.last! / values.first!) - 1) * 100, label: self.portfolioPercentChange)
+                }
+            }
+
+//            for x in trades {
+//                print("ticker: \(x.ticker), type: \(x.type), shareamt: \(x.shareAmount), netshares: \(x.netShares), date: \(fmt.string(from: Date(timeIntervalSince1970: x.dateAcquired)))")
+//            }
+                    
+//            print("start: \(fmt.string(from: grouping.dateStart))")
+        } catch { print(error) }
+        
     }
     
-    func getDayValue() {
-        
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 }
 
-extension PortfolioVC: UITableViewDelegate, UITableViewDataSource {
+extension PortfolioVC: UITableViewDelegate, UITableViewDataSource, ChartViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         ownedStocks.count
     }
@@ -91,6 +170,24 @@ extension PortfolioVC: UITableViewDelegate, UITableViewDataSource {
         cell.setup(ticker: stk.symbol!, sharesOwned: stk.sharesOwned)
         
         return cell
+    }
+    
+    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+        let format = DateFormatter()
+        format.dateStyle = .long
+        format.timeStyle = .none
+        dateLabel.text = "\(NumDateFormatter.convertDate(dateString: dates[Int(entry.x)]))"
+        
+        portfolioValueLabel.text = String(format: "%.2f", entry.y)
+    }
+    
+    func chartValueNothingSelected(_ chartView: ChartViewBase) {
+        let format = DateFormatter()
+        format.dateStyle = .long
+        format.timeStyle = .none
+        dateLabel.text = "\(format.string(from: Date()))"
+        
+        portfolioValueLabel.text = "$\(String(format: "%.2f", currentValue))"
     }
 }
 

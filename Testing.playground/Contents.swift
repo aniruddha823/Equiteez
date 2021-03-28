@@ -75,12 +75,12 @@ let trades2 = [Transaction(ticker: "GS", shareAmount: 1, netShares: -1, timestam
 
 let trades3 = [Transaction(ticker: "GS", shareAmount: 1, netShares: -1, timestamp: 1614358800.0, type: "buy"),
 Transaction(ticker: "AAPL", shareAmount: 5, netShares: -1, timestamp: 1614532500.0, type: "buy"),
+Transaction(ticker: "AAPL", shareAmount: 7, netShares: -1, timestamp: 1614631500.0, type: "buy"),
 Transaction(ticker: "GS", shareAmount: 9, netShares: -1, timestamp: 1614717900.0, type: "buy"),
 Transaction(ticker: "GS", shareAmount: 4, netShares: -1, timestamp: 1614731400.0, type: "sell"),
+Transaction(ticker: "AAPL", shareAmount: 10, netShares: -1, timestamp: 1614821400.0, type: "sell"),
 Transaction(ticker: "GS", shareAmount: 2, netShares: -1, timestamp: 1614930300.0, type: "buy"),
 Transaction(ticker: "GS", shareAmount: 3, netShares: -1, timestamp: 1614959100.0, type: "sell"),
-Transaction(ticker: "AAPL", shareAmount: 2, netShares: -1, timestamp: 1615012200.0, type: "buy"),
-Transaction(ticker: "AAPL", shareAmount: 3, netShares: -1, timestamp: 1615046400.0, type: "buy"),
 Transaction(ticker: "GS", shareAmount: 7, netShares: -1, timestamp: 1615068000.0, type: "buy")]
 
 var mydates : [String] = []
@@ -143,12 +143,8 @@ func getDailyTransactions(tickertrades: [Transaction]) {
     var j = 0
 
     while i < p.count {
-        
-        if m.count == 1 {
-            p[i].shareList[m[0].ticker] = m[0].netShares
-        } else if j == m.count - 1 {
-            p[i].shareList[m[j].ticker] = m[j].netShares
-        } else if i == p.count - 1 {
+
+        if i == p.count - 1 {
             p[i].shareList[m[j + 1].ticker] = m[j + 1].netShares
         } else if m[j + 1].timestamp < p[i + 1].date {
             j += 1
@@ -160,38 +156,6 @@ func getDailyTransactions(tickertrades: [Transaction]) {
         i += 1
     }
 }
-
-//var groupedTickers = groupedTransactionsByTicker(trades2)
-//
-//for i in groupedTickers.keys {
-//    for j in 0..<groupedTickers[i]!.count {
-//
-//        if j == 0 {
-//            groupedTickers[i]![j].netShares = groupedTickers[i]![j].shareAmount
-//        } else if groupedTickers[i]![j].type == "buy" {
-//            groupedTickers[i]![j].netShares = groupedTickers[i]![j - 1].netShares + groupedTickers[i]![j].shareAmount
-//        } else if groupedTickers[i]![j].type == "sell" {
-//            groupedTickers[i]![j].netShares = groupedTickers[i]![j - 1].netShares - groupedTickers[i]![j].shareAmount
-//        }
-//
-//        print("ticker: \(groupedTickers[i]![j].ticker), amount: \(groupedTickers[i]![j].shareAmount), net: \(groupedTickers[i]![j].netShares), type: \(groupedTickers[i]![j].type), date: \(format.string(from: groupedTickers[i]![j].timestamp))")
-//    }
-//}
-//
-//let fmt2 = DateFormatter()
-//fmt2.dateFormat = "yyyy-MM-dd"
-//
-//for ticker in groupedTickers.keys {
-//    getDailyTransactions(tickertrades: groupedTickers[ticker]!)
-//}
-//
-//let timeline = p.filter { !Calendar.current.isDateInWeekend($0.date) }
-//
-//for day in timeline {
-//    for ticker in day.shareList.keys {
-//        print("date: \(fmt.string(from: day.date)), ticker: \(ticker), netSharesEOD: \(day.shareList[ticker]!)")
-//    }
-//}
 
 //func getWeekChart(symbol: String, datefrom: String, dateto: String, completionHandler: @escaping ([Double], [Double], [String]) -> ()) {
 //    guard let url = URL(string: baseURL + "historical-price-full/\(symbol)?from=\(datefrom)&to=\(dateto)&apikey=\(apikey)") else { return }
@@ -214,4 +178,39 @@ func getDailyTransactions(tickertrades: [Transaction]) {
 //        completionHandler(weekPrices, weekPercentages, weekDates)
 //    }
 //}
+var groupedTickers = groupedTransactionsByTicker(trades3)
+
+for i in groupedTickers.keys {
+    for j in 0..<groupedTickers[i]!.count {
+
+        if j == 0 {
+            groupedTickers[i]![j].netShares = groupedTickers[i]![j].shareAmount
+        } else if groupedTickers[i]![j].type == "buy" {
+            groupedTickers[i]![j].netShares = groupedTickers[i]![j - 1].netShares + groupedTickers[i]![j].shareAmount
+        } else if groupedTickers[i]![j].type == "sell" {
+            groupedTickers[i]![j].netShares = groupedTickers[i]![j - 1].netShares - groupedTickers[i]![j].shareAmount
+        }
+
+        print("ticker: \(groupedTickers[i]![j].ticker), amount: \(groupedTickers[i]![j].shareAmount), net: \(groupedTickers[i]![j].netShares), type: \(groupedTickers[i]![j].type), date: \(format.string(from: groupedTickers[i]![j].timestamp))")
+    }
+}
+
+let fmt2 = DateFormatter()
+fmt2.dateFormat = "yyyy-MM-dd"
+
+for ticker in groupedTickers.keys {
+    getDailyTransactions(tickertrades: groupedTickers[ticker]!)
+}
+
+let timeline = p.filter { !Calendar.current.isDateInWeekend($0.date) }
+
+for day in timeline {
+    for ticker in day.shareList.keys {
+        print("date: \(fmt.string(from: day.date)), ticker: \(ticker), netSharesEOD: \(day.shareList[ticker]!)")
+    }
+}
+
+
+
+
 

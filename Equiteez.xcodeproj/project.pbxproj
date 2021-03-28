@@ -82,6 +82,9 @@
 		086B615B23CABC5C0012765B /* NumDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B615A23CABC5C0012765B /* NumDateFormatter.swift */; };
 		086B615C23CABC5C0012765B /* NumDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B615A23CABC5C0012765B /* NumDateFormatter.swift */; };
 		086B615D23CABC5C0012765B /* NumDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B615A23CABC5C0012765B /* NumDateFormatter.swift */; };
+		089C72DD25FF185900291041 /* DateGrouping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089C72DC25FF185900291041 /* DateGrouping.swift */; };
+		089C72DE25FF185900291041 /* DateGrouping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089C72DC25FF185900291041 /* DateGrouping.swift */; };
+		089C72DF25FF185900291041 /* DateGrouping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089C72DC25FF185900291041 /* DateGrouping.swift */; };
 		08B2022423DA8C59001AB937 /* ToolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2022323DA8C59001AB937 /* ToolCell.swift */; };
 		08B2022523DA8C59001AB937 /* ToolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2022323DA8C59001AB937 /* ToolCell.swift */; };
 		08B2022623DA8C59001AB937 /* ToolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2022323DA8C59001AB937 /* ToolCell.swift */; };
@@ -194,6 +197,8 @@
 		086B615223C9B7270012765B /* ToastSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastSwift.swift; sourceTree = "<group>"; };
 		086B615623C9C1FA0012765B /* AlphaVantageQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaVantageQuery.swift; sourceTree = "<group>"; };
 		086B615A23CABC5C0012765B /* NumDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumDateFormatter.swift; sourceTree = "<group>"; };
+		089C72DB25FEACB500291041 /* Testing.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Testing.playground; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		089C72DC25FF185900291041 /* DateGrouping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateGrouping.swift; sourceTree = "<group>"; };
 		08B2022323DA8C59001AB937 /* ToolCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolCell.swift; sourceTree = "<group>"; };
 		08B2022723E7E5CC001AB937 /* StockFinancialsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockFinancialsVC.swift; sourceTree = "<group>"; };
 		08E3788D23C4A0A000246F66 /* StocksMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksMainVC.swift; sourceTree = "<group>"; };
@@ -370,11 +375,13 @@
 		08E3788C23C49E8B00246F66 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				089C72DB25FEACB500291041 /* Testing.playground */,
 				08E378B523C4A24100246F66 /* FMPquery.swift */,
 				086B615623C9C1FA0012765B /* AlphaVantageQuery.swift */,
 				086B615A23CABC5C0012765B /* NumDateFormatter.swift */,
 				086B614E23C91DE50012765B /* ViewAppearance.swift */,
 				086B615223C9B7270012765B /* ToastSwift.swift */,
+				089C72DC25FF185900291041 /* DateGrouping.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -792,6 +799,7 @@
 				08F6ABE2259B0DEB0014DD3C /* TradeHistoryCell.swift in Sources */,
 				08B2022423DA8C59001AB937 /* ToolCell.swift in Sources */,
 				086B611823C674DD0012765B /* PersistentService.swift in Sources */,
+				089C72DD25FF185900291041 /* DateGrouping.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -823,6 +831,7 @@
 				08685BAD258B028C0028EE6C /* TradeHistoryVC.swift in Sources */,
 				086B615023C91DE50012765B /* ViewAppearance.swift in Sources */,
 				0858116424A1D66100C1CA2E /* InformationView.swift in Sources */,
+				089C72DE25FF185900291041 /* DateGrouping.swift in Sources */,
 				08685BA9257C6DDD0028EE6C /* PortfolioVC.swift in Sources */,
 				08B2022923E7E5CC001AB937 /* StockFinancialsVC.swift in Sources */,
 				086B610D23C55C850012765B /* SettingsVC.swift in Sources */,
@@ -860,6 +869,7 @@
 				08685BAE258B028C0028EE6C /* TradeHistoryVC.swift in Sources */,
 				086B615123C91DE50012765B /* ViewAppearance.swift in Sources */,
 				0858116524A1D66100C1CA2E /* InformationView.swift in Sources */,
+				089C72DF25FF185900291041 /* DateGrouping.swift in Sources */,
 				08685BAA257C6DDD0028EE6C /* PortfolioVC.swift in Sources */,
 				08B2022A23E7E5CC001AB937 /* StockFinancialsVC.swift in Sources */,
 				086B610E23C55C850012765B /* SettingsVC.swift in Sources */,
@@ -1026,6 +1036,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y6HHFA67T5;
 				INFOPLIST_FILE = Equiteez/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1045,6 +1056,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y6HHFA67T5;
 				INFOPLIST_FILE = Equiteez/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -1,9 +1,12 @@
 # Files
 /EquiteezLogoClassifier.mlproj
 /.DS_Store
+/Test.playground
+/Testing.playground
 
 # Folders
 Pods/
 /Podfile.lock
+build/
 
 

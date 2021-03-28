@@ -46,6 +46,17 @@ class TradeScreenVC: UIViewController {
         guard let availableBalance = Double(walletFundsLabel.text!.split(separator: "$")[0]) else { return }
         let shareAmount = Int(shareAmountStepper.value)
         let currentDate = Double(Date().timeIntervalSince1970)
+        var latestNetShares: Int64?
+        
+        do {
+            let latestTrade = try PersistentService.context.fetch(Trade.getSortedFetchRequest()).filter { $0.ticker == ticker }.first
+            
+            if let latestTrade = latestTrade {
+                latestNetShares = latestTrade.netShares
+            }
+            
+            
+        } catch { print("failed") }
         
         // Buying
         if transactionTypeControl.selectedSegmentIndex == 0 {
@@ -64,6 +75,12 @@ class TradeScreenVC: UIViewController {
                     trade.sharePrice = sharePrice
                     trade.shareAmount = Int64(shareAmount)
                     trade.dateAcquired = currentDate
+                    
+                    if let latestNetShares = latestNetShares {
+                        trade.netShares = latestNetShares + Int64(shareAmount)
+                    } else {
+                        trade.netShares = Int64(shareAmount)
+                    }
                     
                     let transfer = Transfer(context: PersistentService.context)
                     print("cb: \(availableBalance), tp: \(transactionPrice)")
@@ -85,6 +102,12 @@ class TradeScreenVC: UIViewController {
                     trade.sharePrice = sharePrice
                     trade.shareAmount = Int64(shareAmount)
                     trade.dateAcquired = currentDate
+                    
+                    if let latestNetShares = latestNetShares {
+                        trade.netShares = latestNetShares + Int64(shareAmount)
+                    } else {
+                        trade.netShares = Int64(shareAmount)
+                    }
                     
                     let transfer = Transfer(context: PersistentService.context)
                     print("cb: \(availableBalance), tp: \(transactionPrice)")
@@ -136,6 +159,12 @@ class TradeScreenVC: UIViewController {
                 trade.sharePrice = sharePrice
                 trade.shareAmount = Int64(shareAmount)
                 trade.dateAcquired = currentDate
+                
+                if let latestNetShares = latestNetShares {
+                    trade.netShares = latestNetShares - Int64(shareAmount)
+                } else {
+                    trade.netShares = Int64(shareAmount)
+                }
                 
                 let transfer = Transfer(context: PersistentService.context)
                 transfer.walletBalance = availableBalance + transactionPrice

@@ -102,7 +102,7 @@ class StockDetailsVC: UIViewController {
         AppDelegate.AppUtility.lockOrientation(.portrait)
         ticker = ticker.uppercased()
         self.title = ticker
-        print("nav title: \(navigationItem.title)")
+//        print("nav title: \(navigationItem.title)")
         
         let nv = Bundle.main.loadNibNamed("NameView", owner: nil, options: nil)?.first as! NameView
         nv.setupCell(ticker: ticker)

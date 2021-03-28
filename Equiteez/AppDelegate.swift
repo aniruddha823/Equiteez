@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 
 @UIApplicationMain
+@available(iOS 13.0, *)
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var enableAllOrientation = true

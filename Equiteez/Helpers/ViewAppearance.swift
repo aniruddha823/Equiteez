@@ -31,9 +31,12 @@ class ViewAppearance {
         line.drawCirclesEnabled = false
         line.drawFilledEnabled = true
         line.fillAlpha = 1
-        let gradientColors = [UIColor(red: 0/255.0, green: 200/255.0, blue: 100/255.0, alpha: 1).cgColor, UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1).cgColor] as CFArray; let colorLocations : [CGFloat] = [1.0, 0.0]
+        let gradientColors = [UIColor(red: 0/255.0, green: 200/255.0, blue: 100/255.0, alpha: 1).cgColor, UIColor(red: 0/255.0, green: 200/255.0, blue: 100/255.0, alpha: 1).cgColor, UIColor(red: 0/255.0, green: 200/255.0, blue: 100/255.0, alpha: 1).cgColor, UIColor.white.cgColor] as CFArray;
+        let colorLocations : [CGFloat] = [0.0, 0.333, 0.666, 1.0]
         let gradient = CGGradient.init(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: gradientColors, locations: colorLocations)
-        line.fill = Fill(linearGradient: gradient!, angle: 90)
+        line.fill = Fill(linearGradient: gradient!, angle: 270)
+        line.colors = [UIColor.clear]
+        
         let data = LineChartData(dataSet: line)
         
         lineChartView.data = data
