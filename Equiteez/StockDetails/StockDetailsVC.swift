@@ -70,10 +70,10 @@ class StockSegmentedVC: UIViewController {
         
         tradeButton.layer.cornerRadius = tradeButton.frame.height / 2
 
-        UIView.animate(withDuration: 0.25, animations: {
-                self.stockDetailView.alpha = 1
-                self.stockFinancialsView.alpha = 0
-        })
+//        UIView.animate(withDuration: 0.25, animations: {
+//                self.stockDetailView.alpha = 1
+//                self.stockFinancialsView.alpha = 0
+//        })
     }
     
     override func viewDidLoad() {

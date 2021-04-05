@@ -7,11 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08032F59261A2AB40060D7EB /* StatementPagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08032F58261A2AB40060D7EB /* StatementPagerViewCell.swift */; };
+		08032F5A261A2AB40060D7EB /* StatementPagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08032F58261A2AB40060D7EB /* StatementPagerViewCell.swift */; };
+		08032F5B261A2AB40060D7EB /* StatementPagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08032F58261A2AB40060D7EB /* StatementPagerViewCell.swift */; };
+		08032F5D261A2B140060D7EB /* StatementPagerViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08032F5C261A2B140060D7EB /* StatementPagerViewCell.xib */; };
+		08032F5E261A2B140060D7EB /* StatementPagerViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08032F5C261A2B140060D7EB /* StatementPagerViewCell.xib */; };
+		08032F5F261A2B140060D7EB /* StatementPagerViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08032F5C261A2B140060D7EB /* StatementPagerViewCell.xib */; };
 		082BB27625708E9E001927A0 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082BB27525708E9E001927A0 /* Stock.swift */; };
 		082BB27725708E9E001927A0 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082BB27525708E9E001927A0 /* Stock.swift */; };
 		082BB27825708E9E001927A0 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082BB27525708E9E001927A0 /* Stock.swift */; };
 		082BB27925720B0A001927A0 /* Equiteez.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 08EF72C223C497EB003A8A13 /* Equiteez.xcdatamodeld */; };
 		082BB27A25720B0B001927A0 /* Equiteez.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 08EF72C223C497EB003A8A13 /* Equiteez.xcdatamodeld */; };
+		085284D5261AC5E300121DCB /* StatementTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 085284D4261AC5E300121DCB /* StatementTitleCell.xib */; };
+		085284D6261AC5E300121DCB /* StatementTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 085284D4261AC5E300121DCB /* StatementTitleCell.xib */; };
+		085284D7261AC5E300121DCB /* StatementTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 085284D4261AC5E300121DCB /* StatementTitleCell.xib */; };
 		0858115024A1D58200C1CA2E /* DetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0858114C24A1D58100C1CA2E /* DetailsView.xib */; };
 		0858115124A1D58200C1CA2E /* DetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0858114C24A1D58100C1CA2E /* DetailsView.xib */; };
 		0858115224A1D58200C1CA2E /* DetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0858114C24A1D58100C1CA2E /* DetailsView.xib */; };
@@ -173,7 +182,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		08032F58261A2AB40060D7EB /* StatementPagerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementPagerViewCell.swift; sourceTree = "<group>"; };
+		08032F5C261A2B140060D7EB /* StatementPagerViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatementPagerViewCell.xib; sourceTree = "<group>"; };
 		082BB27525708E9E001927A0 /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
+		085284D4261AC5E300121DCB /* StatementTitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatementTitleCell.xib; sourceTree = "<group>"; };
 		0858114C24A1D58100C1CA2E /* DetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailsView.xib; sourceTree = "<group>"; };
 		0858114D24A1D58200C1CA2E /* StatsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatsView.xib; sourceTree = "<group>"; };
 		0858114E24A1D58200C1CA2E /* InformationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InformationView.xib; sourceTree = "<group>"; };
@@ -272,6 +284,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08032F57261A2A160060D7EB /* StockFinancials */ = {
+			isa = PBXGroup;
+			children = (
+				08B2022723E7E5CC001AB937 /* StockFinancialsVC.swift */,
+				08032F58261A2AB40060D7EB /* StatementPagerViewCell.swift */,
+				08032F5C261A2B140060D7EB /* StatementPagerViewCell.xib */,
+				085284D4261AC5E300121DCB /* StatementTitleCell.xib */,
+			);
+			path = StockFinancials;
+			sourceTree = "<group>";
+		};
 		08685BA6257C6DAA0028EE6C /* Portfolio */ = {
 			isa = PBXGroup;
 			children = (
@@ -358,7 +381,6 @@
 				0858114E24A1D58200C1CA2E /* InformationView.xib */,
 				08E378A123C4A19100246F66 /* StockDetails.storyboard */,
 				08E3789D23C4A17B00246F66 /* StockDetailsVC.swift */,
-				08B2022723E7E5CC001AB937 /* StockFinancialsVC.swift */,
 			);
 			path = StockDetails;
 			sourceTree = "<group>";
@@ -417,6 +439,7 @@
 				08E3788723C49CF600246F66 /* StocksMain */,
 				08E3788523C49CF100246F66 /* SearchStock */,
 				08E3788823C49CF900246F66 /* StockDetails */,
+				08032F57261A2A160060D7EB /* StockFinancials */,
 				08685BA6257C6DAA0028EE6C /* Portfolio */,
 				08F6ABE5259B0DFC0014DD3C /* TradeHistory */,
 				08E3788A23C49E1800246F66 /* TradeScreen */,
@@ -594,6 +617,7 @@
 			files = (
 				0858115924A1D58200C1CA2E /* GraphView.xib in Resources */,
 				08E378B223C4A21C00246F66 /* Portfolio.storyboard in Resources */,
+				08032F5D261A2B140060D7EB /* StatementPagerViewCell.xib in Resources */,
 				08E3789223C4A10700246F66 /* StocksMain.storyboard in Resources */,
 				0858115324A1D58200C1CA2E /* StatsView.xib in Resources */,
 				08EF72C923C497EE003A8A13 /* LaunchScreen.storyboard in Resources */,
@@ -609,6 +633,7 @@
 				08E378A223C4A19100246F66 /* StockDetails.storyboard in Resources */,
 				0858115024A1D58200C1CA2E /* DetailsView.xib in Resources */,
 				08EF72C123C497EB003A8A13 /* HomeScreen.storyboard in Resources */,
+				085284D5261AC5E300121DCB /* StatementTitleCell.xib in Resources */,
 				086B611023C55FA10012765B /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -620,6 +645,7 @@
 				08685BB9258F22C50028EE6C /* TradeStock.storyboard in Resources */,
 				08E3789323C4A10700246F66 /* StocksMain.storyboard in Resources */,
 				08F6ABDF259B0D8C0014DD3C /* TradeHistoryCell.xib in Resources */,
+				085284D6261AC5E300121DCB /* StatementTitleCell.xib in Resources */,
 				0858115424A1D58200C1CA2E /* StatsView.xib in Resources */,
 				086B611523C5FD5E0012765B /* StockCell.xib in Resources */,
 				0858115724A1D58200C1CA2E /* InformationView.xib in Resources */,
@@ -627,6 +653,7 @@
 				08F6ABDB25991A720014DD3C /* PortfolioStockCell.xib in Resources */,
 				08685BB5258B05410028EE6C /* TradeHistory.storyboard in Resources */,
 				08E378B323C4A21C00246F66 /* Portfolio.storyboard in Resources */,
+				08032F5E261A2B140060D7EB /* StatementPagerViewCell.xib in Resources */,
 				08E3789B23C4A16200246F66 /* SearchStock.storyboard in Resources */,
 				08FA695F25A11C740043757F /* NameView.xib in Resources */,
 				0858115124A1D58200C1CA2E /* DetailsView.xib in Resources */,
@@ -642,6 +669,7 @@
 				08685BBA258F22C50028EE6C /* TradeStock.storyboard in Resources */,
 				08E3789423C4A10700246F66 /* StocksMain.storyboard in Resources */,
 				08F6ABE0259B0D8C0014DD3C /* TradeHistoryCell.xib in Resources */,
+				085284D7261AC5E300121DCB /* StatementTitleCell.xib in Resources */,
 				0858115524A1D58200C1CA2E /* StatsView.xib in Resources */,
 				086B611623C5FD5E0012765B /* StockCell.xib in Resources */,
 				0858115824A1D58200C1CA2E /* InformationView.xib in Resources */,
@@ -649,6 +677,7 @@
 				08F6ABDC25991A720014DD3C /* PortfolioStockCell.xib in Resources */,
 				08685BB6258B05410028EE6C /* TradeHistory.storyboard in Resources */,
 				08E378B423C4A21C00246F66 /* Portfolio.storyboard in Resources */,
+				08032F5F261A2B140060D7EB /* StatementPagerViewCell.xib in Resources */,
 				08E3789C23C4A16200246F66 /* SearchStock.storyboard in Resources */,
 				08FA696025A11C740043757F /* NameView.xib in Resources */,
 				0858115224A1D58200C1CA2E /* DetailsView.xib in Resources */,
@@ -767,6 +796,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08032F59261A2AB40060D7EB /* StatementPagerViewCell.swift in Sources */,
 				0858116024A1D66100C1CA2E /* DetailsView.swift in Sources */,
 				08685BA8257C6DDD0028EE6C /* PortfolioVC.swift in Sources */,
 				086B613D23C69AAE0012765B /* Equiteez.xcdatamodeld in Sources */,
@@ -829,6 +859,7 @@
 				08E378B723C4A24100246F66 /* FMPquery.swift in Sources */,
 				08EF72D423C497EE003A8A13 /* EquiteezTests.swift in Sources */,
 				08685BAD258B028C0028EE6C /* TradeHistoryVC.swift in Sources */,
+				08032F5A261A2AB40060D7EB /* StatementPagerViewCell.swift in Sources */,
 				086B615023C91DE50012765B /* ViewAppearance.swift in Sources */,
 				0858116424A1D66100C1CA2E /* InformationView.swift in Sources */,
 				089C72DE25FF185900291041 /* DateGrouping.swift in Sources */,
@@ -867,6 +898,7 @@
 				08E378B823C4A24100246F66 /* FMPquery.swift in Sources */,
 				08EF72DF23C497EE003A8A13 /* EquiteezUITests.swift in Sources */,
 				08685BAE258B028C0028EE6C /* TradeHistoryVC.swift in Sources */,
+				08032F5B261A2AB40060D7EB /* StatementPagerViewCell.swift in Sources */,
 				086B615123C91DE50012765B /* ViewAppearance.swift in Sources */,
 				0858116524A1D66100C1CA2E /* InformationView.swift in Sources */,
 				089C72DF25FF185900291041 /* DateGrouping.swift in Sources */,

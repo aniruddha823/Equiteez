@@ -76,7 +76,7 @@ class ViewAppearance {
     }
     
     class func makeBarGraph(values: [Double], labelText: String) -> BarChartView {
-        var bgv = BarChartView()
+        let bgv = BarChartView()
         var entries = [BarChartDataEntry]()
         var barColors = [UIColor]()
         for i in stride(from: 0, to: values.count, by: 1){

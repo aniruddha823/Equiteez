@@ -14,8 +14,9 @@ class StocksMainVC: UIViewController {
     
     var savedStocks = [Stock]()
     var passingTicker = ""
-    @IBOutlet weak var editButton: UIButton!
+    let dg = DispatchGroup()
     
+    @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var stocksTableView: UITableView!
     {
         didSet {

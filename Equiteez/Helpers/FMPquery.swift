@@ -262,4 +262,32 @@ class FMPquery {
         }
         
     }
+    
+    class func getIncomeStatement (symbol: String, completionHandler: @escaping (Data) -> ()) {
+        guard let url = URL(string: baseURL + "income-statement/\(symbol)?period=quarter&limit=12&apikey=\(apikey)") else { return }
+            
+        Alamofire.request(url, method: .get).validate().responseJSON { (response) in
+            guard response.result.isSuccess else { return }
+                
+            let json = JSON(response.result.value)
+            let incst = response.data!
+            
+            completionHandler(incst)
+        }
+        
+    }
+    
+    class func getCashFlowStatement (symbol: String, completionHandler: @escaping (Data) -> ()) {
+        guard let url = URL(string: baseURL + "cash-flow-statement/\(symbol)?period=quarter&limit=12&apikey=\(apikey)") else { return }
+            
+        Alamofire.request(url, method: .get).validate().responseJSON { (response) in
+            guard response.result.isSuccess else { return }
+                
+            let json = JSON(response.result.value)
+            let cft = response.data!
+            
+            completionHandler(cft)
+        }
+        
+    }
 }

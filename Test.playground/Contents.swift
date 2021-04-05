@@ -161,23 +161,23 @@ func getDailyTransactions(tickertrades: [Transaction]) {
     }
 }
 
-//var groupedTickers = groupedTransactionsByTicker(trades2)
-//
-//for i in groupedTickers.keys {
-//    for j in 0..<groupedTickers[i]!.count {
-//
-//        if j == 0 {
-//            groupedTickers[i]![j].netShares = groupedTickers[i]![j].shareAmount
-//        } else if groupedTickers[i]![j].type == "buy" {
-//            groupedTickers[i]![j].netShares = groupedTickers[i]![j - 1].netShares + groupedTickers[i]![j].shareAmount
-//        } else if groupedTickers[i]![j].type == "sell" {
-//            groupedTickers[i]![j].netShares = groupedTickers[i]![j - 1].netShares - groupedTickers[i]![j].shareAmount
-//        }
-//
-//        print("ticker: \(groupedTickers[i]![j].ticker), amount: \(groupedTickers[i]![j].shareAmount), net: \(groupedTickers[i]![j].netShares), type: \(groupedTickers[i]![j].type), date: \(format.string(from: groupedTickers[i]![j].timestamp))")
-//    }
-//}
-//
+var groupedTickers = groupedTransactionsByTicker(trades3)
+
+for i in groupedTickers.keys {
+    for j in 0..<groupedTickers[i]!.count {
+
+        if j == 0 {
+            groupedTickers[i]![j].netShares = groupedTickers[i]![j].shareAmount
+        } else if groupedTickers[i]![j].type == "buy" {
+            groupedTickers[i]![j].netShares = groupedTickers[i]![j - 1].netShares + groupedTickers[i]![j].shareAmount
+        } else if groupedTickers[i]![j].type == "sell" {
+            groupedTickers[i]![j].netShares = groupedTickers[i]![j - 1].netShares - groupedTickers[i]![j].shareAmount
+        }
+
+        print("ticker: \(groupedTickers[i]![j].ticker), amount: \(groupedTickers[i]![j].shareAmount), net: \(groupedTickers[i]![j].netShares), type: \(groupedTickers[i]![j].type), date: \(format.string(from: groupedTickers[i]![j].timestamp))")
+    }
+}
+
 //let fmt2 = DateFormatter()
 //fmt2.dateFormat = "yyyy-MM-dd"
 //

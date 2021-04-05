@@ -16,6 +16,7 @@ class Trade: NSManagedObject {
     @NSManaged public var shareAmount: Int64
     @NSManaged public var netShares: Int64
     @NSManaged public var dateAcquired: Double
+    @NSManaged public var walletBalancePost: Double
 }
 
 extension Trade {

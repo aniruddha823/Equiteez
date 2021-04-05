@@ -13,23 +13,31 @@ import UIKit
 class DayTransaction {
     var date: Date
     var shareList: [String: Int]
-    
+    var eodBalance: Double
 
     init(exactDate: Date, shares: [String: Int]) {
         self.date = exactDate
         self.shareList = shares
+        self.eodBalance = -1
     }
 }
 
 class DateGrouping {
-    var fmt = DateFormatter()
+    var trades: [Trade]
+    var transfers: [Transfer]
     var dailyTransactions: [DayTransaction]
+    var fmt = DateFormatter()
     var dateStart: Date
     var tickerSet = Set<String>()
     
-    init() {
+    init() throws {
         self.dailyTransactions = [DayTransaction]()
         self.dateStart = Date()
+        
+        do {
+            trades = try PersistentService.context.fetch(Trade.getSortedFetchRequest())
+            transfers = try PersistentService.context.fetch(Transfer.getSortedFetchRequest())
+        } catch let error as NSError { throw error }
     }
     
     // Groups a list of trades by the ticker
@@ -41,16 +49,16 @@ class DateGrouping {
         acc[cur.ticker] = existing
       }
     }
-    
+
     // Gets the net shares owned/last trade on each day for a ticker (e.g. reduces days
     // with multiple trades of a stock to the last trade made on that day)
-    private func groupedTradesByDay(transactions: [Trade]) -> [Date: Trade] {
+    func groupedTradesByDay(transactions: [Trade]) -> [Date: Trade] {
         let empty: [Date: Trade] = [:]
       return transactions.reduce(into: empty) { acc, cur in
         let components = Calendar.current.dateComponents([.year, .month, .day], from: Date(timeIntervalSince1970: cur.dateAcquired))
         let date = Calendar.current.date(from: components)!
         var existing = acc[date] ?? cur
-        
+
         if let lastTransactionOfDay = acc[date], lastTransactionOfDay.dateAcquired < cur.dateAcquired {
             existing = cur
             acc[date] = existing
@@ -61,7 +69,7 @@ class DateGrouping {
         }
       }
     }
-    
+
     // Groups a list of trades by the calendar day
     private func getDailyTransactions(tickertrades: [Trade]) {
         let groupedDays = groupedTradesByDay(transactions: tickertrades)
@@ -71,75 +79,89 @@ class DateGrouping {
         var j = 0
 
         while i < dailyTransactions.count {
-//            print("i: \(i), j: \(j), mcount: \(m.count)")
-            
             if m.count == 1 {
-//                print("ifcheck 1")
                 dailyTransactions[i].shareList[m[0].ticker] = Int(m[0].netShares)
+                    i += 1
             } else if j == m.count - 1 {
-//                print("ifcheck 2")
                 dailyTransactions[i].shareList[m[j].ticker] = Int(m[j].netShares)
-            } else if i == dailyTransactions.count - 1 {
-//                print("ifcheck 3")
-                dailyTransactions[i].shareList[m[j + 1].ticker] = Int(m[j + 1].netShares)
-            } else if m[j + 1].dateAcquired < dailyTransactions[i + 1].date.timeIntervalSince1970 {
-//                print("ifcheck 4")
-                j += 1
+                i += 1
+            } else if m[j + 1].dateAcquired < dailyTransactions[i].date.timeIntervalSince1970 {
+                    j += 1
+            } else if m[j + 1].dateAcquired >= dailyTransactions[i].date.timeIntervalSince1970 {
                 dailyTransactions[i].shareList[m[j].ticker] = Int(m[j].netShares)
-            } else {
-//                print("ifcheck 5")
-                dailyTransactions[i].shareList[m[j].ticker] = Int(m[j].netShares)
+                i += 1
             }
-
-            i += 1
         }
     }
-    
+
     // Creates a timeline with the number of shares owned on each day for
-    // each ticker from the list of all trades.
-    func getTradeTimeline(tradelist: [Trade]) -> [DayTransaction] {
-        let groupedTickers = groupedTradesByTicker(transactions: tradelist)
-        
+    // each ticker from the list of all trades
+    func getTradeTimeline() -> [DayTransaction] {
+        let groupedTickers = groupedTradesByTicker(transactions: trades.reversed() as Array)
+
         for ticker in groupedTickers.keys {
-            
             tickerSet.insert(ticker)
-//            print("ticker: \(ticker), count: \(groupedTickers[ticker]?.count)")
             getDailyTransactions(tickertrades: groupedTickers[ticker]!)
-//            print("done")
         }
-        
+
         return dailyTransactions.filter { !Calendar.current.isDateInWeekend($0.date) }
     }
-    
+
+    func getWalletTimeline() {
+        fmt.dateFormat = "MM-dd-yyyy HH:mm:ss Z"
+        fmt.timeZone = TimeZone(abbreviation: "PST")
+
+        let sl2 = groupedTradesByDay(transactions: trades.reversed() as Array)
+
+        let m = sl2.map { $0.value }.sorted { $0.dateAcquired < $1.dateAcquired }
+
+        var i = 0
+        var j = 0
+
+        while i < dailyTransactions.count {
+            if m.count == 1 {
+                dailyTransactions[i].eodBalance = m[0].walletBalancePost
+                i += 1
+            } else if j == m.count - 1 {
+                dailyTransactions[i].eodBalance = m[j].walletBalancePost
+                i += 1
+            } else if m[j + 1].dateAcquired < dailyTransactions[i].date.timeIntervalSince1970 {
+                j += 1
+            } else if m[j + 1].dateAcquired >= dailyTransactions[i].date.timeIntervalSince1970 {
+                dailyTransactions[i].eodBalance = m[j].walletBalancePost
+                i += 1
+            }
+        }
+    }
+
+    // Calculate the dates going back x days from today
     func getDateRange(daysBack: Int) {
         fmt.dateFormat = "MM-dd-yyyy HH:mm:ss Z"
         fmt.timeZone = TimeZone(abbreviation: "PST")
         var dstart = Calendar.current.date(byAdding: .day, value: 1, to: Date())!
-        
+
         for i in 0..<daysBack {
             var dt = DayTransaction(exactDate: dstart, shares: [:])
             dailyTransactions.insert(dt, at: 0)
             dstart = Calendar.current.date(byAdding: .day, value: -1, to: dstart)!
-            
+
             if i == daysBack - 1 {
                 dt = DayTransaction(exactDate: dstart, shares: [:])
                 dailyTransactions.insert(dt, at: 0)
             }
         }
-        
+
         self.dateStart = dstart
     }
-    
-    // Calculate the net shares owned after each transaction (running total).
+
+    // Calculate the net shares owned after each transaction made (running total)
     func getNetShares() {
         do {
-            var trades = try PersistentService.context.fetch(Trade.getSortedFetchRequest()).reversed() as Array
-            
-            var fmt = DateFormatter()
+            let fmt = DateFormatter()
             fmt.dateFormat = "MM-dd-yyyy HH:mm:ss Z"
             fmt.timeZone = TimeZone(abbreviation: "PST")
-            let tradesByTicker = groupedTradesByTicker(transactions: trades)
-            
+            let tradesByTicker = groupedTradesByTicker(transactions: trades.reversed() as Array)
+
             for i in tradesByTicker.keys {
                 for j in 0..<tradesByTicker[i]!.count {
 
@@ -152,27 +174,36 @@ class DateGrouping {
                     }
                 }
             }
-            
+
             for t in trades {
                 print("ticker: \(t.ticker), type: \(t.type), shareamt: \(t.shareAmount), netshares: \(t.netShares), date: \(fmt.string(from: Date(timeIntervalSince1970: t.dateAcquired)))")
             }
-            
+
             PersistentService.saveContext()
         } catch { print(error) }
     }
-    
-    // Reset net shares owned for each transaction to -1.
+
+    // Reset net shares owned for each transaction to -1
     func resetNetShares() {
         do {
-            var trades = try PersistentService.context.fetch(Trade.getSortedFetchRequest()).reversed() as Array
-            
-            for t in trades {
+            for t in trades.reversed() as Array {
                 t.netShares = -1
-            
+
                 print("ticker: \(t.ticker), type: \(t.type), shareamt: \(t.shareAmount), netshares: \(t.netShares), date: \(fmt.string(from: Date(timeIntervalSince1970: t.dateAcquired)))")
             }
-            
+
             PersistentService.saveContext()
         } catch { print(error) }
+    }
+
+    // Get the remaining wallet balance after each transaction made
+    func getPostTransactionBalances() {
+        do {
+            for i in 0..<transfers.count - 1 {
+                trades[i].walletBalancePost = transfers[i].walletBalance
+            }
+
+            PersistentService.saveContext()
+        } catch { print("fail") }
     }
 }

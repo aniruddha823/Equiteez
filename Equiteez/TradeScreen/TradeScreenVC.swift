@@ -75,6 +75,7 @@ class TradeScreenVC: UIViewController {
                     trade.sharePrice = sharePrice
                     trade.shareAmount = Int64(shareAmount)
                     trade.dateAcquired = currentDate
+                    trade.walletBalancePost = availableBalance - transactionPrice
                     
                     if let latestNetShares = latestNetShares {
                         trade.netShares = latestNetShares + Int64(shareAmount)
@@ -102,6 +103,7 @@ class TradeScreenVC: UIViewController {
                     trade.sharePrice = sharePrice
                     trade.shareAmount = Int64(shareAmount)
                     trade.dateAcquired = currentDate
+                    trade.walletBalancePost = availableBalance - transactionPrice
                     
                     if let latestNetShares = latestNetShares {
                         trade.netShares = latestNetShares + Int64(shareAmount)
@@ -159,6 +161,7 @@ class TradeScreenVC: UIViewController {
                 trade.sharePrice = sharePrice
                 trade.shareAmount = Int64(shareAmount)
                 trade.dateAcquired = currentDate
+                trade.walletBalancePost = availableBalance + transactionPrice
                 
                 if let latestNetShares = latestNetShares {
                     trade.netShares = latestNetShares - Int64(shareAmount)

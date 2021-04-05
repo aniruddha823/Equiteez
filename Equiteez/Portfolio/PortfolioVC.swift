@@ -81,23 +81,15 @@ class PortfolioVC: UIViewController {
         portfolioPercentChange.layer.cornerRadius = portfolioPercentChange.frame.height / 2
         
         do {
-            let trades = try PersistentService.context.fetch(Trade.getSortedFetchRequest())
-            let grouping = DateGrouping()
+            let grouping = try DateGrouping()
+//            grouping.getPostTransactionBalances()
             grouping.getDateRange(daysBack: 30)
-
-            let timeline = grouping.getTradeTimeline(tradelist: trades.reversed() as Array)
+            grouping.getWalletTimeline()
+            let timeline = grouping.getTradeTimeline()
 
             let fmt = DateFormatter()
             fmt.dateFormat = "yyyy-MM-dd"
             fmt.timeZone = TimeZone(abbreviation: "PST")
-                            
-//            for day in timeline {
-//                for ticker in day.shareList.keys {
-//                    print("date: \(fmt.string(from: day.date)), ticker: \(ticker), netSharesEOD: \(day.shareList[ticker]!)")
-//                }
-//
-//                print("date: \(fmt.string(from: day.date))")
-//            }
 
             var values = [Double]()
 
@@ -108,7 +100,6 @@ class PortfolioVC: UIViewController {
                 dg2.enter()
                 FMPquery.getMChart(symbol: ticker, datefrom: fmt.string(from: grouping.dateStart), dateto: fmt.string(from: Calendar.current.date(byAdding: .day, value: -1, to: Date())!
                         )) { mp, mpct, mpd in
-                            
                             self.dates = mpd
 
                     for i in stride(from: 0, to: mp.count, by: 1) {
@@ -123,18 +114,15 @@ class PortfolioVC: UIViewController {
 
                     dg2.leave()
                 }
-
-//                print("ticker: \(ticker), \(x)")
             }
 
             dg2.notify(queue: DispatchQueue.global()) {
-//                print(values)
 
                 DispatchQueue.main.async {
                     var lineChartEntries = [ChartDataEntry]()
 
                     for i in stride(from: 0, to: values.count, by: 1) {
-                        let day = ChartDataEntry(x: Double(i), y: values[i])
+                        let day = ChartDataEntry(x: Double(i), y: values[i] + timeline[i].eodBalance)
                         lineChartEntries.append(day)
                     }
 
@@ -143,12 +131,6 @@ class PortfolioVC: UIViewController {
                     NumDateFormatter.formatPercent(percentage: ((values.last! / values.first!) - 1) * 100, label: self.portfolioPercentChange)
                 }
             }
-
-//            for x in trades {
-//                print("ticker: \(x.ticker), type: \(x.type), shareamt: \(x.shareAmount), netshares: \(x.netShares), date: \(fmt.string(from: Date(timeIntervalSince1970: x.dateAcquired)))")
-//            }
-                    
-//            print("start: \(fmt.string(from: grouping.dateStart))")
         } catch { print(error) }
         
     }
