@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DLRadioButton
 
 class SettingsVC: UIViewController {
     
@@ -20,6 +21,17 @@ class SettingsVC: UIViewController {
             view.window?.overrideUserInterfaceStyle = .light
         }
     }
+    @IBOutlet weak var sharesValueButton: DLRadioButton!
+    @IBAction func showSharesValueInPortfolio(_ sender: Any) {
+        UserDefaults.standard.set("sval", forKey: "returnsType")
+        UserDefaults.standard.set(false, forKey: "chartIsSet")
+    }
+    
+    @IBOutlet weak var totalValueButton: DLRadioButton!
+    @IBAction func showTotalValueInPortfolio(_ sender: Any) {
+        UserDefaults.standard.set("total", forKey: "returnsType")
+        UserDefaults.standard.set(false, forKey: "chartIsSet")
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         AppDelegate.AppUtility.lockOrientation(.portrait)
@@ -30,6 +42,21 @@ class SettingsVC: UIViewController {
             } else if themeSelected == "light" {
                 darkModeSwitch.setOn(false, animated: false)
             }
+        }
+        
+        if let returnTypeSelected = UserDefaults.standard.string(forKey: "returnsType") {
+            if returnTypeSelected == "sval" {
+                sharesValueButton.isSelected = true
+                totalValueButton.isSelected = false
+            } else if returnTypeSelected == "total" {
+                totalValueButton.isSelected = true
+                sharesValueButton.isSelected = false
+            }
+        } else {
+            UserDefaults.standard.set("sval", forKey: "returnsType")
+            UserDefaults.standard.set(false, forKey: "chartIsSet")
+            sharesValueButton.isSelected = true
+            totalValueButton.isSelected = false
         }
         
 //        let style = overrideUserInterfaceStyle

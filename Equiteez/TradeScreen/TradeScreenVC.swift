@@ -10,6 +10,7 @@ import UIKit
 import SPStorkController
 import SPFakeBar
 import CoreData
+import AudioToolbox
 
 class TradeScreenVC: UIViewController {
     let fakenavbar = SPFakeBarView(style: .stork)
@@ -91,6 +92,10 @@ class TradeScreenVC: UIViewController {
                     savedStock.sharesOwned += shareAmount
                     
                     PersistentService.saveContext()
+                    UserDefaults.standard.set(false, forKey: "portfolioSet")
+                    
+                    self.view.makeToast(message: "Trade Confirmed!", duration: 1.5, position: .center)
+                    AudioServicesPlaySystemSound(1407)
                     dismiss(animated: true, completion: nil)
                 }
                 
@@ -140,6 +145,10 @@ class TradeScreenVC: UIViewController {
                     }
                     
                     PersistentService.saveContext()
+                    UserDefaults.standard.set(false, forKey: "portfolioSet")
+                    
+                    self.view.makeToast(message: "Trade Confirmed!", duration: 1.5, position: .center)
+                    AudioServicesPlaySystemSound(1407)
                     dismiss(animated: true, completion: nil)
                 }
             }
@@ -176,6 +185,10 @@ class TradeScreenVC: UIViewController {
                 savedStock!.sharesOwned -= shareAmount
                 
                 PersistentService.saveContext()
+                UserDefaults.standard.set(false, forKey: "portfolioSet")
+                
+                self.view.makeToast(message: "Trade Confirmed!", duration: 1.5, position: .center)
+                AudioServicesPlaySystemSound(1407)
                 dismiss(animated: true, completion: nil)
             }
         }

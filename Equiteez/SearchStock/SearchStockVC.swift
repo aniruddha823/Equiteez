@@ -37,14 +37,7 @@ class SearchStockVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         self.modalPresentationCapturesStatusBarAppearance = true
-        
-        self.fakenavbar.titleLabel.text = "Search"
-        self.fakenavbar.titleLabel.font = UIFont(name: "Avenir Next", size: self.fakenavbar.titleLabel.font.pointSize)
-        self.fakenavbar.layer.isOpaque = true
-        self.fakenavbar.layer.backgroundColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
-        self.view.addSubview(self.fakenavbar)
         
         searchStockField.layer.cornerRadius = 10
         ViewAppearance.setupShadow(view: searchStockField)
@@ -70,12 +63,6 @@ class SearchStockVC: UIViewController {
     }
     
     func fetchStockList() {
-       
-        do {
-            let count = try PersistentService.context.fetch(Stock.fetchRequest()).count
-        }
-        catch { print("fail") }
-        
         FMPquery.getStockList() { (list) in
             for (symbol, name) in list {
                 let item = SearchTextFieldItem(title: symbol, subtitle: name)

@@ -48,7 +48,9 @@ class ViewAppearance {
         lineChartView.leftAxis.enabled = false
         lineChartView.drawBordersEnabled = false
         lineChartView.chartDescription?.text = ""
-        lineChartView.animate(xAxisDuration: 1.0, yAxisDuration: 1.0)
+        lineChartView.legend.enabled = false
+        lineChartView.doubleTapToZoomEnabled = false
+        lineChartView.animate(xAxisDuration: 0.75, yAxisDuration: 0.75)
     }
     
     class func setupBarGraphView(barChartView: BarChartView) {

@@ -46,6 +46,8 @@ class NameView: UIView {
                 
                     PersistentService.saveContext()
                 }
+                
+                UserDefaults.standard.set(false, forKey: "watchlistSet")
             }
         } else if !state {
             let fetchRequest: NSFetchRequest<Stock> = Stock.getSortedFetchRequest()
@@ -61,6 +63,8 @@ class NameView: UIView {
                 }
                 
                 PersistentService.saveContext()
+                
+                UserDefaults.standard.set(false, forKey: "watchlistSet")
             } catch { print(error) }
         }
     }

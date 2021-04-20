@@ -28,12 +28,9 @@ class PortfolioStockCell: UITableViewCell {
         return nib
     }
     
-    func setup(ticker: String, sharesOwned: Int) {
+    func setup(ticker: String, sharesOwned: Int, price: Double) {
         stockTickerLabel.text = ticker
         shareAmountLabel.text = "\(sharesOwned) shares"
-        
-        FMPquery.getCurrentPrice(symbol: ticker) { [weak self] (price) in
-            self?.stockPositionLabel.text = "$\(String(format: "%.2f", price * Double(sharesOwned)))"
-        }
+        stockPositionLabel.text = "$\(String(format: "%.2f", price))"
     }
 }

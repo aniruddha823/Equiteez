@@ -30,6 +30,8 @@ target 'Equiteez' do
   pod 'SPStorkController'
   pod 'SPFakeBar'
   pod 'SwiftDataTables'
+  pod 'CollectionViewSlantedLayout', '~> 3.1'
+  pod 'BetterSegmentedControl', '~> 1.0'
 
 end
 

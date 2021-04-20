@@ -17,11 +17,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="zax-yC-2Kb">
-                                <rect key="frame" x="20" y="108" width="374" height="31"/>
+                                <rect key="frame" x="20" y="145.5" width="374" height="31"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dark Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0cp-xB-1nP">
-                                        <rect key="frame" x="0.0" y="0.0" width="102.5" height="31"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="82" height="31"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                         <color key="textColor" name="text-primary"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -33,12 +33,73 @@
                                     </switch>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Returns Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mwk-ji-kv0">
+                                <rect key="frame" x="20" y="216.5" width="374" height="27.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-MediumItalic" family="Avenir Next" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Appearance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZS-RU-JkT">
+                                <rect key="frame" x="20" y="108" width="374" height="27.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-MediumItalic" family="Avenir Next" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="YLA-F3-P8L">
+                                <rect key="frame" x="20" y="254" width="374" height="73"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="LfF-Sc-Wad">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Stock Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VK0-JN-uea">
+                                                <rect key="frame" x="0.0" y="0.0" width="128.5" height="34"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vir-ti-KBA" customClass="DLRadioButton">
+                                                <rect key="frame" x="344" y="0.0" width="30" height="34"/>
+                                                <connections>
+                                                    <action selector="showSharesValueInPortfolio:" destination="dzo-DZ-F9I" eventType="touchUpInside" id="qFV-yN-OBD"/>
+                                                    <outletCollection property="otherButtons" destination="EAq-1V-a89" id="LA1-2s-dM9"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="F8D-SF-EM5">
+                                        <rect key="frame" x="0.0" y="39" width="374" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Total Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KgW-RT-WDR">
+                                                <rect key="frame" x="0.0" y="0.0" width="123" height="34"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAq-1V-a89" customClass="DLRadioButton">
+                                                <rect key="frame" x="344" y="0.0" width="30" height="34"/>
+                                                <connections>
+                                                    <action selector="showTotalValueInPortfolio:" destination="dzo-DZ-F9I" eventType="touchUpInside" id="pxq-em-eJy"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" name="background-primary"/>
                         <constraints>
-                            <constraint firstItem="zax-yC-2Kb" firstAttribute="top" secondItem="2dh-bg-9ZX" secondAttribute="top" constant="20" id="3Wb-LU-ZdG"/>
+                            <constraint firstItem="2dh-bg-9ZX" firstAttribute="trailing" secondItem="jZS-RU-JkT" secondAttribute="trailing" constant="20" id="9OC-pA-5B6"/>
+                            <constraint firstItem="jZS-RU-JkT" firstAttribute="leading" secondItem="2dh-bg-9ZX" secondAttribute="leading" constant="20" id="FGl-yo-jTe"/>
+                            <constraint firstItem="2dh-bg-9ZX" firstAttribute="trailing" secondItem="mwk-ji-kv0" secondAttribute="trailing" constant="20" id="JLc-XK-v5E"/>
+                            <constraint firstItem="2dh-bg-9ZX" firstAttribute="trailing" secondItem="YLA-F3-P8L" secondAttribute="trailing" constant="20" id="WaV-OV-8jo"/>
+                            <constraint firstItem="jZS-RU-JkT" firstAttribute="top" secondItem="2dh-bg-9ZX" secondAttribute="top" constant="20" id="Wwh-EQ-D0V"/>
+                            <constraint firstItem="mwk-ji-kv0" firstAttribute="top" secondItem="zax-yC-2Kb" secondAttribute="bottom" constant="40" id="YQb-sY-X2C"/>
+                            <constraint firstItem="zax-yC-2Kb" firstAttribute="top" secondItem="jZS-RU-JkT" secondAttribute="bottom" constant="10" id="aVg-QO-uBl"/>
                             <constraint firstItem="2dh-bg-9ZX" firstAttribute="trailing" secondItem="zax-yC-2Kb" secondAttribute="trailing" constant="20" id="hns-Cj-zPQ"/>
+                            <constraint firstItem="YLA-F3-P8L" firstAttribute="top" secondItem="mwk-ji-kv0" secondAttribute="bottom" constant="10" id="lmI-yh-Kuw"/>
+                            <constraint firstItem="YLA-F3-P8L" firstAttribute="leading" secondItem="2dh-bg-9ZX" secondAttribute="leading" constant="20" id="rFC-tz-eeQ"/>
                             <constraint firstItem="zax-yC-2Kb" firstAttribute="leading" secondItem="2dh-bg-9ZX" secondAttribute="leading" constant="20" id="u0M-P0-waF"/>
+                            <constraint firstItem="mwk-ji-kv0" firstAttribute="leading" secondItem="2dh-bg-9ZX" secondAttribute="leading" constant="20" id="wad-KS-8S4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2dh-bg-9ZX"/>
                     </view>
@@ -46,6 +107,8 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="darkModeSwitch" destination="F00-XN-Sid" id="Iy1-8r-aev"/>
+                        <outlet property="sharesValueButton" destination="vir-ti-KBA" id="xWF-KS-t2E"/>
+                        <outlet property="totalValueButton" destination="EAq-1V-a89" id="hIm-qM-Kc9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fxb-wb-NuH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

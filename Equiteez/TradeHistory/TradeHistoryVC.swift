@@ -25,7 +25,8 @@ class TradeHistoryVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.modalPresentationCapturesStatusBarAppearance = true
         
         tradesTableView.delegate = self
         tradesTableView.dataSource = self

@@ -12,29 +12,39 @@ import FaveButton
 import CoreData
 import SPStorkController
 import SPFakeBar
+import BetterSegmentedControl
 
 class StockSegmentedVC: UIViewController {
+    @IBOutlet weak var stockViewControl: BetterSegmentedControl!
     
     @IBOutlet weak var stockDetailView: UIView!
     @IBOutlet weak var stockFinancialsView: UIView!
+    @IBOutlet weak var stockNewsView: UIView!
+    
     @IBOutlet weak var shareAmountLabel: UILabel!
     @IBOutlet weak var tradeButton: UIButton!
     
     var detailContainer: StockDetailsVC?
     var financialsContainer: StockFinancialsVC?
+    var newsContainer: StockNewsVC?
     var tradeScreen: TradeScreenVC?
     var ticker = ""
     
-    @IBAction func switchStockViews(_ sender: UISegmentedControl) {
-        if sender.selectedSegmentIndex == 0 {
+    @IBAction func switchStockViews(_ sender: BetterSegmentedControl) {
+        if sender.index == 0 {
             stockDetailView.alpha = 1
             stockFinancialsView.alpha = 0
+            stockNewsView.alpha = 0
             print("in details")
-        } else if sender.selectedSegmentIndex == 1 {
+        } else if sender.index == 1 {
             stockDetailView.alpha = 0
             stockFinancialsView.alpha = 1
+            stockNewsView.alpha = 0
             print("in fins")
-        } else {
+        } else if sender.index == 2 {
+            stockDetailView.alpha = 0
+            stockFinancialsView.alpha = 0
+            stockNewsView.alpha = 1
             print("In the News!!!")
         }
     }
@@ -50,6 +60,9 @@ class StockSegmentedVC: UIViewController {
         } else if segue.identifier == "gotoFinancials" {
             financialsContainer = segue.destination as? StockFinancialsVC
             financialsContainer?.ticker = ticker
+        } else if segue.identifier == "gotoNews" {
+            newsContainer = segue.destination as? StockNewsVC
+            newsContainer?.ticker = ticker
         } else if segue.identifier == "gotoTradeScreen" {
             tradeScreen = segue.destination as? TradeScreenVC
             tradeScreen?.ticker = ticker
@@ -77,9 +90,15 @@ class StockSegmentedVC: UIViewController {
     }
     
     override func viewDidLoad() {
+        self.title = ticker
+        stockViewControl.cornerRadius = stockViewControl.frame.height / 2
+        stockViewControl.segments = LabelSegment.segments(withTitles: ["Details", "Financials", "News"],
+                                                          normalTextColor: UIColor(red: 0/255, green: 200/255, blue: 100/255, alpha: 1.00), selectedTextColor: .white)
         
+        stockDetailView.alpha = 1
+        stockFinancialsView.alpha = 0
+        stockNewsView.alpha = 0
     }
-    
 }
 
 class TradeScreenSegue: UIStoryboardSegue {

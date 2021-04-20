@@ -17,7 +17,7 @@ class NumDateFormatter {
         
         var formatted = ""
         
-        switch num / 1000.00 {
+        switch abs(num) / 1000.00 {
         case 1 ..< 1000:
             formatted = String(format: "%.2f", num / 1000.00) + "K"
         case 1000 ..< 1000000:

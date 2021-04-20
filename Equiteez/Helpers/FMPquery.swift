@@ -263,7 +263,7 @@ class FMPquery {
         
     }
     
-    class func getIncomeStatement (symbol: String, completionHandler: @escaping (Data) -> ()) {
+    class func getIncomeStatement(symbol: String, completionHandler: @escaping (Data) -> ()) {
         guard let url = URL(string: baseURL + "income-statement/\(symbol)?period=quarter&limit=12&apikey=\(apikey)") else { return }
             
         Alamofire.request(url, method: .get).validate().responseJSON { (response) in
@@ -277,7 +277,7 @@ class FMPquery {
         
     }
     
-    class func getCashFlowStatement (symbol: String, completionHandler: @escaping (Data) -> ()) {
+    class func getCashFlowStatement(symbol: String, completionHandler: @escaping (Data) -> ()) {
         guard let url = URL(string: baseURL + "cash-flow-statement/\(symbol)?period=quarter&limit=12&apikey=\(apikey)") else { return }
             
         Alamofire.request(url, method: .get).validate().responseJSON { (response) in
@@ -290,4 +290,36 @@ class FMPquery {
         }
         
     }
+    
+    class func getNews(symbol: String, completionHandler: @escaping ([Article]) -> ()) {
+        guard let url = URL(string: baseURL + "stock_news?tickers=\(symbol)&limit=10&apikey=\(apikey)") else { return }
+            
+        Alamofire.request(url, method: .get).validate().responseJSON { (response) in
+            guard response.result.isSuccess else { return }
+                
+            let json = JSON(response.result.value)
+            var articles = [Article]()
+            
+            for (_, object) in json {
+                let title = object["title"].stringValue
+                let imageURL = object["image"].stringValue
+                let siteName = object["site"].stringValue
+                let articleURL = object["url"].stringValue
+                let datePublished = object["publishedDate"].stringValue
+                
+                articles.append(Article(title: title, imageURL: imageURL, siteName: siteName, articleURL: articleURL, datePublished: datePublished))
+            }
+            
+            completionHandler(articles)
+        }
+        
+    }
+}
+
+struct Article {
+    var title: String
+    var imageURL: String
+    var siteName: String
+    var articleURL: String
+    var datePublished: String
 }

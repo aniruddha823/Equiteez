@@ -37,18 +37,30 @@ class StockCell: UITableViewCell {
         symbol.text = "(\(ticker))"
     }
     
-    func setupCellNumbers(ticker: String) {
-        FMPquery.getCurrentPrice(symbol: ticker) { (price) in
-            self.currentPrice.text = "$" + String(format: "%.2f", price)
-        }
+    func setupCellNumbers(price: Double, percentage: Double, volume: Double) {
+        currentPercentChange.layer.masksToBounds = true
+        currentPercentChange.layer.cornerRadius = currentPercentChange.frame.height / 2
         
-        FMPquery.getProfile(symbol: ticker) { [weak self] (ticker, mkcp, avgv, pchg, cmpn, cmpi, cmpw, cmpd, cmpc, cmpl, cmpe) in
-            
-            NumDateFormatter.formatPercent(percentage: Double(pchg) ?? 0, label: self!.currentPercentChange)
-            
-            self?.currentVolume.text = "Vol: \(NumDateFormatter.getFormattedNumberString(num: avgv))"
-        }
+        currentPrice.text = "$" + String(format: "%.2f", price)
+        NumDateFormatter.formatPercent(percentage: percentage, label: currentPercentChange)
+        currentVolume.text = "Vol: \(NumDateFormatter.getFormattedNumberString(num: volume))"
     }
+    
+    func setupCellNumbers2(ticker: String) {
+            currentPercentChange.layer.masksToBounds = true
+            currentPercentChange.layer.cornerRadius = currentPercentChange.frame.height / 2
+            
+            FMPquery.getCurrentPrice(symbol: ticker) { (price) in
+                self.currentPrice.text = "$" + String(format: "%.2f", price)
+            }
+    
+            FMPquery.getProfile(symbol: ticker) { [weak self] (ticker, mkcp, avgv, pchg, cmpn, cmpi, cmpw, cmpd, cmpc, cmpl, cmpe) in
+    
+                NumDateFormatter.formatPercent(percentage: Double(pchg) ?? 0, label: self!.currentPercentChange)
+    
+                self?.currentVolume.text = "Vol: \(NumDateFormatter.getFormattedNumberString(num: avgv))"
+            }
+        }
     
     // Set the logo of the cell according to the url provided
     func setLogo(logoURL: String) {

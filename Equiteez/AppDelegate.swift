@@ -42,6 +42,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //
 //                }
 //            }
+            
+            UserDefaults.standard.set(false, forKey: "watchlistSet")
+            UserDefaults.standard.set(false, forKey: "portfolioIsSet")
+            UserDefaults.standard.set(false, forKey: "chartIsSet")
         } catch { print(error) }
         
         return true

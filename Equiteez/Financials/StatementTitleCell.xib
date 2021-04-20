@@ -20,24 +20,22 @@
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="CAC-7T-x0E">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="vmo-wH-wRb">
-                                    <rect key="frame" x="0.0" y="0.0" width="25" height="60"/>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="iXr-hG-7rf">
+                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="25" id="HXE-MN-g9S"/>
-                                        <constraint firstAttribute="height" constant="25" id="hQ3-iF-836"/>
+                                        <constraint firstAttribute="width" secondItem="iXr-hG-7rf" secondAttribute="height" multiplier="1:1" id="6B7-F0-BwR"/>
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance Sheet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neG-8s-iJj">
-                                    <rect key="frame" x="25" y="0.0" width="325" height="60"/>
+                                    <rect key="frame" x="60" y="0.0" width="255" height="60"/>
                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="25"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="tpz-DA-4sj">
-                                    <rect key="frame" x="350" y="0.0" width="25" height="60"/>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="Wog-KA-C0Y">
+                                    <rect key="frame" x="315" y="0.0" width="60" height="60"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="25" id="R3T-8T-kpk"/>
-                                        <constraint firstAttribute="width" constant="25" id="yud-G4-2bh"/>
+                                        <constraint firstAttribute="width" secondItem="Wog-KA-C0Y" secondAttribute="height" multiplier="1:1" id="lVq-X8-27F"/>
                                     </constraints>
                                 </imageView>
                             </subviews>

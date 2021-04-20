@@ -23,12 +23,8 @@ class StockFinancialsVC: UIViewController {
     typealias IncomeStatements = [IncomeStatement]; var ist = IncomeStatements()
     typealias CashFlowStatements = [CashFlowStatement]; var cfst = CashFlowStatements()
     
-//    lazy var dataTableBS = makeDataTableBS()
-//    lazy var dataTableIS = makeDataTableIS()
-//    lazy var dataTableCFS = makeDataTableCFS()
-    
     var ticker = ""
-    var tables = [SwiftDataTable]()
+    var tables = [String : SwiftDataTable]()
     var test = ["Balance Sheet", "Income Statement", "Cash Flow Statement"]
     
     let dg = DispatchGroup()
@@ -55,44 +51,51 @@ class StockFinancialsVC: UIViewController {
             self?.bst = x
 
             let table = self!.makeDataTableBS()
-            self?.tables.append(table)
-            self!.dg.leave()
+            self?.tables["Balance Sheet"] = table
+//            self!.dg.leave()
         }
 
-        dg.enter()
+//        dg.enter()
         FMPquery.getIncomeStatement(symbol: ticker) { [weak self] (incst) in
             let x = try! JSONDecoder().decode(IncomeStatements.self, from: incst)
             self?.ist = x
             
             let table = self!.makeDataTableIS()
-            self?.tables.append(table)
-            self!.dg.leave()
+            self?.tables["Income Statement"] = table
+//            self!.dg.leave()
         }
 
-        dg.enter()
+//        dg.enter()
         FMPquery.getCashFlowStatement(symbol: ticker) { [weak self] (cft) in
             let x = try! JSONDecoder().decode(CashFlowStatements.self, from: cft)
             self?.cfst = x
             
             let table = self!.makeDataTableCFS()
-            self?.tables.append(table)
+            self?.tables["Cash Flow Statement"] = table
             self!.dg.leave()
         }
 
         dg.notify(queue: .main) {
-            self.financialStatementView.reloadData()
             self.financialStatementView.delegate = self
             self.financialStatementView.dataSource = self
             self.financialStatementView.register(UINib(nibName: "StatementPagerViewCell", bundle: .main), forCellWithReuseIdentifier: "fsc")
             self.financialStatementView.transformer = FSPagerViewTransformer(type: .linear)
             self.financialStatementView.isScrollEnabled = false
+            self.financialStatementView.reloadData()
             
-            self.financialStatementTitleView.reloadData()
+            
             self.financialStatementTitleView.delegate = self
             self.financialStatementTitleView.dataSource = self
             self.financialStatementTitleView.register(UINib(nibName: "StatementTitleCell", bundle: .main), forCellWithReuseIdentifier: "fstc")
             self.financialStatementTitleView.transformer = FSPagerViewTransformer(type: .linear)
             self.financialStatementTitleView.bounces = false
+            self.financialStatementTitleView.reloadData()
+            
+//            for t in self.tables {
+//                for r in t.rows {
+//                    print("row name: \(r[0].stringRepresentation)")
+//                }
+//            }
         }
 //
 //        dataTable.delegate = self
@@ -116,11 +119,11 @@ extension StockFinancialsVC: FSPagerViewDelegate, FSPagerViewDataSource {
             cell.contentView.isUserInteractionEnabled = false
 
             if index == 0 {
-                cell.setup(table: tables[index])
+                cell.setup(table: tables["Balance Sheet"]!)
             } else if index == 1 {
-                cell.setup(table: tables[index])
+                cell.setup(table: tables["Income Statement"]!)
             } else if index == 2 {
-                cell.setup(table: tables[index])
+                cell.setup(table: tables["Cash Flow Statement"]!)
             }
 
             return cell

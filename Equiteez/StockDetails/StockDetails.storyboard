@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,28 +17,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="grE-l8-m2l">
-                                <rect key="frame" x="66.666666666666686" y="54" width="242" height="32"/>
-                                <segments>
-                                    <segment title="Details"/>
-                                    <segment title="Financials"/>
-                                    <segment title="News"/>
-                                </segments>
-                                <color key="selectedSegmentTintColor" name="background-primary"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cKb-xj-b8k" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
+                                <rect key="frame" x="15" y="54" width="345" height="30"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="alwaysAnnouncesValue" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="announcesValueImmediately" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="indicatorViewBackgroundColor">
+                                        <color key="value" red="0.0" green="0.78438035100000003" blue="0.3926851455" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="switchStockViews:" destination="rZb-un-m6V" eventType="valueChanged" id="373-8z-q5z"/>
+                                    <action selector="switchStockViews:" destination="rZb-un-m6V" eventType="valueChanged" id="KcX-33-uBV"/>
                                 </connections>
-                            </segmentedControl>
+                            </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I8l-qp-TXq">
-                                <rect key="frame" x="0.0" y="95" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="94" width="375" height="624"/>
                                 <connections>
                                     <segue destination="Zp4-sC-Q0J" kind="embed" identifier="gotoFinancials" id="NyL-rX-Ulu"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O0G-6s-FSz">
-                                <rect key="frame" x="0.0" y="95" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="94" width="375" height="624"/>
                                 <connections>
                                     <segue destination="LXe-eD-bTJ" kind="embed" identifier="gotoDetails" id="Cnk-In-zHi"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="11R-Ga-PvV">
+                                <rect key="frame" x="0.0" y="94" width="375" height="624"/>
+                                <connections>
+                                    <segue destination="If8-z0-cl6" kind="embed" identifier="gotoNews" id="KTo-f3-3jr"/>
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oII-f0-rME">
@@ -89,19 +101,25 @@
                         </subviews>
                         <color key="backgroundColor" name="background-primary"/>
                         <constraints>
-                            <constraint firstItem="grE-l8-m2l" firstAttribute="centerX" secondItem="GzQ-T2-xAO" secondAttribute="centerX" id="B9w-oo-xP5"/>
+                            <constraint firstItem="11R-Ga-PvV" firstAttribute="leading" secondItem="GzQ-T2-xAO" secondAttribute="leading" id="7SC-iP-XN3"/>
                             <constraint firstItem="GzQ-T2-xAO" firstAttribute="trailing" secondItem="I8l-qp-TXq" secondAttribute="trailing" id="CJX-r9-baw"/>
-                            <constraint firstItem="O0G-6s-FSz" firstAttribute="top" secondItem="grE-l8-m2l" secondAttribute="bottom" constant="10" id="G8M-mG-B6q"/>
-                            <constraint firstItem="I8l-qp-TXq" firstAttribute="top" secondItem="grE-l8-m2l" secondAttribute="bottom" constant="10" id="JqA-K9-Hc9"/>
-                            <constraint firstItem="grE-l8-m2l" firstAttribute="top" secondItem="GzQ-T2-xAO" secondAttribute="top" constant="10" id="NXg-wm-BF4"/>
+                            <constraint firstItem="cKb-xj-b8k" firstAttribute="leading" secondItem="GzQ-T2-xAO" secondAttribute="leading" constant="15" id="D8H-uG-PAk"/>
+                            <constraint firstItem="O0G-6s-FSz" firstAttribute="top" secondItem="cKb-xj-b8k" secondAttribute="bottom" constant="10" id="Ds8-6L-NDp"/>
+                            <constraint firstItem="11R-Ga-PvV" firstAttribute="top" secondItem="cKb-xj-b8k" secondAttribute="bottom" constant="10" id="EjK-pQ-Clf"/>
+                            <constraint firstItem="GzQ-T2-xAO" firstAttribute="trailing" secondItem="cKb-xj-b8k" secondAttribute="trailing" constant="15" id="NNL-X8-SQI"/>
+                            <constraint firstItem="cKb-xj-b8k" firstAttribute="top" secondItem="GzQ-T2-xAO" secondAttribute="top" constant="10" id="Ntm-Tg-t5B"/>
                             <constraint firstItem="O0G-6s-FSz" firstAttribute="leading" secondItem="GzQ-T2-xAO" secondAttribute="leading" id="OXH-Wf-tgD"/>
+                            <constraint firstItem="11R-Ga-PvV" firstAttribute="trailing" secondItem="GzQ-T2-xAO" secondAttribute="trailing" id="Wjh-V5-GmK"/>
                             <constraint firstItem="GzQ-T2-xAO" firstAttribute="bottom" secondItem="oII-f0-rME" secondAttribute="bottom" id="Y8n-UE-HNH"/>
                             <constraint firstItem="oII-f0-rME" firstAttribute="leading" secondItem="GzQ-T2-xAO" secondAttribute="leading" id="cZa-48-e1X"/>
                             <constraint firstItem="I8l-qp-TXq" firstAttribute="leading" secondItem="GzQ-T2-xAO" secondAttribute="leading" id="g5g-XR-Xts"/>
                             <constraint firstItem="GzQ-T2-xAO" firstAttribute="trailing" secondItem="O0G-6s-FSz" secondAttribute="trailing" id="lIx-ll-0Mq"/>
+                            <constraint firstItem="I8l-qp-TXq" firstAttribute="top" secondItem="cKb-xj-b8k" secondAttribute="bottom" constant="10" id="nIB-E6-hDA"/>
+                            <constraint firstItem="oII-f0-rME" firstAttribute="top" secondItem="11R-Ga-PvV" secondAttribute="bottom" id="o8e-fS-YAh"/>
                             <constraint firstItem="oII-f0-rME" firstAttribute="top" secondItem="O0G-6s-FSz" secondAttribute="bottom" id="rRh-Vm-sPU"/>
                             <constraint firstItem="oII-f0-rME" firstAttribute="top" secondItem="I8l-qp-TXq" secondAttribute="bottom" id="uuu-pA-EGt"/>
                             <constraint firstItem="GzQ-T2-xAO" firstAttribute="trailing" secondItem="oII-f0-rME" secondAttribute="trailing" id="vkJ-YH-4pk"/>
+                            <constraint firstItem="11R-Ga-PvV" firstAttribute="centerY" secondItem="Hsp-aE-E7h" secondAttribute="centerY" id="wsJ-Xa-mRa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GzQ-T2-xAO"/>
                     </view>
@@ -109,6 +127,8 @@
                         <outlet property="shareAmountLabel" destination="d9x-qi-SdG" id="vuG-s1-8Xl"/>
                         <outlet property="stockDetailView" destination="O0G-6s-FSz" id="ca8-AQ-yPF"/>
                         <outlet property="stockFinancialsView" destination="I8l-qp-TXq" id="Pe8-aq-xFN"/>
+                        <outlet property="stockNewsView" destination="11R-Ga-PvV" id="Nea-sq-EKO"/>
+                        <outlet property="stockViewControl" destination="cKb-xj-b8k" id="Mai-18-YGH"/>
                         <outlet property="tradeButton" destination="aIE-zD-zq5" id="1Q5-HQ-DoW"/>
                         <segue destination="Pcq-Dz-dv9" kind="presentation" identifier="gotoTradeScreen" customClass="TradeScreenSegue" customModule="Equiteez" customModuleProvider="target" id="bYE-oc-L8q"/>
                     </connections>
@@ -165,7 +185,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7IH-Ag-ePx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="116" y="840.88669950738915"/>
+            <point key="canvasLocation" x="-282" y="841"/>
         </scene>
         <!--Stock DetailsVC-->
         <scene sceneID="fiI-9m-4i2">
@@ -222,7 +242,59 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eLY-Ab-XTe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-668" y="840.88669950738915"/>
+            <point key="canvasLocation" x="-969" y="841"/>
+        </scene>
+        <!--Stock NewsVC-->
+        <scene sceneID="9eH-FH-Pnv">
+            <objects>
+                <viewController id="If8-z0-cl6" customClass="StockNewsVC" customModule="Equiteez" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="60P-v9-W2d">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yLs-TE-Pno">
+                                <rect key="frame" x="10" y="54" width="355" height="636"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewLayout key="collectionViewLayout" id="QCs-Mp-9bm" customClass="CollectionViewSlantedLayout" customModule="CollectionViewSlantedLayout">
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="slantingSize">
+                                            <integer key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="lineSpacing">
+                                            <real key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </collectionViewLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="a8S-TV-rX2" customClass="NewsCell" customModule="Equiteez" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="wjA-x8-CmD">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="jK7-gg-K0x" firstAttribute="trailing" secondItem="yLs-TE-Pno" secondAttribute="trailing" constant="10" id="60y-Zj-9fa"/>
+                            <constraint firstItem="jK7-gg-K0x" firstAttribute="bottom" secondItem="yLs-TE-Pno" secondAttribute="bottom" constant="10" id="GwX-EM-TYW"/>
+                            <constraint firstItem="yLs-TE-Pno" firstAttribute="leading" secondItem="jK7-gg-K0x" secondAttribute="leading" constant="10" id="cax-MS-pxD"/>
+                            <constraint firstItem="yLs-TE-Pno" firstAttribute="top" secondItem="jK7-gg-K0x" secondAttribute="top" constant="10" id="e04-h0-XX7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jK7-gg-K0x"/>
+                    </view>
+                    <size key="freeformSize" width="375" height="700"/>
+                    <connections>
+                        <outlet property="collectionViewLayout" destination="QCs-Mp-9bm" id="Gnt-JL-Hdi"/>
+                        <outlet property="newsCollectionView" destination="yLs-TE-Pno" id="dps-2r-u39"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vkd-ur-g2P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="402" y="841"/>
         </scene>
     </scenes>
     <resources>

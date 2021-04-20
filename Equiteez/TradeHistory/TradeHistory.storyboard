@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7KF-0N-D4o">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ex2-6P-qXV">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
@@ -8,23 +8,23 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Trade HistoryVC-->
+        <!--History-->
         <scene sceneID="4n3-aI-jaG">
             <objects>
-                <viewController storyboardIdentifier="tradeHistory" id="7KF-0N-D4o" customClass="TradeHistoryVC" customModule="Equiteez" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7KF-0N-D4o" customClass="TradeHistoryVC" customModule="Equiteez" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yaq-Xu-QZI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Vn-j2-8b2">
-                                <rect key="frame" x="10" y="10" width="394" height="480"/>
+                                <rect key="frame" x="10" y="98" width="355" height="592"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="thc" rowHeight="100" id="MKc-bM-0n0">
-                                        <rect key="frame" x="0.0" y="28" width="394" height="100"/>
+                                        <rect key="frame" x="0.0" y="28" width="355" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MKc-bM-0n0" id="3jb-g6-idz">
-                                            <rect key="frame" x="0.0" y="0.0" width="394" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="355" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" name="background-primary"/>
                                         </tableViewCellContentView>
@@ -35,13 +35,14 @@
                         <color key="backgroundColor" name="background-primary"/>
                         <constraints>
                             <constraint firstItem="0b1-2J-8QZ" firstAttribute="bottom" secondItem="3Vn-j2-8b2" secondAttribute="bottom" constant="10" id="47t-5J-kdp"/>
+                            <constraint firstItem="3Vn-j2-8b2" firstAttribute="top" secondItem="0b1-2J-8QZ" secondAttribute="top" constant="10" id="7nD-Co-SMP"/>
                             <constraint firstItem="0b1-2J-8QZ" firstAttribute="trailing" secondItem="3Vn-j2-8b2" secondAttribute="trailing" constant="10" id="8Bc-PJ-SwM"/>
-                            <constraint firstItem="3Vn-j2-8b2" firstAttribute="top" secondItem="Yaq-Xu-QZI" secondAttribute="top" constant="10" id="NRy-RZ-LH8"/>
                             <constraint firstItem="3Vn-j2-8b2" firstAttribute="leading" secondItem="0b1-2J-8QZ" secondAttribute="leading" constant="10" id="dIT-c2-DlX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0b1-2J-8QZ"/>
                     </view>
-                    <size key="freeformSize" width="414" height="500"/>
+                    <navigationItem key="navigationItem" title="History" id="bik-wp-ffd"/>
+                    <size key="freeformSize" width="375" height="700"/>
                     <connections>
                         <outlet property="tradesTableView" destination="3Vn-j2-8b2" id="GFm-I5-MXa"/>
                         <segue destination="1YQ-GB-35C" kind="unwind" identifier="gotoMain" unwindAction="unwindToMainWithSegue:" id="evl-Hv-1cJ"/>
@@ -50,12 +51,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Bz-2m-jI7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="1YQ-GB-35C" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="60.869565217391312" y="89.732142857142847"/>
+            <point key="canvasLocation" x="970.28985507246387" y="89.732142857142847"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vpW-F9-hu0">
+            <objects>
+                <navigationController storyboardIdentifier="tradeHistory" automaticallyAdjustsScrollViewInsets="NO" id="ex2-6P-qXV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <size key="freeformSize" width="375" height="700"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lja-Vj-yjd">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="background-primary"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                            <color key="textColor" name="text-primary"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7KF-0N-D4o" kind="relationship" relationship="rootViewController" id="KjX-gB-lgc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I8N-LU-Xce" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="190" y="89"/>
         </scene>
     </scenes>
     <resources>
         <namedColor name="background-primary">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="text-primary">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

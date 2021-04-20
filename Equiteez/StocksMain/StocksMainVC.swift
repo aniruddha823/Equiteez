@@ -14,6 +14,10 @@ class StocksMainVC: UIViewController {
     
     var savedStocks = [Stock]()
     var passingTicker = ""
+    var prices: [Double]?
+    var percentages: [Double]?
+    var volumes: [Double]?
+    
     let dg = DispatchGroup()
     
     @IBOutlet weak var editButton: UIButton!
@@ -51,47 +55,110 @@ class StocksMainVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if savedStocks.count > 0 {
-            AppDelegate.AppUtility.lockOrientation(.all)
-        }
-        else {
-            AppDelegate.AppUtility.lockOrientation(.portrait)
-        }
+        let boolcheck = UserDefaults.standard.bool(forKey: "watchlistSet")
         
-//        self.setNeedsStatusBarAppearanceUpdate()
+        refreshSavedStocks()
         
-        if let index = stocksTableView.indexPathForSelectedRow{
+        if let index = stocksTableView.indexPathForSelectedRow {
             self.stocksTableView.deselectRow(at: index, animated: false)
         }
         
-        refreshSavedStocks()
+        if !boolcheck {
+            resetCellData()
+            
+            for i in 0..<savedStocks.count {
+                dg.enter()
+                FMPquery.getCurrentPrice(symbol: self.savedStocks[i].symbol!) {
+                    [unowned self] (price) in
+                    self.prices?[i] = price
+                        
+                    self.dg.leave()
+                }
+
+                dg.enter()
+                FMPquery.getProfile(symbol: self.savedStocks[i].symbol!) {
+                    [unowned self] (ticker, mkcp, avgv, pchg, cmpn, cmpi, cmpw, cmpd, cmpc, cmpl, cmpe) in
+                    self.percentages?[i] = Double(pchg) ?? 0
+                    self.volumes?[i] = avgv
+                        
+                    self.dg.leave()
+                }
+            }
+
+            dg.notify(queue: .main) {
+                DispatchQueue.main.async {
+                    self.stocksTableView.delegate = self
+                    self.stocksTableView.dataSource = self
+                    self.stocksTableView.register(UINib(nibName: "StockCell", bundle: nil), forCellReuseIdentifier: "stkc")
+                    self.stocksTableView.reloadData()
+                }
+            }
+            
+            UserDefaults.standard.set(true, forKey: "watchlistSet")
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.tintColor = UIColor(named: "text-primary")
+        let boolcheck = UserDefaults.standard.bool(forKey: "watchlistSet")
         
-        stocksTableView.delegate = self
-        stocksTableView.dataSource = self
-        stocksTableView.register(UINib(nibName: "StockCell", bundle: nil), forCellReuseIdentifier: "stkc")
-        
-        refreshSavedStocks()
+        if !boolcheck {
+            resetCellData()
+            
+            for i in 0..<savedStocks.count {
+                dg.enter()
+                FMPquery.getCurrentPrice(symbol: self.savedStocks[i].symbol!) {
+                    [unowned self] (price) in
+                    self.prices?[i] = price
+                        
+                    self.dg.leave()
+                }
+
+                dg.enter()
+                FMPquery.getProfile(symbol: self.savedStocks[i].symbol!) {
+                    [unowned self] (ticker, mkcp, avgv, pchg, cmpn, cmpi, cmpw, cmpd, cmpc, cmpl, cmpe) in
+                    self.percentages?[i] = Double(pchg) ?? 0
+                    self.volumes?[i] = avgv
+                        
+                    self.dg.leave()
+                }
+            }
+
+            dg.notify(queue: .main) {
+                DispatchQueue.main.async {
+                    self.stocksTableView.delegate = self
+                    self.stocksTableView.dataSource = self
+                    self.stocksTableView.register(UINib(nibName: "StockCell", bundle: nil), forCellReuseIdentifier: "stkc")
+                    self.stocksTableView.reloadData()
+                }
+            }
+            
+            UserDefaults.standard.set(true, forKey: "watchlistSet")
+        }
     }
     
     func refreshSavedStocks() {
         do {
             savedStocks = try PersistentService.context.fetch(Stock.getSortedFetchRequest())
             savedStocks = savedStocks.filter({$0.onWatchlist})
-            stocksTableView.reloadData()
-        } catch { print(error); print("lol") }
+        } catch { print(error) }
     }
     
     func saveItems() {
         PersistentService.saveContext()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        AppDelegate.AppUtility.lockOrientation(.all)
+    func resetCellData() {
+        prices?.removeAll(); percentages?.removeAll(); volumes?.removeAll()
+        prices = Array(repeating: -1, count: savedStocks.count)
+        percentages = Array(repeating: -1, count: savedStocks.count)
+        volumes = Array(repeating: -1, count: savedStocks.count)
     }
+    
+//    override func viewWillDisappear(_ animated: Bool) {
+//        AppDelegate.AppUtility.lockOrientation(.all)
+//    }
 }
 
 extension StocksMainVC: UITableViewDelegate, UITableViewDataSource {
@@ -105,7 +172,8 @@ extension StocksMainVC: UITableViewDelegate, UITableViewDataSource {
         let stk = savedStocks[indexPath.row]
         
         cell.setupCellText(name: stk.companyName!, ticker: stk.symbol!)
-        cell.setupCellNumbers(ticker: stk.symbol!)
+        cell.setupCellNumbers(price: prices![indexPath.row], percentage: percentages![indexPath.row], volume: volumes![indexPath.row])
+//        cell.setupCellNumbers2(ticker: stk.symbol!)
         cell.setLogo(logoURL: stk.companyLogoURL!)
         
         return cell
@@ -129,6 +197,7 @@ extension StocksMainVC: UITableViewDelegate, UITableViewDataSource {
                 PersistentService.context.delete(savedStocks[deleted_index])
                 saveItems()
                 refreshSavedStocks()
+                stocksTableView.reloadData()
             }
     }
     
@@ -163,6 +232,7 @@ extension StocksMainVC: UITableViewDelegate, UITableViewDataSource {
 
         saveItems()
         refreshSavedStocks()
+        stocksTableView.reloadData()
     }
 }
 
@@ -172,6 +242,7 @@ class SearchStockSegue: UIStoryboardSegue {
     
     override func perform() {
         transitioningDelegate.customHeight = 700
+        transitioningDelegate.showIndicator = false
         
         destination.transitioningDelegate = transitioningDelegate
         destination.modalPresentationStyle = .custom

@@ -40,11 +40,11 @@ extension UIView {
         toastView.isScrollEnabled = false
         toastView.clipsToBounds = true
         toastView.layer.cornerRadius = 10
-        toastView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.5)
+        toastView.backgroundColor = UIColor(named: "background-secondary")?.withAlphaComponent(0.85)
         
         toastView.textAlignment = .center
-        toastView.font = UIFont(name: "Avenir Next", size: 12.0)
-        toastView.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        toastView.font = UIFont(name: "Avenir Next", size: 15.0)
+        toastView.textColor = UIColor(named: "text-secondary")
         toastView.text = message
         toastView.sizeToFit()
     }

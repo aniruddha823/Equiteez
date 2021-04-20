@@ -91,6 +91,9 @@
 		086B615B23CABC5C0012765B /* NumDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B615A23CABC5C0012765B /* NumDateFormatter.swift */; };
 		086B615C23CABC5C0012765B /* NumDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B615A23CABC5C0012765B /* NumDateFormatter.swift */; };
 		086B615D23CABC5C0012765B /* NumDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B615A23CABC5C0012765B /* NumDateFormatter.swift */; };
+		08938CD1262418EB004C7708 /* StockNewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08938CD0262418EB004C7708 /* StockNewsVC.swift */; };
+		08938CD2262418EB004C7708 /* StockNewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08938CD0262418EB004C7708 /* StockNewsVC.swift */; };
+		08938CD3262418EB004C7708 /* StockNewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08938CD0262418EB004C7708 /* StockNewsVC.swift */; };
 		089C72DD25FF185900291041 /* DateGrouping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089C72DC25FF185900291041 /* DateGrouping.swift */; };
 		089C72DE25FF185900291041 /* DateGrouping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089C72DC25FF185900291041 /* DateGrouping.swift */; };
 		089C72DF25FF185900291041 /* DateGrouping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089C72DC25FF185900291041 /* DateGrouping.swift */; };
@@ -127,6 +130,12 @@
 		08E378B623C4A24100246F66 /* FMPquery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E378B523C4A24100246F66 /* FMPquery.swift */; };
 		08E378B723C4A24100246F66 /* FMPquery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E378B523C4A24100246F66 /* FMPquery.swift */; };
 		08E378B823C4A24100246F66 /* FMPquery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E378B523C4A24100246F66 /* FMPquery.swift */; };
+		08EA70F526242D2700AD179F /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EA70F426242D2700AD179F /* NewsCell.swift */; };
+		08EA70F626242D2700AD179F /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EA70F426242D2700AD179F /* NewsCell.swift */; };
+		08EA70F726242D2700AD179F /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EA70F426242D2700AD179F /* NewsCell.swift */; };
+		08EA70F926242E1000AD179F /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08EA70F826242E1000AD179F /* NewsCell.xib */; };
+		08EA70FA26242E1000AD179F /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08EA70F826242E1000AD179F /* NewsCell.xib */; };
+		08EA70FB26242E1000AD179F /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08EA70F826242E1000AD179F /* NewsCell.xib */; };
 		08EF72BA23C497EB003A8A13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EF72B923C497EB003A8A13 /* AppDelegate.swift */; };
 		08EF72BC23C497EB003A8A13 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EF72BB23C497EB003A8A13 /* SceneDelegate.swift */; };
 		08EF72BE23C497EB003A8A13 /* HomeScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EF72BD23C497EB003A8A13 /* HomeScreenVC.swift */; };
@@ -209,6 +218,7 @@
 		086B615223C9B7270012765B /* ToastSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastSwift.swift; sourceTree = "<group>"; };
 		086B615623C9C1FA0012765B /* AlphaVantageQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaVantageQuery.swift; sourceTree = "<group>"; };
 		086B615A23CABC5C0012765B /* NumDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumDateFormatter.swift; sourceTree = "<group>"; };
+		08938CD0262418EB004C7708 /* StockNewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockNewsVC.swift; sourceTree = "<group>"; };
 		089C72DB25FEACB500291041 /* Testing.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Testing.playground; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		089C72DC25FF185900291041 /* DateGrouping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateGrouping.swift; sourceTree = "<group>"; };
 		08B2022323DA8C59001AB937 /* ToolCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolCell.swift; sourceTree = "<group>"; };
@@ -222,6 +232,8 @@
 		08E378AD23C4A20E00246F66 /* ToolsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsVC.swift; sourceTree = "<group>"; };
 		08E378B123C4A21C00246F66 /* Portfolio.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Portfolio.storyboard; sourceTree = "<group>"; };
 		08E378B523C4A24100246F66 /* FMPquery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMPquery.swift; sourceTree = "<group>"; };
+		08EA70F426242D2700AD179F /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		08EA70F826242E1000AD179F /* NewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
 		08EF72B623C497EB003A8A13 /* Equiteez.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Equiteez.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08EF72B923C497EB003A8A13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08EF72BB23C497EB003A8A13 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -284,7 +296,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		08032F57261A2A160060D7EB /* StockFinancials */ = {
+		08032F57261A2A160060D7EB /* Financials */ = {
 			isa = PBXGroup;
 			children = (
 				08B2022723E7E5CC001AB937 /* StockFinancialsVC.swift */,
@@ -292,7 +304,7 @@
 				08032F5C261A2B140060D7EB /* StatementPagerViewCell.xib */,
 				085284D4261AC5E300121DCB /* StatementTitleCell.xib */,
 			);
-			path = StockFinancials;
+			path = Financials;
 			sourceTree = "<group>";
 		};
 		08685BA6257C6DAA0028EE6C /* Portfolio */ = {
@@ -317,6 +329,16 @@
 				08F6ABD12591ED510014DD3C /* Transfer.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		08938CCF262418A8004C7708 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				08938CD0262418EB004C7708 /* StockNewsVC.swift */,
+				08EA70F426242D2700AD179F /* NewsCell.swift */,
+				08EA70F826242E1000AD179F /* NewsCell.xib */,
+			);
+			path = News;
 			sourceTree = "<group>";
 		};
 		08E3788223C49CCB00246F66 /* HomeScreen */ = {
@@ -439,7 +461,8 @@
 				08E3788723C49CF600246F66 /* StocksMain */,
 				08E3788523C49CF100246F66 /* SearchStock */,
 				08E3788823C49CF900246F66 /* StockDetails */,
-				08032F57261A2A160060D7EB /* StockFinancials */,
+				08032F57261A2A160060D7EB /* Financials */,
+				08938CCF262418A8004C7708 /* News */,
 				08685BA6257C6DAA0028EE6C /* Portfolio */,
 				08F6ABE5259B0DFC0014DD3C /* TradeHistory */,
 				08E3788A23C49E1800246F66 /* TradeScreen */,
@@ -624,6 +647,7 @@
 				08685BB8258F22C50028EE6C /* TradeStock.storyboard in Resources */,
 				08F6ABDE259B0D8C0014DD3C /* TradeHistoryCell.xib in Resources */,
 				086B611423C5FD5E0012765B /* StockCell.xib in Resources */,
+				08EA70F926242E1000AD179F /* NewsCell.xib in Resources */,
 				08F6ABDA25991A720014DD3C /* PortfolioStockCell.xib in Resources */,
 				08EF72C623C497EE003A8A13 /* Assets.xcassets in Resources */,
 				0858115624A1D58200C1CA2E /* InformationView.xib in Resources */,
@@ -648,6 +672,7 @@
 				085284D6261AC5E300121DCB /* StatementTitleCell.xib in Resources */,
 				0858115424A1D58200C1CA2E /* StatsView.xib in Resources */,
 				086B611523C5FD5E0012765B /* StockCell.xib in Resources */,
+				08EA70FA26242E1000AD179F /* NewsCell.xib in Resources */,
 				0858115724A1D58200C1CA2E /* InformationView.xib in Resources */,
 				08E378A323C4A19100246F66 /* StockDetails.storyboard in Resources */,
 				08F6ABDB25991A720014DD3C /* PortfolioStockCell.xib in Resources */,
@@ -672,6 +697,7 @@
 				085284D7261AC5E300121DCB /* StatementTitleCell.xib in Resources */,
 				0858115524A1D58200C1CA2E /* StatsView.xib in Resources */,
 				086B611623C5FD5E0012765B /* StockCell.xib in Resources */,
+				08EA70FB26242E1000AD179F /* NewsCell.xib in Resources */,
 				0858115824A1D58200C1CA2E /* InformationView.xib in Resources */,
 				08E378A423C4A19100246F66 /* StockDetails.storyboard in Resources */,
 				08F6ABDC25991A720014DD3C /* PortfolioStockCell.xib in Resources */,
@@ -806,6 +832,7 @@
 				086B615323C9B7270012765B /* ToastSwift.swift in Sources */,
 				08685BA3257A03350028EE6C /* FinancialStatements.swift in Sources */,
 				08E3789623C4A14400246F66 /* SearchStockVC.swift in Sources */,
+				08EA70F526242D2700AD179F /* NewsCell.swift in Sources */,
 				08685BBC258F230A0028EE6C /* TradeScreenVC.swift in Sources */,
 				086B615B23CABC5C0012765B /* NumDateFormatter.swift in Sources */,
 				08F6ABD22591ED510014DD3C /* Transfer.swift in Sources */,
@@ -825,6 +852,7 @@
 				08E3789E23C4A17B00246F66 /* StockDetailsVC.swift in Sources */,
 				0858116624A1D66100C1CA2E /* GraphView.swift in Sources */,
 				08E378B623C4A24100246F66 /* FMPquery.swift in Sources */,
+				08938CD1262418EB004C7708 /* StockNewsVC.swift in Sources */,
 				08E378AE23C4A20E00246F66 /* ToolsVC.swift in Sources */,
 				08F6ABE2259B0DEB0014DD3C /* TradeHistoryCell.swift in Sources */,
 				08B2022423DA8C59001AB937 /* ToolCell.swift in Sources */,
@@ -846,6 +874,7 @@
 				086B611923C674DD0012765B /* PersistentService.swift in Sources */,
 				08E378AF23C4A20E00246F66 /* ToolsVC.swift in Sources */,
 				082BB27925720B0A001927A0 /* Equiteez.xcdatamodeld in Sources */,
+				08938CD2262418EB004C7708 /* StockNewsVC.swift in Sources */,
 				08B2022523DA8C59001AB937 /* ToolCell.swift in Sources */,
 				08685BA4257A03350028EE6C /* FinancialStatements.swift in Sources */,
 				086B614823C6A4180012765B /* StockCell.swift in Sources */,
@@ -866,6 +895,7 @@
 				08685BA9257C6DDD0028EE6C /* PortfolioVC.swift in Sources */,
 				08B2022923E7E5CC001AB937 /* StockFinancialsVC.swift in Sources */,
 				086B610D23C55C850012765B /* SettingsVC.swift in Sources */,
+				08EA70F626242D2700AD179F /* NewsCell.swift in Sources */,
 				08685BBD258F230A0028EE6C /* TradeScreenVC.swift in Sources */,
 				082BB27725708E9E001927A0 /* Stock.swift in Sources */,
 				086B615C23CABC5C0012765B /* NumDateFormatter.swift in Sources */,
@@ -885,6 +915,7 @@
 				086B611A23C674DD0012765B /* PersistentService.swift in Sources */,
 				08E378B023C4A20E00246F66 /* ToolsVC.swift in Sources */,
 				082BB27A25720B0B001927A0 /* Equiteez.xcdatamodeld in Sources */,
+				08938CD3262418EB004C7708 /* StockNewsVC.swift in Sources */,
 				08B2022623DA8C59001AB937 /* ToolCell.swift in Sources */,
 				08685BA5257A03350028EE6C /* FinancialStatements.swift in Sources */,
 				086B614923C6A4180012765B /* StockCell.swift in Sources */,
@@ -905,6 +936,7 @@
 				08685BAA257C6DDD0028EE6C /* PortfolioVC.swift in Sources */,
 				08B2022A23E7E5CC001AB937 /* StockFinancialsVC.swift in Sources */,
 				086B610E23C55C850012765B /* SettingsVC.swift in Sources */,
+				08EA70F726242D2700AD179F /* NewsCell.swift in Sources */,
 				08685BBE258F230A0028EE6C /* TradeScreenVC.swift in Sources */,
 				082BB27825708E9E001927A0 /* Stock.swift in Sources */,
 				086B615D23CABC5C0012765B /* NumDateFormatter.swift in Sources */,
