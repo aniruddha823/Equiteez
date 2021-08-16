@@ -91,14 +91,6 @@
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" name="background-primary"/>
-            <connections>
-                <outlet property="companyLogo" destination="Rxe-p3-bBy" id="v6B-Kr-cnx"/>
-                <outlet property="companyName" destination="H9M-eo-cbR" id="y7m-R8-2RW"/>
-                <outlet property="currentPercentChange" destination="pQn-bl-hVn" id="Hej-NF-iME"/>
-                <outlet property="currentPrice" destination="Q0E-RB-0sG" id="HGC-eH-D95"/>
-                <outlet property="currentVolume" destination="EoY-MZ-aHP" id="oOz-KW-4FQ"/>
-                <outlet property="symbol" destination="wCz-Bc-SkJ" id="ze9-N5-Zgn"/>
-            </connections>
             <point key="canvasLocation" x="-28.260869565217394" y="200.22321428571428"/>
         </tableViewCell>
     </objects>

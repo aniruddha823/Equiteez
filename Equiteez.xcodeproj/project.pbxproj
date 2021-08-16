@@ -45,6 +45,9 @@
 		0858116924A1D66100C1CA2E /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0858115F24A1D66100C1CA2E /* StatsView.swift */; };
 		0858116A24A1D66100C1CA2E /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0858115F24A1D66100C1CA2E /* StatsView.swift */; };
 		0858116B24A1D66100C1CA2E /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0858115F24A1D66100C1CA2E /* StatsView.swift */; };
+		085BFABB2679D84E00D2E0F9 /* SavedStockCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 085BFABA2679D84E00D2E0F9 /* SavedStockCell.xib */; };
+		085BFABC2679D84E00D2E0F9 /* SavedStockCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 085BFABA2679D84E00D2E0F9 /* SavedStockCell.xib */; };
+		085BFABD2679D84E00D2E0F9 /* SavedStockCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 085BFABA2679D84E00D2E0F9 /* SavedStockCell.xib */; };
 		08685BA3257A03350028EE6C /* FinancialStatements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08685BA2257A03350028EE6C /* FinancialStatements.swift */; };
 		08685BA4257A03350028EE6C /* FinancialStatements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08685BA2257A03350028EE6C /* FinancialStatements.swift */; };
 		08685BA5257A03350028EE6C /* FinancialStatements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08685BA2257A03350028EE6C /* FinancialStatements.swift */; };
@@ -69,9 +72,9 @@
 		086B611023C55FA10012765B /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 086B610F23C55FA10012765B /* Settings.storyboard */; };
 		086B611123C55FA10012765B /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 086B610F23C55FA10012765B /* Settings.storyboard */; };
 		086B611223C55FA10012765B /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 086B610F23C55FA10012765B /* Settings.storyboard */; };
-		086B611423C5FD5E0012765B /* StockCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 086B611323C5FD5E0012765B /* StockCell.xib */; };
-		086B611523C5FD5E0012765B /* StockCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 086B611323C5FD5E0012765B /* StockCell.xib */; };
-		086B611623C5FD5E0012765B /* StockCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 086B611323C5FD5E0012765B /* StockCell.xib */; };
+		086B611423C5FD5E0012765B /* StockCellBackup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 086B611323C5FD5E0012765B /* StockCellBackup.xib */; };
+		086B611523C5FD5E0012765B /* StockCellBackup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 086B611323C5FD5E0012765B /* StockCellBackup.xib */; };
+		086B611623C5FD5E0012765B /* StockCellBackup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 086B611323C5FD5E0012765B /* StockCellBackup.xib */; };
 		086B611823C674DD0012765B /* PersistentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B611723C674DD0012765B /* PersistentService.swift */; };
 		086B611923C674DD0012765B /* PersistentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B611723C674DD0012765B /* PersistentService.swift */; };
 		086B611A23C674DD0012765B /* PersistentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B611723C674DD0012765B /* PersistentService.swift */; };
@@ -203,6 +206,7 @@
 		0858115D24A1D66100C1CA2E /* InformationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
 		0858115E24A1D66100C1CA2E /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		0858115F24A1D66100C1CA2E /* StatsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		085BFABA2679D84E00D2E0F9 /* SavedStockCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavedStockCell.xib; sourceTree = "<group>"; };
 		08685BA2257A03350028EE6C /* FinancialStatements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialStatements.swift; sourceTree = "<group>"; };
 		08685BA7257C6DDD0028EE6C /* PortfolioVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioVC.swift; sourceTree = "<group>"; };
 		08685BAB258B028C0028EE6C /* TradeHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeHistoryVC.swift; sourceTree = "<group>"; };
@@ -211,7 +215,7 @@
 		08685BBB258F230A0028EE6C /* TradeScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeScreenVC.swift; sourceTree = "<group>"; };
 		086B610B23C55C850012765B /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		086B610F23C55FA10012765B /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
-		086B611323C5FD5E0012765B /* StockCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StockCell.xib; sourceTree = "<group>"; };
+		086B611323C5FD5E0012765B /* StockCellBackup.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StockCellBackup.xib; sourceTree = "<group>"; };
 		086B611723C674DD0012765B /* PersistentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentService.swift; sourceTree = "<group>"; };
 		086B614623C6A4180012765B /* StockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCell.swift; sourceTree = "<group>"; };
 		086B614E23C91DE50012765B /* ViewAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAppearance.swift; sourceTree = "<group>"; };
@@ -381,9 +385,10 @@
 			isa = PBXGroup;
 			children = (
 				08E3789123C4A10700246F66 /* StocksMain.storyboard */,
-				086B611323C5FD5E0012765B /* StockCell.xib */,
+				086B611323C5FD5E0012765B /* StockCellBackup.xib */,
 				08E3788D23C4A0A000246F66 /* StocksMainVC.swift */,
 				086B614623C6A4180012765B /* StockCell.swift */,
+				085BFABA2679D84E00D2E0F9 /* SavedStockCell.xib */,
 			);
 			path = StocksMain;
 			sourceTree = "<group>";
@@ -597,7 +602,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = "Aniruddha Prabhu";
 				TargetAttributes = {
 					08EF72B523C497EB003A8A13 = {
@@ -638,6 +643,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				085BFABB2679D84E00D2E0F9 /* SavedStockCell.xib in Resources */,
 				0858115924A1D58200C1CA2E /* GraphView.xib in Resources */,
 				08E378B223C4A21C00246F66 /* Portfolio.storyboard in Resources */,
 				08032F5D261A2B140060D7EB /* StatementPagerViewCell.xib in Resources */,
@@ -646,7 +652,7 @@
 				08EF72C923C497EE003A8A13 /* LaunchScreen.storyboard in Resources */,
 				08685BB8258F22C50028EE6C /* TradeStock.storyboard in Resources */,
 				08F6ABDE259B0D8C0014DD3C /* TradeHistoryCell.xib in Resources */,
-				086B611423C5FD5E0012765B /* StockCell.xib in Resources */,
+				086B611423C5FD5E0012765B /* StockCellBackup.xib in Resources */,
 				08EA70F926242E1000AD179F /* NewsCell.xib in Resources */,
 				08F6ABDA25991A720014DD3C /* PortfolioStockCell.xib in Resources */,
 				08EF72C623C497EE003A8A13 /* Assets.xcassets in Resources */,
@@ -670,8 +676,9 @@
 				08E3789323C4A10700246F66 /* StocksMain.storyboard in Resources */,
 				08F6ABDF259B0D8C0014DD3C /* TradeHistoryCell.xib in Resources */,
 				085284D6261AC5E300121DCB /* StatementTitleCell.xib in Resources */,
+				085BFABC2679D84E00D2E0F9 /* SavedStockCell.xib in Resources */,
 				0858115424A1D58200C1CA2E /* StatsView.xib in Resources */,
-				086B611523C5FD5E0012765B /* StockCell.xib in Resources */,
+				086B611523C5FD5E0012765B /* StockCellBackup.xib in Resources */,
 				08EA70FA26242E1000AD179F /* NewsCell.xib in Resources */,
 				0858115724A1D58200C1CA2E /* InformationView.xib in Resources */,
 				08E378A323C4A19100246F66 /* StockDetails.storyboard in Resources */,
@@ -695,8 +702,9 @@
 				08E3789423C4A10700246F66 /* StocksMain.storyboard in Resources */,
 				08F6ABE0259B0D8C0014DD3C /* TradeHistoryCell.xib in Resources */,
 				085284D7261AC5E300121DCB /* StatementTitleCell.xib in Resources */,
+				085BFABD2679D84E00D2E0F9 /* SavedStockCell.xib in Resources */,
 				0858115524A1D58200C1CA2E /* StatsView.xib in Resources */,
-				086B611623C5FD5E0012765B /* StockCell.xib in Resources */,
+				086B611623C5FD5E0012765B /* StockCellBackup.xib in Resources */,
 				08EA70FB26242E1000AD179F /* NewsCell.xib in Resources */,
 				0858115824A1D58200C1CA2E /* InformationView.xib in Resources */,
 				08E378A423C4A19100246F66 /* StockDetails.storyboard in Resources */,
@@ -1004,6 +1012,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1064,6 +1073,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

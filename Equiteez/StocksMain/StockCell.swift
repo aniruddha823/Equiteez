@@ -12,22 +12,25 @@
 
 import UIKit
 import SDWebImage
+import Charts
 
 class StockCell: UITableViewCell {
     
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var companyName: UILabel!
     @IBOutlet weak var symbol: UILabel!
     @IBOutlet weak var currentPrice: UILabel!
     @IBOutlet weak var currentVolume: UILabel!
     @IBOutlet weak var currentPercentChange: UILabel!
     @IBOutlet weak var companyLogo: UIImageView!
-
+    @IBOutlet weak var priceGraph: LineChartView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
     class func fetchNib() -> UINib {
-        let nib = UINib(nibName: "StockCell", bundle: nil)
+        let nib = UINib(nibName: "SavedStockCell", bundle: nil)
         
         return nib
     }
@@ -67,6 +70,16 @@ class StockCell: UITableViewCell {
         companyLogo.layer.masksToBounds = true
         let imgURL = URL(string: logoURL)
         companyLogo.sd_setImage(with: imgURL)
+    }
+    
+    func setupAppearance() {
+        containerView.layer.cornerRadius = 10
+        containerView.layer.masksToBounds = false
+        containerView.clipsToBounds = false
+        containerView.layer.shadowColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        containerView.layer.shadowOffset = CGSize(width: 1, height: 1)
+        containerView.layer.shadowRadius = 3
+        containerView.layer.shadowOpacity = 1
     }
 }
 

@@ -53,6 +53,35 @@ class ViewAppearance {
         lineChartView.animate(xAxisDuration: 0.75, yAxisDuration: 0.75)
     }
     
+    class func setupMiniLineGraphView(lineChartView: LineChartView, lce: [ChartDataEntry]) {
+        let line = LineChartDataSet(entries: lce, label: "")
+        line.drawValuesEnabled = false
+        line.drawCirclesEnabled = false
+        line.drawFilledEnabled = true
+        line.fillAlpha = 1
+        let gradientColors = [UIColor(red: 0/255.0, green: 200/255.0, blue: 100/255.0, alpha: 1).cgColor, UIColor(red: 0/255.0, green: 200/255.0, blue: 100/255.0, alpha: 1).cgColor, UIColor(red: 0/255.0, green: 200/255.0, blue: 100/255.0, alpha: 1).cgColor, UIColor.white.cgColor] as CFArray;
+        let colorLocations : [CGFloat] = [0.0, 0.333, 0.666, 1.0]
+        let gradient = CGGradient.init(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: gradientColors, locations: colorLocations)
+        line.fill = Fill(linearGradient: gradient!, angle: 270)
+        line.colors = [UIColor.clear]
+        
+        let data = LineChartData(dataSet: line)
+        
+        lineChartView.data = data
+        lineChartView.xAxis.enabled = false
+        lineChartView.minOffset = 0
+        lineChartView.leftAxis.drawGridLinesEnabled = false
+        lineChartView.rightAxis.drawGridLinesEnabled = false
+        lineChartView.rightAxis.enabled = false
+        lineChartView.leftAxis.enabled = false
+        lineChartView.drawBordersEnabled = false
+        lineChartView.chartDescription?.text = ""
+        lineChartView.legend.enabled = false
+        lineChartView.doubleTapToZoomEnabled = false
+        lineChartView.isUserInteractionEnabled = false
+        lineChartView.animate(xAxisDuration: 0.75, yAxisDuration: 0.75)
+    }
+    
     class func setupBarGraphView(barChartView: BarChartView) {
         barChartView.xAxis.enabled = false
         barChartView.minOffset = 0

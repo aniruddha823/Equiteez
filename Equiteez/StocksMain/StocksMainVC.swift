@@ -9,6 +9,7 @@
 import UIKit
 import SPStorkController
 import CoreData
+import Charts
 
 class StocksMainVC: UIViewController {
     
@@ -19,6 +20,9 @@ class StocksMainVC: UIViewController {
     var volumes: [Double]?
     
     let dg = DispatchGroup()
+    let x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]
+    let y = [60.53, 60.19, 59.90, 60.07, 60.08, 60.03, 59.79, 59.56, 59.70, 59.82, 60.10, 60.53, 60.65, 60.77, 60.80, 60.64, 60.63, 60.68, 60.59, 60.51, 60.35, 60.26, 60.32, 60.4, 60.5, 60.85, 60.63]
+    var lineChartEntries = [ChartDataEntry]()
     
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var stocksTableView: UITableView!
@@ -101,6 +105,12 @@ class StocksMainVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.tintColor = UIColor(named: "text-primary")
+        
+        for i in stride(from: 0, to: x.count, by: 1) {
+            let day = ChartDataEntry(x: Double(x[i]), y: y[i])
+            lineChartEntries.append(day)
+        }
+        
         let boolcheck = UserDefaults.standard.bool(forKey: "watchlistSet")
         
         if !boolcheck {
@@ -129,7 +139,7 @@ class StocksMainVC: UIViewController {
                 DispatchQueue.main.async {
                     self.stocksTableView.delegate = self
                     self.stocksTableView.dataSource = self
-                    self.stocksTableView.register(UINib(nibName: "StockCell", bundle: nil), forCellReuseIdentifier: "stkc")
+                    self.stocksTableView.register(UINib(nibName: "SavedStockCell", bundle: nil), forCellReuseIdentifier: "stkc")
                     self.stocksTableView.reloadData()
                 }
             }
@@ -171,10 +181,21 @@ extension StocksMainVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "stkc") as! StockCell
         let stk = savedStocks[indexPath.row]
         
+        cell.setupAppearance()
         cell.setupCellText(name: stk.companyName!, ticker: stk.symbol!)
         cell.setupCellNumbers(price: prices![indexPath.row], percentage: percentages![indexPath.row], volume: volumes![indexPath.row])
 //        cell.setupCellNumbers2(ticker: stk.symbol!)
         cell.setLogo(logoURL: stk.companyLogoURL!)
+        
+        
+//        cell.layer.cornerRadius = 10
+//        cell.layer.shadowColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+//        cell.layer.shadowOffset = CGSize(width: 3.0, height: 3.0)
+//        cell.layer.shadowRadius = 3
+//        cell.layer.shadowOpacity = 1
+//        cell.layer.masksToBounds = true
+        
+        ViewAppearance.setupMiniLineGraphView(lineChartView: cell.priceGraph, lce: lineChartEntries)
         
         return cell
     }
