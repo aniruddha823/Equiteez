@@ -2,9 +2,9 @@
 A simple iOS application to buy/sell stocks using virtual $$$ and view the financial statements of publicly traded companies. This app stores transactions made & other information 100% on-device using CoreData.
 
 ## Screenshots
-<img src="Screenshots/watchlist.png" height="400" hspace="20"/> <img src="Screenshots/portfolio.png" height="400" hspace="20"/> <img src="Screenshots/tradehistory.png" height="400" hspace="20"/>
+<img src="Screenshots/watchlist.png" height="320" hspace="20"/> <img src="Screenshots/stocknews.png" height="320" hspace="20"/> <img src="Screenshots/tradescreen.png" height="320" hspace="20"/> <img src="Screenshots/portfolio.png" height="320" hspace="20"/> <img src="Screenshots/history.png" height="320" hspace="20"/>
 
-&emsp;&emsp;&emsp;&emsp;&emsp;Watchlist&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Portfolio View&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Trade History
+&emsp;&emsp;&emsp;&emsp;Watchlist&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Stock News&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Trade Screen&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Portfolio View&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;History
 
 ## Dependencies
 - Charts: https://github.com/danielgindi/Charts
